@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-primary {
+    font-family: var(--font-primary), Impact, 'Arial Narrow', sans-serif;
+  }
+
+  .font-secondary {
+    font-family: var(--font-secondary), Arial, Helvetica, sans-serif;
+  }
+
+  .overlay {
+    content: '';
+    @apply absolute
+    inset-0 
+    bg-gradient-to-b from-neutral-900/70 via-neutral-900/70 to-neutral-900/70;
+  }
+
+  .section-content-width {
+    @apply px-5
+    sm:px-6
+    md:px-8
+    lg:px-10
+    xl:px-12
+    2xl:px-14;
+  }
+
+  .section-content-height {
+    @apply py-10
+    sm:py-12
+    md:py-16
+    lg:py-20
+    xl:py-24
+    2xl:py-28;
+  }
+
+  .section-container {
+    @apply relative
+    max-w-7xl
+    mx-auto
+    section-content-height
+    section-content-width
+    text-center
+    lg:text-start;
+  }
+
+  .btn {
+    @apply text-sm
+    lg:text-base
+    2xl:text-lg
+    tracking-widest
+    whitespace-nowrap
+    font-primary
+    font-[700]
+    uppercase
+    text-center
+    px-4
+    lg:px-[1.125rem]
+    2xl:px-5
+    py-2
+    lg:py-2.5
+    2xl:py-3
+    border-2
+    rounded-lg
+    shadow-lg
+    active:scale-95
+    active:shadow-lg
+    transition;
+  }
+
+  .btn-primary {
+    @apply bg-indigo-600
+    text-gray-50
+    border-indigo-600
+    hover:bg-teal-400
+    hover:border-teal-400
+    hover:text-gray-900;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent
+    text-gray-50
+    hover:bg-teal-400
+    hover:border-teal-400
+    hover:text-gray-900;
+  }
+
+  @media (max-width: 355px) {
+    .section-content-width {
+      @apply px-2.5;
+    }
+
+    .section-content-height {
+      @apply py-5;
+    }
+
+    .btn {
+      @apply text-xs
+      font-[600]
+      px-3
+      py-1.5;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[url('/images/body-bg.svg')]
+  bg-fixed
+  bg-opacity-30
+  max-w-screen-2xl
+  mx-auto
+  antialiased
+  shadow-lg
+  font-secondary;
+}
