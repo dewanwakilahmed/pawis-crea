@@ -82,6 +82,7 @@
   .btn-secondary {
     @apply bg-transparent
     text-gray-50
+    border-gray-50
     hover:bg-teal-400
     hover:border-teal-400
     hover:text-gray-900;
@@ -98,6 +99,7 @@
 
     .btn {
       @apply text-xs
+      tracking-wider
       font-[600]
       px-3
       py-1.5;
@@ -118,4 +120,15 @@ body {
   antialiased
   shadow-lg
   font-secondary;
+}
+
+@keyframes slide-up-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

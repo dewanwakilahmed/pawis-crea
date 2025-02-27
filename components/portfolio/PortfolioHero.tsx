@@ -14,28 +14,39 @@ const PortfolioHero: FC = () => {
         loop
         muted
         playsInline
+        preload="auto"
+        poster="/images/portfolio-video-placeholder.jpg"
       >
+        {/* <source src="/videos/portfolio-hero-bg.webm" type="video/webm" /> */}
         <source src="/videos/portfolio-hero-bg.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+        <span className="sr-only">
+          A showcase of a few of our best photography and videography scenes
+        </span>
+        Oops! It looks like your browser doesn&apos;t support video playback.
+        Don&apos;t worry - you can still explore our stunning visuals below!
       </video>
 
       <div className="portfolio-hero-container">
         <div className="portfolio-hero-content">
           <h1 className="portfolio-hero-headline">
-            Bringing Brands to Life Through Stunning Visuals
+            Elevate Your Brand with Stunning Visuals
           </h1>
           <h2 className="portfolio-hero-subheadline">
-            From captivating photography to cinematic videography, we create
-            visuals that engage, inspire, and convert
+            Photography and videography that captivate and convert
           </h2>
           <div className="portfolio-hero-cta">
-            <Link
+            <a
               href="/portfolio#portfolio-category"
               className="explore-our-work-btn"
+              aria-label="Explore our portfolio"
             >
               Explore Our Work
-            </Link>
-            <Link href="/contact-us" className="book-a-session-btn">
+            </a>
+            <Link
+              href="/contact-us"
+              className="book-a-session-btn"
+              aria-label="Book a Session"
+            >
               Book a Session
             </Link>
           </div>
