@@ -54,7 +54,6 @@
     whitespace-nowrap
     font-primary
     font-[700]
-    uppercase
     text-center
     px-4
     lg:px-[1.125rem]
@@ -99,7 +98,6 @@
 
     .btn {
       @apply text-xs
-      tracking-wider
       font-[600]
       px-3
       py-1.5;
