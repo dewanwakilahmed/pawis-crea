@@ -77,21 +77,17 @@ const Header: FC = () => {
             <hr className="mobile-nav-divider" />
             <ul className="mobile-nav-links">
               {navItems.map((item) => (
-                <li
-                  className="mobile-nav-link"
-                  key={item.href}
-                  onClick={toggleMobileMenu}
-                >
-                  <Link href={item.href}>
+                <li key={item.href} onClick={toggleMobileMenu}>
+                  <Link href={item.href} className="mobile-nav-link">
                     {lang === 'English' ? item.en : item.es}
                   </Link>
                 </li>
               ))}
-              <li
-                className="book-a-session-header-mobile-nav-btn"
-                onClick={toggleMobileMenu}
-              >
-                <Link href="/booking">
+              <li onClick={toggleMobileMenu}>
+                <Link
+                  href="/booking"
+                  className="book-a-session-header-mobile-nav-btn"
+                >
                   {lang === 'English' ? 'Book a Session' : 'Reservar Sesión'}
                 </Link>
               </li>

@@ -1,9 +1,9 @@
 .header {
   @apply fixed
   z-50
-  w-full
-  left-0
   top-0
+  w-full
+  max-w-screen-2xl
   bg-neutral-900/50
   backdrop-blur-md
   shadow-lg;
@@ -38,7 +38,7 @@
   flex-row
   items-center
   justify-center
-  gap-5;
+  gap-6;
 }
 
 .nav-link {
@@ -91,7 +91,8 @@
 }
 
 .mobile-nav-toggle-btn {
-  @apply text-4xl
+  @apply text-gray-50
+  text-4xl
   lg:text-5xl
   xl:hidden;
 }
@@ -110,7 +111,8 @@
   btn-primary
   hidden
   xl:block
-  w-48;
+  lg:w-48
+  2xl:w-52;
 }
 
 .mobile-nav {
@@ -138,7 +140,8 @@
 }
 
 .mobile-nav-link {
-  @apply text-gray-50
+  @apply block
+  text-gray-50
   font-primary
   text-base
   lg:text-lg
@@ -147,10 +150,11 @@
 }
 
 .book-a-session-header-mobile-nav-btn {
-  @apply btn
+  @apply block
+  btn
   btn-primary
-  mt-3
-  lg:mt-4
+  mt-2
+  lg:mt-3
   w-40
   lg:w-48;
 }
@@ -188,7 +192,7 @@
   }
 
   .book-a-session-header-mobile-nav-btn {
-    @apply mt-2.5
+    @apply mt-1
     w-36;
   }
 }
