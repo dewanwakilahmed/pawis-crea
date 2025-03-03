@@ -35,7 +35,6 @@
 .portfolio-hero-headline {
   @apply text-3xl
   lg:text-4xl
-  2xl:text-5xl
   tracking-widest
   font-primary
   font-[900]
@@ -43,8 +42,7 @@
   text-center
   text-gray-50
   mb-4
-  lg:mb-5
-  2xl:mb-6;
+  lg:mb-5;
 
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
@@ -65,15 +63,13 @@
 .portfolio-hero-cta {
   @apply mt-8
   lg:mt-9
-  2xl:mt-10
   flex
   flex-col
   sm:flex-row
   items-center
   justify-center
   gap-4
-  lg:gap-5
-  2xl:gap-6;
+  lg:gap-5;
 }
 
 .explore-our-work-btn {

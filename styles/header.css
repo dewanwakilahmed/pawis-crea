@@ -21,8 +21,7 @@
   justify-center
 
   py-3
-  lg:py-4
-  2xl:py-5;
+  lg:py-4;
 }
 
 .company-logo-container {
@@ -38,12 +37,12 @@
   flex-row
   items-center
   justify-center
-  gap-6;
+  xl:gap-6;
 }
 
 .nav-link {
   @apply block
-  w-24
+  xl:w-24
   text-gray-50
   tracking-widest
   font-[700]
@@ -51,7 +50,6 @@
   whitespace-nowrap
   text-center
   lg:text-base
-  2xl:text-lg
   transition
   relative;
 }
@@ -80,7 +78,7 @@
   items-center
   gap-3
   lg:gap-4
-  2xl:gap-5;
+  xl:gap-5;
 }
 
 .switch-lang-mobile-btn {
@@ -111,8 +109,7 @@
   btn-primary
   hidden
   xl:block
-  lg:w-48
-  2xl:w-52;
+  lg:w-48;
 }
 
 .mobile-nav {
@@ -153,8 +150,8 @@
   @apply block
   btn
   btn-primary
-  mt-2
-  lg:mt-3
+  mt-1
+  lg:mt-2
   w-40
   lg:w-48;
 }
@@ -192,7 +189,7 @@
   }
 
   .book-a-session-header-mobile-nav-btn {
-    @apply mt-1
+    @apply mt-0.5
     w-36;
   }
 }
