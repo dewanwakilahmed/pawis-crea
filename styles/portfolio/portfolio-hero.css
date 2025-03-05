@@ -50,7 +50,6 @@
 .portfolio-hero-subheadline {
   @apply text-lg
   lg:text-xl
-  2xl:text-2xl
   tracking-wider
   font-primary
   font-[700]
