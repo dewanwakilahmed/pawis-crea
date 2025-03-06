@@ -1,7 +1,8 @@
 'use client';
 
 import React, { FC, useState } from 'react';
-import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
+import { Link, useRouter, usePathname } from '@/i18n/navigation';
 
 // CSS
 import '@/styles/header.css';
@@ -14,20 +15,27 @@ import CompanyLogo from '@/components/CompanyLogo';
 
 const Header: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
-  const [lang, setLang] = useState('English');
-
-  const switchLang = () => setLang(lang === 'English' ? 'Español' : 'English');
+  const t = useTranslations('Header.nav');
+  const tLang = useTranslations('Header.lang');
+  const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = useLocale();
 
   const navItems = [
-    { en: 'Home', es: 'Inicio', href: '/' },
-    { en: 'About', es: 'Sobre', href: '/about' },
-    { en: 'Portfolio', es: 'Portafolio', href: '/portfolio' },
-    { en: 'Services', es: 'Servicios', href: '/services' },
-    { en: 'Contact', es: 'Contacto', href: '/contact' },
+    { key: 'home', href: '/' },
+    { key: 'about', href: '/about' },
+    { key: 'portfolio', href: '/portfolio' },
+    { key: 'services', href: '/services' },
+    { key: 'contact', href: '/contact' },
   ];
+
+  const otherLocale = currentLocale === 'en' ? 'es' : 'en';
+
+  const switchLang = (newLocale: string) => {
+    router.push(pathname, { locale: newLocale });
+  };
 
   return (
     <header className="header">
@@ -41,7 +49,7 @@ const Header: FC = () => {
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="nav-link">
-                  {lang === 'English' ? item.en : item.es}
+                  {t(item.key)}
                 </Link>
               </li>
             ))}
@@ -49,15 +57,21 @@ const Header: FC = () => {
         </nav>
 
         <div className="header-btns">
-          <button onClick={switchLang} className="switch-lang-btn">
-            {lang === 'English' ? 'English' : 'Español'}
+          <button
+            onClick={() => switchLang(otherLocale)}
+            className="switch-lang-btn"
+          >
+            {tLang(`${otherLocale}_long`)}
           </button>
           <Link href="/booking" className="book-a-session-header-btn">
-            {lang === 'English' ? 'Book a Session' : 'Reservar Sesión'}
+            {t('book_a_session')}
           </Link>
 
-          <button onClick={switchLang} className="switch-lang-mobile-btn">
-            {lang === 'English' ? 'EN' : 'ES'}
+          <button
+            onClick={() => switchLang(otherLocale)}
+            className="switch-lang-mobile-btn"
+          >
+            {tLang(`${otherLocale}_short`)}
           </button>
           {isMobileMenuOpen ? (
             <RiCloseFill
@@ -77,9 +91,13 @@ const Header: FC = () => {
             <hr className="mobile-nav-divider" />
             <ul className="mobile-nav-links">
               {navItems.map((item) => (
-                <li key={item.href} onClick={toggleMobileMenu}>
-                  <Link href={item.href} className="mobile-nav-link">
-                    {lang === 'English' ? item.en : item.es}
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="mobile-nav-link"
+                    onClick={toggleMobileMenu}
+                  >
+                    {t(item.key)}
                   </Link>
                 </li>
               ))}
@@ -88,7 +106,7 @@ const Header: FC = () => {
                   href="/booking"
                   className="book-a-session-header-mobile-nav-btn"
                 >
-                  {lang === 'English' ? 'Book a Session' : 'Reservar Sesión'}
+                  {t('book_a_session')}
                 </Link>
               </li>
             </ul>

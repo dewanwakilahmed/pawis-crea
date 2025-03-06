@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
@@ -23,6 +23,10 @@ export const viewport: Viewport = {
   themeColor: '#1F2937',
 };
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 interface RootLayoutProps {
   children: ReactNode;
   params: Promise<{ locale: string }>;
@@ -34,6 +38,8 @@ const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
+
+  setRequestLocale(locale);
 
   // Providing all messages to the client
   // side is the easiest way to get started

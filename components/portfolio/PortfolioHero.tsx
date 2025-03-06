@@ -1,10 +1,13 @@
 import React, { FC } from 'react';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 // CSS
 import '@/styles/portfolio/portfolio-hero.css';
 
 const PortfolioHero: FC = () => {
+  const t = useTranslations('PortfolioHero');
+
   return (
     <section className="portfolio-hero">
       <video
@@ -28,26 +31,22 @@ const PortfolioHero: FC = () => {
 
       <div className="portfolio-hero-container">
         <div className="portfolio-hero-content">
-          <h1 className="portfolio-hero-headline">
-            Elevate Your Brand with Stunning Visuals
-          </h1>
-          <h2 className="portfolio-hero-subheadline">
-            Photography and videography that captivate and convert
-          </h2>
+          <h1 className="portfolio-hero-headline">{t('headline')}</h1>
+          <h2 className="portfolio-hero-subheadline">{t('subheadline')}</h2>
           <div className="portfolio-hero-cta">
             <a
               href="/portfolio#portfolio-category"
               className="explore-our-work-btn"
               aria-label="Explore our portfolio"
             >
-              Explore Our Work
+              {t('explore')}
             </a>
             <Link
               href="/contact-us"
               className="book-a-session-btn"
               aria-label="Book a Session"
             >
-              Book a Session
+              {t('book')}
             </Link>
           </div>
         </div>

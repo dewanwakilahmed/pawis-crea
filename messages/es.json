@@ -9,8 +9,8 @@
       "book_a_session": "Reservar Sesión"
     },
     "lang": {
-      "english": "English",
-      "spanish": "Español",
+      "en_long": "English",
+      "es_long": "Español",
       "en_short": "EN",
       "es_short": "ES"
     }
