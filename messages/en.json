@@ -1,0 +1,27 @@
+{
+  "Header": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "portfolio": "Portfolio",
+      "services": "Services",
+      "contact": "Contact",
+      "book_a_session": "Book a Session"
+    },
+    "lang": {
+      "english": "English",
+      "spanish": "Español",
+      "en_short": "EN",
+      "es_short": "ES"
+    }
+  },
+  "PortfolioHero": {
+    "headline": "Elevate Your Brand with Stunning Visuals",
+    "subheadline": "Photography and videography that captivate and convert",
+    "explore": "Explore Our Work",
+    "book": "Book a Session"
+  },
+  "Home": {
+    "title": "Home Page"
+  }
+}

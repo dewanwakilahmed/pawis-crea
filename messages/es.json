@@ -1,0 +1,27 @@
+{
+  "Header": {
+    "nav": {
+      "home": "Inicio",
+      "about": "Sobre",
+      "portfolio": "Portafolio",
+      "services": "Servicios",
+      "contact": "Contacto",
+      "book_a_session": "Reservar Sesión"
+    },
+    "lang": {
+      "english": "English",
+      "spanish": "Español",
+      "en_short": "EN",
+      "es_short": "ES"
+    }
+  },
+  "PortfolioHero": {
+    "headline": "Eleva Tu Marca con Visuales Impactantes",
+    "subheadline": "Fotografía y videografía que cautivan y convierten",
+    "explore": "Explora Nuestro Trabajo",
+    "book": "Reservar Sesión"
+  },
+  "Home": {
+    "title": "Página de Inicio"
+  }
+}
