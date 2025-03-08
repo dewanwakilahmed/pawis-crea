@@ -106,7 +106,8 @@
   @apply btn
   btn-primary
   hidden
-  xl:block
+  md:block
+  md:w-40
   lg:w-48;
 }
 
@@ -146,6 +147,7 @@
 
 .book-a-session-header-mobile-nav-btn {
   @apply block
+  md:hidden
   btn
   btn-primary
   mt-1

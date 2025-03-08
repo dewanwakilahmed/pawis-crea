@@ -23,5 +23,28 @@
   },
   "Home": {
     "title": "Home Page"
+  },
+  "Footer": {
+    "slogan": "Dare to Dream",
+    "quick_links": "Quick Links",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "portfolio": "Portfolio",
+      "services": "Services",
+      "contact": "Contact",
+      "book_a_session": "Book a Session"
+    },
+    "contact": "Contact Us",
+    "follow_us": "Follow Us",
+    "social": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "vimeo": "Vimeo",
+      "youtube": "YouTube"
+    },
+    "rights_reserved": "All Rights Reserved",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service"
   }
 }

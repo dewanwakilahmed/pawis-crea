@@ -23,5 +23,28 @@
   },
   "Home": {
     "title": "Página de Inicio"
+  },
+  "Footer": {
+    "slogan": "Atrévete a Soñar",
+    "quick_links": "Enlaces Rápidos",
+    "nav": {
+      "home": "Inicio",
+      "about": "Sobre",
+      "portfolio": "Portafolio",
+      "services": "Servicios",
+      "contact": "Contacto",
+      "book_a_session": "Reservar Sesión"
+    },
+    "contact": "Contáctanos",
+    "follow_us": "Síguenos",
+    "social": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "vimeo": "Vimeo",
+      "youtube": "YouTube"
+    },
+    "rights_reserved": "Todos los Derechos Reservados",
+    "privacy_policy": "Política de Privacidad",
+    "terms_of_service": "Términos de Servicio"
   }
 }
