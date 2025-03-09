@@ -4,6 +4,7 @@ import { routing } from '@/i18n/routing';
 
 // Sections
 import PortfolioHero from '@/components/portfolio/PortfolioHero';
+import PhotoGallery from '@/components/portfolio/PhotoGallery';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -20,6 +21,7 @@ const PortfolioPage: FC<PortfolioPageProps> = ({ params }) => {
   return (
     <main className="portfolio-page">
       <PortfolioHero />
+      <PhotoGallery />
     </main>
   );
 };
