@@ -1,5 +1,5 @@
 'use client';
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import Image from 'next/image';
 
 // CSS
@@ -21,10 +21,64 @@ import lgZoom from 'lightgallery/plugins/zoom';
 import imageData from '@/public/images/imageData';
 
 const PhotoGallery: FC = () => {
+  const categories = Array.from(new Set(imageData.map((img) => img.category)));
+
+  // Initial state: first 3 images from each category
+  const initialImages = categories
+    .map((category) =>
+      imageData.filter((img) => img.category === category).slice(0, 3)
+    )
+    .flat();
+
+  // State for filtered images and current filter
+  const [filteredImages, setFilteredImages] = useState(initialImages);
+  const [activeFilter, setActiveFilter] = useState('initial'); // 'initial', 'all', or category name
+
+  // Filter handler
+  const handleFilter = (filter: string) => {
+    setActiveFilter(filter);
+    if (filter === 'all') {
+      setFilteredImages(imageData); // Show all images
+    } else if (filter === 'initial') {
+      setFilteredImages(initialImages); // Reset to initial state
+    } else {
+      setFilteredImages(imageData.filter((img) => img.category === filter)); // Filter by category
+    }
+  };
+
   return (
     <section className="photo-gallery">
       <div className="photo-gallery-container">
         <h3 className="photo-gallery-heading">Photo Gallery</h3>
+
+        <div className="photo-gallery-filters">
+          <button
+            className={`filter-btn ${
+              activeFilter === 'initial' ? 'active' : ''
+            }`}
+            onClick={() => handleFilter('initial')}
+          >
+            Initial
+          </button>
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`filter-btn ${
+                activeFilter === category ? 'active' : ''
+              }`}
+              onClick={() => handleFilter(category)}
+            >
+              {category.charAt(0).toUpperCase() +
+                category.slice(1).replace(/-/g, ' ')}
+            </button>
+          ))}
+          <button
+            className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
+            onClick={() => handleFilter('all')}
+          >
+            All
+          </button>
+        </div>
 
         <div className="photo-gallery-content">
           <LightGallery
@@ -42,7 +96,7 @@ const PhotoGallery: FC = () => {
               className="my-masonry-grid"
               columnClassName="my-masonry-grid_column"
             >
-              {imageData.map((image, index) => (
+              {filteredImages.map((image, index) => (
                 <a
                   key={index}
                   href={`/images/portfolio-img/${image.src}`}
