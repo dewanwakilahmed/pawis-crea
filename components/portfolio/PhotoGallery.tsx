@@ -1,48 +1,40 @@
 'use client';
 import React, { FC, useState } from 'react';
 import Image from 'next/image';
+import LightGallery from 'lightgallery/react';
+import Masonry from 'react-masonry-css';
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
 
 // CSS
 import '@/styles/portfolio/photo-gallery.css';
-
-// Masonry
-import Masonry from 'react-masonry-css';
-
-// LightGallery
-import LightGallery from 'lightgallery/react';
-
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
 
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
-import lgZoom from 'lightgallery/plugins/zoom';
-
+// Image Data
 import imageData from '@/public/images/imageData';
 
 const PhotoGallery: FC = () => {
   const categories = Array.from(new Set(imageData.map((img) => img.category)));
 
-  // Initial state: first 3 images from each category
-  const initialImages = categories
+  const featuredImages = categories
     .map((category) =>
       imageData.filter((img) => img.category === category).slice(0, 3)
     )
     .flat();
 
-  // State for filtered images and current filter
-  const [filteredImages, setFilteredImages] = useState(initialImages);
-  const [activeFilter, setActiveFilter] = useState('initial'); // 'initial', 'all', or category name
+  const [filteredImages, setFilteredImages] = useState(featuredImages);
+  const [activeFilter, setActiveFilter] = useState('featured');
 
-  // Filter handler
   const handleFilter = (filter: string) => {
     setActiveFilter(filter);
     if (filter === 'all') {
-      setFilteredImages(imageData); // Show all images
-    } else if (filter === 'initial') {
-      setFilteredImages(initialImages); // Reset to initial state
+      setFilteredImages(imageData);
+    } else if (filter === 'featured') {
+      setFilteredImages(featuredImages);
     } else {
-      setFilteredImages(imageData.filter((img) => img.category === filter)); // Filter by category
+      setFilteredImages(imageData.filter((img) => img.category === filter));
     }
   };
 
@@ -54,11 +46,11 @@ const PhotoGallery: FC = () => {
         <div className="photo-gallery-filters">
           <button
             className={`filter-btn ${
-              activeFilter === 'initial' ? 'active' : ''
+              activeFilter === 'featured' ? 'active' : ''
             }`}
-            onClick={() => handleFilter('initial')}
+            onClick={() => handleFilter('featured')}
           >
-            Initial
+            Featured
           </button>
           {categories.map((category) => (
             <button
@@ -88,10 +80,10 @@ const PhotoGallery: FC = () => {
           >
             <Masonry
               breakpointCols={{
-                default: 4, // 4 columns by default
-                1024: 3, // 3 columns below 1024px
-                768: 2, // 2 columns below 768px
-                480: 1, // 1 column below 480px
+                default: 4,
+                1024: 3,
+                768: 2,
+                480: 1,
               }}
               className="my-masonry-grid"
               columnClassName="my-masonry-grid_column"
