@@ -27,24 +27,37 @@ const PhotoGallery: FC = () => {
         <h3 className="photo-gallery-heading">Photo Gallery</h3>
 
         <div className="photo-gallery-content">
-          <Masonry
-            breakpointCols={3}
-            className="my-masonry-grid"
-            columnClassName="my-masonry-grid_column"
+          <LightGallery
+            speed={500}
+            plugins={[lgThumbnail, lgZoom]}
+            selector=".photo-gallery-item"
           >
-            <LightGallery speed={500} plugins={[lgThumbnail, lgZoom]}>
+            <Masonry
+              breakpointCols={{
+                default: 4, // 4 columns by default
+                1024: 3, // 3 columns below 1024px
+                768: 2, // 2 columns below 768px
+                480: 1, // 1 column below 480px
+              }}
+              className="my-masonry-grid"
+              columnClassName="my-masonry-grid_column"
+            >
               {imageData.map((image, index) => (
-                <a key={index} href={`/images/portfolio-img/${image.src}`}>
+                <a
+                  key={index}
+                  href={`/images/portfolio-img/${image.src}`}
+                  className="photo-gallery-item"
+                >
                   <Image
                     alt={image.alt}
                     src={`/images/portfolio-img/${image.src}`}
-                    width={parseInt(image.width) / 10}
-                    height={parseInt(image.height) / 10}
+                    width={parseInt(image.width) / 5}
+                    height={parseInt(image.height) / 5}
                   />
                 </a>
               ))}
-            </LightGallery>
-          </Masonry>
+            </Masonry>
+          </LightGallery>
         </div>
       </div>
     </section>
