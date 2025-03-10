@@ -105,8 +105,9 @@ const PhotoGallery: FC = () => {
                   <Image
                     alt={image.alt}
                     src={`/images/portfolio-img/${image.src}`}
-                    width={parseInt(image.width) / 5}
-                    height={parseInt(image.height) / 5}
+                    width={parseInt(image.width)}
+                    height={parseInt(image.height)}
+                    layout="responsive"
                   />
                 </a>
               ))}
