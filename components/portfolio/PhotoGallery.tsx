@@ -2,15 +2,24 @@
 import React, { FC, useState } from 'react';
 import Image from 'next/image';
 import LightGallery from 'lightgallery/react';
-import Masonry from 'react-masonry-css';
+import { LightGallerySettings } from 'lightgallery/lg-settings';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
+import lgAutoplay from 'lightgallery/plugins/autoplay';
+import lgFullscreen from 'lightgallery/plugins/fullscreen';
+import lgShare from 'lightgallery/plugins/share';
+import lgRotate from 'lightgallery/plugins/rotate';
+import Masonry from 'react-masonry-css';
 
 // CSS
 import '@/styles/portfolio/photo-gallery.css';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
+import 'lightgallery/css/lg-autoplay.css';
+import 'lightgallery/css/lg-fullscreen.css';
+import 'lightgallery/css/lg-share.css';
+import 'lightgallery/css/lg-rotate.css';
 
 // Image Data
 import imageData from '@/public/images/imageData';
@@ -36,6 +45,19 @@ const PhotoGallery: FC = () => {
     } else {
       setFilteredImages(imageData.filter((img) => img.category === filter));
     }
+  };
+
+  const gallerySettings: Partial<LightGallerySettings> = {
+    speed: 500,
+    plugins: [lgThumbnail, lgZoom, lgAutoplay, lgFullscreen, lgShare, lgRotate],
+    autoplay: true,
+    slideShowAutoplay: true,
+    slideShowInterval: 5000,
+    share: true,
+    facebook: true,
+    twitter: true,
+    pinterest: true,
+    selector: '.photo-gallery-item',
   };
 
   return (
@@ -73,11 +95,7 @@ const PhotoGallery: FC = () => {
         </div>
 
         <div className="photo-gallery-content">
-          <LightGallery
-            speed={500}
-            plugins={[lgThumbnail, lgZoom]}
-            selector=".photo-gallery-item"
-          >
+          <LightGallery {...gallerySettings}>
             <Masonry
               breakpointCols={{
                 default: 4,

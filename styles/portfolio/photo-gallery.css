@@ -4,7 +4,8 @@
 }
 
 .photo-gallery-container {
-  @apply section-container;
+  @apply section-container
+  relative;
   position: relative; /* Ensures sticky positioning works within this container */
 }
 
