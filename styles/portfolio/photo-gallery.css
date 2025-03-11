@@ -77,17 +77,38 @@
 
 .photo-gallery-img {
   @apply block
-  w-full;
+  w-full
+  relative;
+}
+
+.img-loading-skeleton {
+  @apply bg-gray-600
+    animate-pulse
+    rounded
+    shadow-md
+    w-full
+    absolute
+    top-0
+    left-0;
 }
 
 .photo-gallery-img-thumbnail {
   @apply w-full
-  h-auto
-  block
-  rounded
-  shadow-md
-  hover:opacity-90
-  transition;
+    h-auto
+    block
+    rounded
+    shadow-md
+    hover:opacity-90
+    transition-opacity
+    duration-300;
 
   image-rendering: -webkit-optimize-contrast;
+}
+
+.photo-gallery-img-thumbnail.loading {
+  @apply opacity-0;
+}
+
+.photo-gallery-img-thumbnail.loaded {
+  @apply opacity-100;
 }

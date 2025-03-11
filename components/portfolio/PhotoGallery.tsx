@@ -57,6 +57,16 @@ const gallerySettings: Partial<LightGallerySettings> = {
   selector: '.photo-gallery-img',
 };
 
+const Skeleton: FC<{ width: number; height: number }> = ({ width, height }) => (
+  <div
+    className="img-loading-skeleton"
+    style={{
+      width: '100%',
+      paddingBottom: `${(height / width) * 100}%`,
+    }}
+  />
+);
+
 const PhotoGallery: FC = () => {
   const categories = useMemo(
     () => Array.from(new Set(imageData.map((img) => img.category))),
@@ -66,10 +76,16 @@ const PhotoGallery: FC = () => {
     getFilteredImages('featured', categories)
   );
   const [activeFilter, setActiveFilter] = useState('featured');
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
 
   const handleFilter = (filter: string) => {
     setFilteredImages(getFilteredImages(filter, categories));
     setActiveFilter(filter);
+    setLoadedImages(new Set()); // Reset loaded images when filter changes
+  };
+
+  const handleImageLoad = (src: string) => {
+    setLoadedImages((prev) => new Set(prev).add(src));
   };
 
   if (!imageData.length) {
@@ -130,24 +146,35 @@ const PhotoGallery: FC = () => {
               className="my-masonry-grid"
               columnClassName="my-masonry-grid_column"
             >
-              {filteredImages.map((image) => (
-                <a
-                  key={image.src}
-                  href={`/images/portfolio-img/${image.src}`}
-                  className="photo-gallery-img"
-                >
-                  <Image
-                    alt={image.alt}
-                    src={`/images/portfolio-img/${image.src}`}
-                    width={image.width}
-                    height={image.height}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw"
-                    layout="responsive"
-                    onError={() => console.error(`Failed to load ${image.src}`)}
-                    className="photo-gallery-img-thumbnail"
-                  />
-                </a>
-              ))}
+              {filteredImages.map((image) => {
+                const isLoaded = loadedImages.has(image.src);
+                return (
+                  <a
+                    key={image.src}
+                    href={`/images/portfolio-img/${image.src}`}
+                    className="photo-gallery-img"
+                  >
+                    {!isLoaded && (
+                      <Skeleton width={image.width} height={image.height} />
+                    )}
+                    <Image
+                      alt={image.alt}
+                      src={`/images/portfolio-img/${image.src}`}
+                      width={image.width}
+                      height={image.height}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw"
+                      layout="responsive"
+                      onLoadingComplete={() => handleImageLoad(image.src)}
+                      onError={() =>
+                        console.error(`Failed to load ${image.src}`)
+                      }
+                      className={`photo-gallery-img-thumbnail ${
+                        isLoaded ? 'loaded' : 'loading'
+                      }`}
+                    />
+                  </a>
+                );
+              })}
             </Masonry>
           </LightGallery>
         </div>
