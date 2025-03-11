@@ -125,3 +125,15 @@ body {
     transform: translateY(0);
   }
 }
+
+@keyframes leftToRIghtBackAndForthLoop {
+  0% {
+    transform: translateX(-15%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-15%);
+  }
+}

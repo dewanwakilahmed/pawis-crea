@@ -21,6 +21,9 @@ import 'lightgallery/css/lg-fullscreen.css';
 import 'lightgallery/css/lg-share.css';
 import 'lightgallery/css/lg-rotate.css';
 
+// Icon
+import { MdArrowRightAlt } from 'react-icons/md';
+
 // Image Data
 import imageData from '@/public/images/imageData';
 
@@ -101,37 +104,42 @@ const PhotoGallery: FC = () => {
       <div className="photo-gallery-container">
         <h3 className="photo-gallery-heading">Photo Gallery</h3>
 
-        <div className="photo-gallery-filters">
-          <button
-            className={`filter-btn ${
-              activeFilter === 'featured' ? 'active' : ''
-            }`}
-            onClick={() => handleFilter('featured')}
-            aria-label="Filter by featured images"
-            role="button"
-          >
-            Featured
-          </button>
-          {categories.map((category) => (
+        <div className="photo-gallery-filter-bar">
+          <div className="photo-gallery-filters">
             <button
-              key={category}
               className={`filter-btn ${
-                activeFilter === category ? 'active' : ''
+                activeFilter === 'featured' ? 'active' : ''
               }`}
-              onClick={() => handleFilter(category)}
-              aria-label={`Filter by ${category} images`}
+              onClick={() => handleFilter('featured')}
+              aria-label="Filter by featured images"
               role="button"
             >
-              {category.charAt(0).toUpperCase() +
-                category.slice(1).replace(/-/g, ' ')}
+              Featured
             </button>
-          ))}
-          <button
-            className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
-            onClick={() => handleFilter('all')}
-          >
-            All
-          </button>
+            {categories.map((category) => (
+              <button
+                key={category}
+                className={`filter-btn ${
+                  activeFilter === category ? 'active' : ''
+                }`}
+                onClick={() => handleFilter(category)}
+                aria-label={`Filter by ${category} images`}
+                role="button"
+              >
+                {category.charAt(0).toUpperCase() +
+                  category.slice(1).replace(/-/g, ' ')}
+              </button>
+            ))}
+            <button
+              className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
+              onClick={() => handleFilter('all')}
+            >
+              All
+            </button>
+          </div>
+          <div className="scroll-right">
+            <MdArrowRightAlt className="scroll-right-icon" />
+          </div>
         </div>
 
         <div className="photo-gallery-content">

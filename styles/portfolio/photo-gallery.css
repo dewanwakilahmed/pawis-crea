@@ -1,6 +1,5 @@
 .photo-gallery {
-  @apply bg-neutral-700
-  text-gray-50;
+  @apply bg-gradient-to-tr from-stone-50 to-stone-300;
 }
 
 .photo-gallery-container {
@@ -9,24 +8,65 @@
 }
 
 .photo-gallery-heading {
-  @apply mb-6;
+  @apply text-2xl
+  lg:text-3xl
+  font-primary
+  font-[900]
+  tracking-widest
+  text-gray-600
+  w-min
+  text-nowrap
+  border-t-[6px]
+  lg:border-t-[8px]
+  border-indigo-300
+  mb-9
+  lg:mb-10;
 }
 
-.photo-gallery-filters {
+.photo-gallery-filter-bar {
   @apply sticky
   top-0
   z-50
-  bg-neutral-700
-  py-4
-  mb-6
+
+  p-3
+  lg:p-4
+  mb-5
+  lg:mb-6
+  
+  bg-neutral-900/50
+  backdrop-blur-md
+  
+  rounded-lg
+  shadow-lg
+  
   flex
+  items-center;
+}
+
+.scroll-right {
+  @apply w-8
+  lg:w-10
+  ml-1
+  lg:ml-2;
+}
+
+.scroll-right-icon {
+  @apply text-gray-50
+  text-3xl
+  lg:text-4xl
+  flex-shrink-0;
+  animation: leftToRIghtBackAndForthLoop 2s ease-in-out infinite;
+}
+
+.photo-gallery-filters {
+  @apply flex
   flex-nowrap
   overflow-x-auto
-  gap-3
+  gap-2
+  lg:gap-3
+  xl:gap-4
   justify-start
   whitespace-nowrap;
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -38,40 +78,37 @@
 }
 
 .filter-btn {
-  @apply px-4 
-  py-2 
-  bg-gray-600 
-  hover:bg-gray-500
-  active:bg-gray-800
-  text-white 
-  border-none 
-  rounded 
-  cursor-pointer 
-  transition-colors 
-  duration-300 
+  @apply btn
+  btn-secondary
   flex-shrink-0;
 }
 
 .filter-btn.active {
-  @apply bg-gray-800;
+  @apply bg-gray-50
+  border-gray-50
+  text-gray-950;
 }
 
 .my-masonry-grid {
   @apply flex
-  -ml-4
+  -ml-5
+  lg:-ml-6
   w-auto;
 
   display: -webkit-box;
   display: -ms-flexbox;
 }
+
 .my-masonry-grid_column {
-  @apply pl-4
+  @apply pl-5
+  lg:pl-6
   bg-clip-padding;
 }
 
 .my-masonry-grid_column > a {
   @apply block
-  mb-4
+  mb-5
+  lg:mb-6
   bg-none;
 }
 
@@ -82,25 +119,26 @@
 }
 
 .img-loading-skeleton {
-  @apply bg-gray-600
-    animate-pulse
-    rounded
-    shadow-md
-    w-full
-    absolute
-    top-0
-    left-0;
+  @apply bg-gray-700
+  animate-pulse
+  rounded-lg
+  shadow-lg
+  w-full
+  absolute
+  top-0
+  left-0;
 }
 
 .photo-gallery-img-thumbnail {
   @apply w-full
-    h-auto
-    block
-    rounded
-    shadow-md
-    hover:opacity-90
-    transition-opacity
-    duration-300;
+  h-auto
+  block
+  rounded-lg
+  shadow-lg
+  relative
+  hover:scale-[1.025]
+  hover:brightness-125
+  transition;
 
   image-rendering: -webkit-optimize-contrast;
 }
@@ -111,4 +149,33 @@
 
 .photo-gallery-img-thumbnail.loaded {
   @apply opacity-100;
+}
+
+@media (max-width: 355px) {
+  .photo-gallery-heading {
+    @apply text-xl
+    mb-8;
+  }
+
+  .photo-gallery-filter-bar {
+    @apply p-2.5
+    mb-4;
+  }
+
+  .scroll-right {
+    @apply w-8
+    ml-0.5;
+  }
+
+  .scroll-right-icon {
+    @apply text-2xl;
+  }
+
+  .photo-gallery-filters {
+    @apply gap-1.5;
+  }
+
+  .my-masonry-grid_column > a {
+    @apply mb-4;
+  }
 }
