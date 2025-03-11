@@ -52,6 +52,10 @@
   flex-shrink-0;
 }
 
+.filter-btn.active {
+  @apply bg-gray-800;
+}
+
 .my-masonry-grid {
   @apply flex
   -ml-4

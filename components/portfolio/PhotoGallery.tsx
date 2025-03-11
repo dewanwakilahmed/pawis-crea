@@ -1,5 +1,5 @@
 'use client';
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useMemo } from 'react';
 import Image from 'next/image';
 import LightGallery from 'lightgallery/react';
 import { LightGallerySettings } from 'lightgallery/lg-settings';
@@ -24,41 +24,61 @@ import 'lightgallery/css/lg-rotate.css';
 // Image Data
 import imageData from '@/public/images/imageData';
 
+interface Image {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  category: string;
+}
+
+const getFilteredImages = (filter: string, categories: string[]): Image[] => {
+  if (filter === 'all') return imageData;
+  if (filter === 'featured') {
+    return categories
+      .map((category) =>
+        imageData.filter((img) => img.category === category).slice(0, 3)
+      )
+      .flat();
+  }
+  return imageData.filter((img) => img.category === filter);
+};
+
+const gallerySettings: Partial<LightGallerySettings> = {
+  speed: 500,
+  plugins: [lgThumbnail, lgZoom, lgAutoplay, lgFullscreen, lgShare, lgRotate],
+  autoplay: true,
+  slideShowAutoplay: true,
+  slideShowInterval: 5000,
+  share: true,
+  facebook: true,
+  twitter: true,
+  pinterest: true,
+  selector: '.photo-gallery-img',
+};
+
 const PhotoGallery: FC = () => {
-  const categories = Array.from(new Set(imageData.map((img) => img.category)));
-
-  const featuredImages = categories
-    .map((category) =>
-      imageData.filter((img) => img.category === category).slice(0, 3)
-    )
-    .flat();
-
-  const [filteredImages, setFilteredImages] = useState(featuredImages);
+  const categories = useMemo(
+    () => Array.from(new Set(imageData.map((img) => img.category))),
+    []
+  );
+  const [filteredImages, setFilteredImages] = useState(() =>
+    getFilteredImages('featured', categories)
+  );
   const [activeFilter, setActiveFilter] = useState('featured');
 
   const handleFilter = (filter: string) => {
-    if (filter === 'all') {
-      setFilteredImages(imageData);
-    } else if (filter === 'featured') {
-      setFilteredImages(featuredImages);
-    } else {
-      setFilteredImages(imageData.filter((img) => img.category === filter));
-    }
+    setFilteredImages(getFilteredImages(filter, categories));
     setActiveFilter(filter);
   };
 
-  const gallerySettings: Partial<LightGallerySettings> = {
-    speed: 500,
-    plugins: [lgThumbnail, lgZoom, lgAutoplay, lgFullscreen, lgShare, lgRotate],
-    autoplay: true,
-    slideShowAutoplay: true,
-    slideShowInterval: 5000,
-    share: true,
-    facebook: true,
-    twitter: true,
-    pinterest: true,
-    selector: '.photo-gallery-img',
-  };
+  if (!imageData.length) {
+    return (
+      <p className="images-not-loaded">
+        No images are available at the moment! Please check back later
+      </p>
+    );
+  }
 
   return (
     <section className="photo-gallery">
@@ -71,6 +91,8 @@ const PhotoGallery: FC = () => {
               activeFilter === 'featured' ? 'active' : ''
             }`}
             onClick={() => handleFilter('featured')}
+            aria-label="Filter by featured images"
+            role="button"
           >
             Featured
           </button>
@@ -81,6 +103,8 @@ const PhotoGallery: FC = () => {
                 activeFilter === category ? 'active' : ''
               }`}
               onClick={() => handleFilter(category)}
+              aria-label={`Filter by ${category} images`}
+              role="button"
             >
               {category.charAt(0).toUpperCase() +
                 category.slice(1).replace(/-/g, ' ')}
@@ -106,18 +130,20 @@ const PhotoGallery: FC = () => {
               className="my-masonry-grid"
               columnClassName="my-masonry-grid_column"
             >
-              {filteredImages.map((image, index) => (
+              {filteredImages.map((image) => (
                 <a
-                  key={index}
+                  key={image.src}
                   href={`/images/portfolio-img/${image.src}`}
                   className="photo-gallery-img"
                 >
                   <Image
                     alt={image.alt}
                     src={`/images/portfolio-img/${image.src}`}
-                    width={parseInt(image.width)}
-                    height={parseInt(image.height)}
+                    width={image.width}
+                    height={image.height}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw"
                     layout="responsive"
+                    onError={() => console.error(`Failed to load ${image.src}`)}
                     className="photo-gallery-img-thumbnail"
                   />
                 </a>
