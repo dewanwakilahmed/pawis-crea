@@ -6,94 +6,84 @@
 .photo-gallery-container {
   @apply section-container
   relative;
-  position: relative; /* Ensures sticky positioning works within this container */
 }
 
 .photo-gallery-heading {
-  margin-bottom: 20px; /* Space before filters */
+  @apply mb-6;
 }
 
-/* Sticky Filter Bar with Horizontal Scroll */
 .photo-gallery-filters {
-  position: sticky;
-  top: 0; /* Sticks to the top of the viewport */
-  z-index: 100; /* Stays above header and gallery content */
-  background-color: rgba(55, 65, 81, 0.95); /* Slightly transparent gray-700 */
-  padding: 10px 0; /* Vertical padding */
-  margin-bottom: 20px;
-  display: flex;
-  flex-wrap: nowrap; /* Prevents wrapping, keeps buttons in one row */
-  overflow-x: auto; /* Enables horizontal scrolling */
-  gap: 10px; /* Space between buttons */
-  justify-content: flex-start; /* Aligns buttons to the left, scrollable */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  white-space: nowrap; /* Ensures buttons don’t wrap */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
-  /* Hide scrollbar across browsers */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  @apply sticky
+  top-0
+  z-50
+  bg-neutral-700
+  py-4
+  mb-6
+  flex
+  flex-nowrap
+  overflow-x-auto
+  gap-3
+  justify-start
+  whitespace-nowrap;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* Hide scrollbar in Webkit browsers (Chrome, Safari, Edge) */
 .photo-gallery-filters::-webkit-scrollbar {
-  display: none;
+  @apply hidden;
 }
 
 .filter-btn {
-  padding: 8px 16px;
-  background-color: #4b5563; /* Tailwind gray-600 */
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  flex-shrink: 0; /* Prevents buttons from shrinking */
-}
-
-.filter-btn:hover {
-  background-color: #6b7280; /* Tailwind gray-500 */
-}
-
-.filter-btn.active {
-  background-color: #1f2937; /* Tailwind gray-800 */
-  font-weight: bold;
+  @apply px-4 
+  py-2 
+  bg-gray-600 
+  hover:bg-gray-500
+  active:bg-gray-800
+  text-white 
+  border-none 
+  rounded 
+  cursor-pointer 
+  transition-colors 
+  duration-300 
+  flex-shrink-0;
 }
 
 .my-masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
-  display: flex;
-  margin-left: -15px; /* gutter size offset */
-  width: auto;
+  @apply flex
+  -ml-4
+  w-auto;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
 }
 .my-masonry-grid_column {
-  padding-left: 15px; /* gutter size */
-  background-clip: padding-box;
+  @apply pl-4
+  bg-clip-padding;
 }
 
-/* Style your items */
 .my-masonry-grid_column > a {
-  /* change div to reference your elements you put in <Masonry> */
-  display: block;
-  margin-bottom: 15px;
-  background: none;
+  @apply block
+  mb-4
+  bg-none;
 }
 
-.photo-gallery-item {
-  display: block;
-  width: 100%;
+.photo-gallery-img {
+  @apply block
+  w-full;
 }
 
-.photo-gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.photo-gallery-img-thumbnail {
+  @apply w-full
+  h-auto
+  block
+  rounded
+  shadow-md
+  hover:opacity-90
+  transition;
+
   image-rendering: -webkit-optimize-contrast;
-}
-
-.photo-gallery-item:hover img {
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
 }

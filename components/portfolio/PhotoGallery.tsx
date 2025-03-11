@@ -37,7 +37,6 @@ const PhotoGallery: FC = () => {
   const [activeFilter, setActiveFilter] = useState('featured');
 
   const handleFilter = (filter: string) => {
-    setActiveFilter(filter);
     if (filter === 'all') {
       setFilteredImages(imageData);
     } else if (filter === 'featured') {
@@ -45,6 +44,7 @@ const PhotoGallery: FC = () => {
     } else {
       setFilteredImages(imageData.filter((img) => img.category === filter));
     }
+    setActiveFilter(filter);
   };
 
   const gallerySettings: Partial<LightGallerySettings> = {
@@ -57,7 +57,7 @@ const PhotoGallery: FC = () => {
     facebook: true,
     twitter: true,
     pinterest: true,
-    selector: '.photo-gallery-item',
+    selector: '.photo-gallery-img',
   };
 
   return (
@@ -110,7 +110,7 @@ const PhotoGallery: FC = () => {
                 <a
                   key={index}
                   href={`/images/portfolio-img/${image.src}`}
-                  className="photo-gallery-item"
+                  className="photo-gallery-img"
                 >
                   <Image
                     alt={image.alt}
@@ -118,6 +118,7 @@ const PhotoGallery: FC = () => {
                     width={parseInt(image.width)}
                     height={parseInt(image.height)}
                     layout="responsive"
+                    className="photo-gallery-img-thumbnail"
                   />
                 </a>
               ))}
