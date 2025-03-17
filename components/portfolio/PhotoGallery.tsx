@@ -84,7 +84,7 @@ const PhotoGallery: FC = () => {
   const handleFilter = (filter: string) => {
     setFilteredImages(getFilteredImages(filter, categories));
     setActiveFilter(filter);
-    setLoadedImages(new Set()); // Reset loaded images when filter changes
+    setLoadedImages(new Set());
   };
 
   const handleImageLoad = (src: string) => {
