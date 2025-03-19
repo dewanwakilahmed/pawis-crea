@@ -22,7 +22,33 @@
     "book": "Book a Session"
   },
   "Home": {
-    "title": "Home Page"
+    "aboutPawisCrea": {
+      "sectionHeading": "Our Story - Through Our Lens",
+      "imgAltText": "The founder of Pawis Crea capturing a moment with their camera",
+      "imgCaption": "Capturing moments, creating stories - one frame at a time",
+      "slogan": "Dare to Dream",
+      "description": "At Pawis Crea, we don’t just take pictures—we craft stories. With a deep passion for photography and videography, our team transforms fleeting moments into timeless treasures. From intimate portraits to dynamic event coverage, we work closely with our clients to bring their visions to life. Whether it’s an artist seeking expressive visuals, a couple cherishing their wedding day, or a business looking to elevate its brand, we ensure every frame speaks volumes. Our journey is fueled by a love for visual artistry, capturing the beauty and emotion of each moment in images that resonate with your heart. Join us as we see the world through our lens and create memories that echo long after the shutter clicks",
+      "uspAriaLabel": "Our Unique Selling Points",
+      "usps": {
+        "expertise": {
+          "heading": "Over 4 Years of Expertise",
+          "description": "With more than four years of professional photography and videography, we bring a proven track record of excellence to every project"
+        },
+        "collaboration": {
+          "heading": "Your Story, Our Craft",
+          "description": "We listen closely and collaborate with you, turning your vision into authentic visuals that resonate with emotion"
+        },
+        "moments": {
+          "heading": "Masters of the Moment",
+          "description": "From candid shots to cinematic videos, we specialize in capturing the details that tell your unique story"
+        },
+        "versatility": {
+          "heading": "Creative Versatility",
+          "description": "Whether it’s an artist’s portfolio, a wedding day, or a corporate brand, our artistic vision and technical excellence deliver timeless results"
+        }
+      },
+      "bookSessionBtn": "Book a Session"
+    }
   },
   "Footer": {
     "slogan": "Dare to Dream",

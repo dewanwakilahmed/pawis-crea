@@ -35,7 +35,7 @@ const PortfolioHero: FC = () => {
           <h2 className="portfolio-hero-subheadline">{t('subheadline')}</h2>
           <div className="portfolio-hero-cta">
             <a
-              href="/portfolio#portfolio-category"
+              href="/#portfolio-category"
               className="explore-our-work-btn"
               aria-label="Explore our portfolio"
             >

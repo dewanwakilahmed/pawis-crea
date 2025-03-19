@@ -1,23 +1,31 @@
 import React, { FC, use } from 'react';
-import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+
+// Sections
+import PortfolioHero from '@/components/portfolio/PortfolioHero';
+import PhotoGallery from '@/components/portfolio/PhotoGallery';
+import AboutPawisCrea from '@/components/portfolio/AboutPawisCrea';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-interface HomePageProps {
+interface PortfolioPageProps {
   params: Promise<{ locale: string }>;
 }
 
-const HomePage: FC<HomePageProps> = ({ params }) => {
+const PortfolioPage: FC<PortfolioPageProps> = ({ params }) => {
   const { locale } = use(params);
   setRequestLocale(locale);
 
-  const t = useTranslations('Home');
-
-  return <main className="home-page mt-36">{t('title')}</main>;
+  return (
+    <main className="portfolio-page">
+      <PortfolioHero />
+      {/* <PhotoGallery /> */}
+      <AboutPawisCrea />
+    </main>
+  );
 };
 
-export default HomePage;
+export default PortfolioPage;

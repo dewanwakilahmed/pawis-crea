@@ -22,7 +22,33 @@
     "book": "Reservar Sesión"
   },
   "Home": {
-    "title": "Página de Inicio"
+    "aboutPawisCrea": {
+      "sectionHeading": "Nuestra Historia - A Través de Nuestro Lente",
+      "imgAltText": "El fundador de Pawis Crea capturando un momento con su cámara",
+      "imgCaption": "Capturando momentos, creando historias - un cuadro a la vez",
+      "slogan": "Atrévete a Soñar",
+      "description": "En Pawis Crea, no solo tomamos fotos—creamos historias. Con una profunda pasión por la fotografía y la videografía, nuestro equipo transforma momentos fugaces en tesoros atemporales. Desde retratos íntimos hasta cobertura dinámica de eventos, trabajamos de cerca con nuestros clientes para dar vida a sus visiones. Ya sea un artista buscando visuales expresivos, una pareja atesorando su día de boda, o un negocio buscando elevar su marca, nos aseguramos de que cada cuadro hable por sí mismo. Nuestro viaje está impulsado por un amor por el arte visual, capturando la belleza y la emoción de cada momento en imágenes que resuenan con tu corazón. Únete a nosotros mientras vemos el mundo a través de nuestro lente y creamos recuerdos que resuenan mucho después de que el obturador hace clic",
+      "uspAriaLabel": "Nuestros Puntos de Venta Únicos",
+      "usps": {
+        "expertise": {
+          "heading": "Más de 4 Años de Experiencia",
+          "description": "Con más de cuatro años de fotografía y videografía profesional, aportamos un historial comprobado de excelencia a cada proyecto"
+        },
+        "collaboration": {
+          "heading": "Tu Historia, Nuestra Artesanía",
+          "description": "Escuchamos atentamente y colaboramos contigo, convirtiendo tu visión en visuales auténticos que resuenan con emoción"
+        },
+        "moments": {
+          "heading": "Maestros del Momento",
+          "description": "Desde tomas espontáneas hasta videos cinematográficos, nos especializamos en capturar los detalles que cuentan tu historia única"
+        },
+        "versatility": {
+          "heading": "Versatilidad Creativa",
+          "description": "Ya sea el portafolio de un artista, un día de boda o una marca corporativa, nuestra visión artística y excelencia técnica entregan resultados atemporales"
+        }
+      },
+      "bookSessionBtn": "Reservar Sesión"
+    }
   },
   "Footer": {
     "slogan": "Atrévete a Soñar",
