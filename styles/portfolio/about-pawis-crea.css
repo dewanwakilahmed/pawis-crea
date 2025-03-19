@@ -1,10 +1,43 @@
 .about-pawis-crea {
+  @apply bg-gradient-to-br from-gray-900 to-gray-800
+  text-white;
 }
 
 .about-pawis-crea-container {
+  @apply section-container;
+}
+
+.about-pawis-crea-content {
+  @apply grid
+  grid-cols-2;
 }
 
 .about-pawis-crea-heading {
+  @apply text-4xl 
+  md:text-5xl 
+  font-bold 
+  tracking-tight 
+  text-transparent 
+  bg-clip-text 
+  bg-gradient-to-r from-amber-200 to-amber-500
+  uppercase
+  relative
+  pb-4
+  mb-8;
+}
+
+.about-pawis-crea-heading::after {
+  content: '';
+  @apply absolute 
+    bottom-0 
+    left-0 
+    w-16 
+    h-1 
+    bg-gradient-to-r from-amber-500 to-amber-200
+    rounded-full;
+}
+
+.about-pawis-crea-figure {
 }
 
 .about-pawis-crea-img {
@@ -12,8 +45,26 @@
   h-auto;
 }
 
+.about-pawis-crea-caption {
+}
+
 .about-pawis-crea-slogan {
 }
 
 .about-pawis-crea-description {
+}
+
+.about-pawis-crea-unique-selling-points {
+}
+
+.about-pawis-crea-usp {
+}
+
+.about-pawis-crea-usp-heading {
+}
+
+.about-pawis-crea-usp-description {
+}
+
+.about-pawis-crea-book-session-btn {
 }

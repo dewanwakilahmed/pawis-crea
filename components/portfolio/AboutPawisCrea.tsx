@@ -66,29 +66,33 @@ const AboutPawisCrea: FC = memo(() => {
             {t('sectionHeading')}
           </h2>
 
-          <figure className="about-pawis-crea-figure">
-            <Image
-              src="/images/about-pawis-crea.jpg"
-              width={1280}
-              height={853}
-              alt={t('imgAltText')}
-              className="about-pawis-crea-founder-img"
-              sizes="(max-width: 768px) 100vw, 50vw"
-              aria-describedby="about-pawis-crea-description"
-              priority
-              placeholder="blur"
-              blurDataURL="/images/about-pawis-crea.jpg"
-            />
-            <figcaption className="about-pawis-crea-caption">
-              {t('imgCaption')}
-            </figcaption>
-          </figure>
+          <div className="about-pawis-crea-content">
+            <div className="about-pawis-crea-img-content">
+              <figure className="about-pawis-crea-figure">
+                <Image
+                  src="/images/about-pawis-crea.jpg"
+                  width={1280}
+                  height={853}
+                  alt={t('imgAltText')}
+                  className="about-pawis-crea-img"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  aria-describedby="about-pawis-crea-description"
+                  priority
+                  placeholder="blur"
+                  blurDataURL="/images/about-pawis-crea.jpg"
+                />
+                <figcaption className="about-pawis-crea-caption">
+                  {t('imgCaption')}
+                </figcaption>
+              </figure>
+            </div>
 
-          <h3 className="about-pawis-crea-slogan">{t('slogan')}</h3>
+            <div className="about-pawis-crea-text-content">
+              <h3 className="about-pawis-crea-slogan">{t('slogan')}</h3>
 
-          <p className="about-pawis-crea-description">{t('description')}</p>
+              <p className="about-pawis-crea-description">{t('description')}</p>
 
-          <ul
+              {/* <ul
             className="about-pawis-crea-unique-selling-points"
             aria-label={t('uspAriaLabel')}
           >
@@ -100,14 +104,16 @@ const AboutPawisCrea: FC = memo(() => {
                 description={usp.description}
               />
             ))}
-          </ul>
+          </ul> */}
 
-          <a
-            href="tel:+15551234567"
-            className="about-pawis-crea-book-session-btn"
-          >
-            {t('bookSessionBtn')}
-          </a>
+              <a
+                href="tel:+15551234567"
+                className="about-pawis-crea-book-session-btn"
+              >
+                {t('bookSessionBtn')}
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </ErrorBoundary>
