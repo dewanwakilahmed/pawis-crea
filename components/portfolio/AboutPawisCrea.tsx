@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { ErrorBoundary } from 'react-error-boundary';
 
 // Component
@@ -14,53 +15,6 @@ interface UniqueSellingPoint {
   description: string;
 }
 
-interface Content {
-  sectionHeading: string;
-  imgAltText: string;
-  imgCaption: string;
-  slogan: string;
-  description: string;
-  usps: UniqueSellingPoint[];
-  aboutPawisCreaBookSessionBtn: string;
-}
-
-// Content
-const CONTENT: Content = {
-  sectionHeading: 'Our Story - Through Our Lens',
-  imgAltText: 'The founder of Pawis Crea capturing a moment with their camera',
-  imgCaption: 'Capturing moments, creating stories - one frame at a time',
-  slogan: 'Dare to Dream',
-  description:
-    '"At Pawis Crea, we don’t just take pictures—we craft stories. With a deep passion for photography and videography, our team transforms fleeting moments into timeless treasures. From intimate portraits to dynamic event coverage, we work closely with our clients to bring their visions to life. Whether it’s an artist seeking expressive visuals, a couple cherishing their wedding day, or a business looking to elevate its brand, we ensure every frame speaks volumes. Our journey is fueled by a love for visual artistry, capturing the beauty and emotion of each moment in images that resonate with your heart. Join us as we see the world through our lens and create memories that echo long after the shutter clicks"',
-  usps: [
-    {
-      id: 'expertise',
-      heading: 'Over 4 Years of Expertise',
-      description:
-        'With more than four years of professional photography and videography, we bring a proven track record of excellence to every project',
-    },
-    {
-      id: 'collaboration',
-      heading: 'Your Story, Our Craft',
-      description:
-        'We listen closely and collaborate with you, turning your vision into authentic visuals that resonate with emotion',
-    },
-    {
-      id: 'moments',
-      heading: 'Masters of the Moment',
-      description:
-        'From candid shots to cinematic videos, we specialize in capturing the details that tell your unique story',
-    },
-    {
-      id: 'versatility',
-      heading: 'Creative Versatility',
-      description:
-        'Whether it’s an artist’s portfolio, a wedding day, or a corporate brand, our artistic vision and technical excellence deliver timeless results',
-    },
-  ],
-  aboutPawisCreaBookSessionBtn: 'Book a Session',
-};
-
 const UniqueSellingPointItem: FC<UniqueSellingPoint> = ({
   heading,
   description,
@@ -72,16 +26,31 @@ const UniqueSellingPointItem: FC<UniqueSellingPoint> = ({
 );
 UniqueSellingPointItem.displayName = 'UniqueSellingPointItem';
 
-const AboutPawisCrea: FC = () => {
-  const {
-    sectionHeading,
-    imgAltText,
-    imgCaption,
-    slogan,
-    description,
-    usps,
-    aboutPawisCreaBookSessionBtn,
-  } = CONTENT;
+const AboutPawisCrea: FC = memo(() => {
+  const t = useTranslations('Home.aboutPawisCrea');
+
+  const usps: UniqueSellingPoint[] = [
+    {
+      id: 'expertise',
+      heading: t('usps.expertise.heading'),
+      description: t('usps.expertise.description'),
+    },
+    {
+      id: 'collaboration',
+      heading: t('usps.collaboration.heading'),
+      description: t('usps.collaboration.description'),
+    },
+    {
+      id: 'moments',
+      heading: t('usps.moments.heading'),
+      description: t('usps.moments.description'),
+    },
+    {
+      id: 'versatility',
+      heading: t('usps.versatility.heading'),
+      description: t('usps.versatility.description'),
+    },
+  ];
 
   return (
     <ErrorBoundary FallbackComponent={SectionErrorFallback}>
@@ -94,7 +63,7 @@ const AboutPawisCrea: FC = () => {
             id="about-pawis-crea-heading"
             className="about-pawis-crea-heading"
           >
-            {sectionHeading}
+            {t('sectionHeading')}
           </h2>
 
           <figure className="about-pawis-crea-figure">
@@ -102,7 +71,7 @@ const AboutPawisCrea: FC = () => {
               src="/images/about-pawis-crea.jpg"
               width={1280}
               height={853}
-              alt={imgAltText}
+              alt={t('imgAltText')}
               className="about-pawis-crea-founder-img"
               sizes="(max-width: 768px) 100vw, 50vw"
               aria-describedby="about-pawis-crea-description"
@@ -111,17 +80,17 @@ const AboutPawisCrea: FC = () => {
               blurDataURL="/images/about-pawis-crea.jpg"
             />
             <figcaption className="about-pawis-crea-caption">
-              {imgCaption}
+              {t('imgCaption')}
             </figcaption>
           </figure>
 
-          <h3 className="about-pawis-crea-slogan">{slogan}</h3>
+          <h3 className="about-pawis-crea-slogan">{t('slogan')}</h3>
 
-          <p className="about-pawis-crea-description">{description}</p>
+          <p className="about-pawis-crea-description">{t('description')}</p>
 
           <ul
             className="about-pawis-crea-unique-selling-points"
-            aria-label="Our Unique Selling Points"
+            aria-label={t('uspAriaLabel')}
           >
             {usps.map((usp) => (
               <UniqueSellingPointItem
@@ -137,13 +106,13 @@ const AboutPawisCrea: FC = () => {
             href="tel:+15551234567"
             className="about-pawis-crea-book-session-btn"
           >
-            {aboutPawisCreaBookSessionBtn}
+            {t('bookSessionBtn')}
           </a>
         </div>
       </section>
     </ErrorBoundary>
   );
-};
+});
 AboutPawisCrea.displayName = 'AboutPawisCrea';
 
 export default AboutPawisCrea;
