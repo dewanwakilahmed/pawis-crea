@@ -1,10 +1,13 @@
 {
+  "Common": {
+    "bookASessionBtn": "Reservar Una Sesión",
+    "videoFallbackTxt": "¡Ups! Parece que tu navegador no soporta la reproducción de video. ¡No te preocupes, aún puedes explorar nuestras impresionantes fotos!"
+  },
   "Header": {
     "nav": {
       "home": "Inicio",
       "about": "Sobre",
       "portfolio": "Portafolio",
-      "services": "Servicios",
       "contact": "Contacto",
       "book_a_session": "Reservar Sesión"
     },
@@ -22,6 +25,12 @@
     "book": "Reservar Sesión"
   },
   "Home": {
+    "HomeHero": {
+      "headline": "Captura Tus Momentos, Enmarca Tu Historia",
+      "subheadline": "Servicios Profesionales de Fotografía y Videografía Que Cuentan Tu Historia",
+      "exploreOurServicesBtn": "Explora Nuestros Servicios",
+      "videoSRTxt": "Una muestra de nuestras mejores escenas de fotografía y videografía"
+    },
     "aboutPawisCrea": {
       "sectionHeading": "Nuestra Historia - A Través de Nuestro Lente",
       "imgAltText": "El fundador de Pawis Crea capturando un momento con su cámara",
@@ -48,6 +57,30 @@
         }
       },
       "bookSessionBtn": "Reservar Sesión"
+    }
+  },
+  "AboutUs": {
+    "AboutUsHero": {
+      "headline": "Detrás de la Lente: la Pasión se Encuentra con la Creatividad",
+      "subheadline": "Conoce al Equipo Que Convierte Momentos en Recuerdos Duraderos",
+      "exploreOurStoryBtn": "Explora Nuestra Historia",
+      "bookBtn": "Reservar Una Sesión"
+    }
+  },
+  "Portfolio": {
+    "PortfolioHero": {
+      "headline": "Un Vistazo a Nuestras Historias Visuales",
+      "subheadline": "Descubre Nuestra Colección de Fotos Impresionantes y Videos Cinematográficos",
+      "exploreOurWorksBtn": "Explora Nuestros Trabajos",
+      "bookBtn": "Reservar Una Sesión"
+    }
+  },
+  "ContactUs": {
+    "ContactUsHero": {
+      "headline": "Creemos Algo Increíble Juntos",
+      "subheadline": "Contáctanos para Comenzar Tu Viaje en Fotografía o Videografía con Nosotros",
+      "callUsBtn": "Llámanos",
+      "leaveAMsgBtn": "Déjanos Un Mensaje"
     }
   },
   "Footer": {

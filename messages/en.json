@@ -1,10 +1,13 @@
 {
+  "Common": {
+    "bookASessionBtn": "Book a Session",
+    "videoFallbackTxt": "Oops! It looks like your browser doesn't support video playback. Don't worry - you can still explore our stunning photos!"
+  },
   "Header": {
     "nav": {
       "home": "Home",
       "about": "About",
       "portfolio": "Portfolio",
-      "services": "Services",
       "contact": "Contact",
       "book_a_session": "Book a Session"
     },
@@ -22,6 +25,12 @@
     "book": "Book a Session"
   },
   "Home": {
+    "HomeHero": {
+      "headline": "Capture Your Moments, Frame Your Story",
+      "subheadline": "Professional Photography & Videography Services That Tell Your Story",
+      "exploreOurServicesBtn": "Explore Our Services",
+      "videoSRTxt": "A showcase of our best photography and videography scenes"
+    },
     "aboutPawisCrea": {
       "sectionHeading": "Our Story - Through Our Lens",
       "imgAltText": "The founder of Pawis Crea capturing a moment with their camera",
@@ -48,6 +57,28 @@
         }
       },
       "bookSessionBtn": "Book a Session"
+    }
+  },
+  "AboutUs": {
+    "AboutUsHero": {
+      "headline": "Behind the Lens: Passion Meets Creativity",
+      "subheadline": "Get to Know the Team That Turns Moments into Lasting Memories",
+      "exploreOurStoryBtn": "Explore Our Story"
+    }
+  },
+  "Portfolio": {
+    "PortfolioHero": {
+      "headline": "A Glimpse of Our Visual Stories",
+      "subheadline": "Discover Our Collection of Breathtaking Photos and Cinematic Videos",
+      "exploreOurWorksBtn": "Explore Our Works"
+    }
+  },
+  "ContactUs": {
+    "ContactUsHero": {
+      "headline": "Let’s Create Something Amazing Together",
+      "subheadline": "Reach out to Start Your Photography or Videography Journey with Us",
+      "callUsBtn": "Call Us",
+      "leaveAMsgBtn": "Leave Us A Message"
     }
   },
   "Footer": {
