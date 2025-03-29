@@ -3,7 +3,7 @@
   min-h-screen;
 }
 
-.home-hero-video {
+.home-hero-bg-video {
   @apply absolute
   z-10
   w-full

@@ -28,7 +28,7 @@ const HomeHero: FC = () => {
       aria-labelledby="home-hero-headline"
     >
       <video
-        className="home-hero-video"
+        className="home-hero-bg-video"
         aria-hidden="true"
         autoPlay
         loop

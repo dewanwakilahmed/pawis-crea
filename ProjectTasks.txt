@@ -1,1 +1,3 @@
+- Portfolio Hero
+- Contact Us Hero
 - Add Pawis Crea Logo

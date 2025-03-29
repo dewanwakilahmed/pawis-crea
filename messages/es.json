@@ -64,15 +64,14 @@
       "headline": "Detrás de la Lente: la Pasión se Encuentra con la Creatividad",
       "subheadline": "Conoce al Equipo Que Convierte Momentos en Recuerdos Duraderos",
       "exploreOurStoryBtn": "Explora Nuestra Historia",
-      "bookBtn": "Reservar Una Sesión"
+      "videoSRTxt": "El equipo de Pawis Crea en acción, capturando momentos con pasión y creatividad"
     }
   },
   "Portfolio": {
     "PortfolioHero": {
       "headline": "Un Vistazo a Nuestras Historias Visuales",
       "subheadline": "Descubre Nuestra Colección de Fotos Impresionantes y Videos Cinematográficos",
-      "exploreOurWorksBtn": "Explora Nuestros Trabajos",
-      "bookBtn": "Reservar Una Sesión"
+      "exploreOurWorksBtn": "Explora Nuestros Trabajos"
     }
   },
   "ContactUs": {
