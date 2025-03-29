@@ -5,6 +5,8 @@ Website Pages:
 2. About Us
 3. Portfolio
 4. Contact Us
+5. Privacy Policy
+6. Terms of Use
 
 Pages Sections:
 1. Home Page
