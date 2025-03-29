@@ -60,7 +60,6 @@ const AboutUsHero: FC = () => {
               href="/#our-story"
               className="explore-our-story-btn"
               aria-label={exploreOurStoryBtn}
-              prefetch
             >
               {exploreOurStoryBtn}
             </Link>

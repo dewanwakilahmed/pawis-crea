@@ -60,7 +60,6 @@ const HomeHero: FC = () => {
               href="/#services-overview"
               className="explore-our-services-btn"
               aria-label={exploreOurServicesBtn}
-              prefetch
             >
               {exploreOurServicesBtn}
             </Link>

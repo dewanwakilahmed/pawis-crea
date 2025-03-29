@@ -60,7 +60,6 @@ const PortfolioHero: FC = () => {
               href="/#portfolio-categories"
               className="explore-our-works-btn"
               aria-label={exploreOurWorksBtn}
-              prefetch
             >
               {exploreOurWorksBtn}
             </Link>
