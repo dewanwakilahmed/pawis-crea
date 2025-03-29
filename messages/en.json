@@ -18,12 +18,6 @@
       "es_short": "ES"
     }
   },
-  "PortfolioHero": {
-    "headline": "Elevate Your Brand with Stunning Visuals",
-    "subheadline": "Photography and videography that captivate and convert",
-    "explore": "Explore Our Work",
-    "book": "Book a Session"
-  },
   "Home": {
     "HomeHero": {
       "headline": "Capture Your Moments, Frame Your Story",
@@ -71,7 +65,8 @@
     "PortfolioHero": {
       "headline": "A Glimpse of Our Visual Stories",
       "subheadline": "Discover Our Collection of Breathtaking Photos and Cinematic Videos",
-      "exploreOurWorksBtn": "Explore Our Works"
+      "exploreOurWorksBtn": "Explore Our Works",
+      "videoSRTxt": "A handpicked showcase of our most electrifying DJ event moments"
     }
   },
   "ContactUs": {

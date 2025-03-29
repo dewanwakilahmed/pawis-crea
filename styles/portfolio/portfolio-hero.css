@@ -3,7 +3,7 @@
   min-h-screen;
 }
 
-.portfolio-hero-video {
+.portfolio-hero-bg-video {
   @apply absolute
   z-10
   w-full
@@ -11,7 +11,7 @@
   object-cover;
 }
 
-.portfolio-hero-container {
+.portfolio-hero-content {
   @apply relative
   z-20
   w-full
@@ -21,11 +21,11 @@
   justify-items-center;
 }
 
-.portfolio-hero-container::before {
+.portfolio-hero-content::before {
   @apply overlay;
 }
 
-.portfolio-hero-content {
+.portfolio-hero-container {
   @apply relative
   section-container;
 
@@ -71,7 +71,7 @@
   lg:gap-5;
 }
 
-.explore-our-work-btn {
+.explore-our-works-btn {
   @apply btn
   btn-primary;
 }
@@ -84,13 +84,11 @@
 @media (max-width: 355px) {
   .portfolio-hero-headline {
     @apply text-2xl
-    tracking-wider
     mb-3;
   }
 
   .portfolio-hero-subheadline {
-    @apply text-base
-    tracking-wide;
+    @apply text-base;
   }
 
   .portfolio-hero-cta {

@@ -18,12 +18,6 @@
       "es_short": "ES"
     }
   },
-  "PortfolioHero": {
-    "headline": "Eleva Tu Marca con Visuales Impactantes",
-    "subheadline": "Fotografía y videografía que cautivan y convierten",
-    "explore": "Explora Nuestro Trabajo",
-    "book": "Reservar Sesión"
-  },
   "Home": {
     "HomeHero": {
       "headline": "Captura Tus Momentos, Enmarca Tu Historia",
@@ -71,7 +65,8 @@
     "PortfolioHero": {
       "headline": "Un Vistazo a Nuestras Historias Visuales",
       "subheadline": "Descubre Nuestra Colección de Fotos Impresionantes y Videos Cinematográficos",
-      "exploreOurWorksBtn": "Explora Nuestros Trabajos"
+      "exploreOurWorksBtn": "Explora Nuestros Trabajos",
+      "videoSRTxt": "Una selección exclusiva de nuestros momentos más electrizantes en eventos de DJ"
     }
   },
   "ContactUs": {
