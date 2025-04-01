@@ -1,1 +1,5 @@
 - Add Pawis Crea Logo
+- Finish OurStory Section
+- Improve language switching
+- Improve Header
+- Improve Footer

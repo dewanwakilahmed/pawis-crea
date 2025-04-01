@@ -1,7 +1,11 @@
 {
   "Common": {
     "bookASessionBtn": "Book a Session",
-    "videoFallbackTxt": "Oops! It looks like your browser doesn't support video playback. Don't worry - you can still explore our stunning photos!"
+    "videoFallbackTxt": "Oops! It looks like your browser doesn't support video playback. Don't worry - you can still explore our stunning photos!",
+    "CompanyLogo": {
+      "companyLogoAriaLabel": "Company logo linking to homepage",
+      "companyLogoAltText": "Pawis Crea Company Logo"
+    }
   },
   "Header": {
     "nav": {

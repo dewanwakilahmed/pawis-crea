@@ -6,14 +6,14 @@ import { Link } from "@/i18n/navigation";
 import "@/styles/home/home-hero.css";
 
 const HomeHero: FC = () => {
-  const t_Home_HomeHero = useTranslations("Home.HomeHero");
+  const t_HomeHero_Home = useTranslations("Home.HomeHero");
   const t_Common = useTranslations("Common");
 
   const { headline, subheadline, exploreOurServicesBtn, videoSRTxt } = {
-    headline: t_Home_HomeHero("headline"),
-    subheadline: t_Home_HomeHero("subheadline"),
-    exploreOurServicesBtn: t_Home_HomeHero("exploreOurServicesBtn"),
-    videoSRTxt: t_Home_HomeHero("videoSRTxt"),
+    headline: t_HomeHero_Home("headline"),
+    subheadline: t_HomeHero_Home("subheadline"),
+    exploreOurServicesBtn: t_HomeHero_Home("exploreOurServicesBtn"),
+    videoSRTxt: t_HomeHero_Home("videoSRTxt"),
   };
 
   const { bookASessionBtn, videoFallbackTxt } = {
@@ -78,5 +78,7 @@ const HomeHero: FC = () => {
     </section>
   );
 };
+
+HomeHero.displayName = "HomeHero";
 
 export default HomeHero;

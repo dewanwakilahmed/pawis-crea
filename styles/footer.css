@@ -19,7 +19,8 @@
   @apply md:col-span-2
   lg:col-span-3
   lg:justify-self-center
-  md:order-1;
+  md:order-1
+  mx-auto;
 }
 
 .footer-company-slogan {
@@ -31,7 +32,8 @@
   uppercase
   italic
   tracking-widest
-  mt-2;
+  mt-2
+  text-center;
 }
 
 .footer-nav-links {

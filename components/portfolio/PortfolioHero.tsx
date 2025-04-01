@@ -6,14 +6,14 @@ import { Link } from "@/i18n/navigation";
 import "@/styles/portfolio/portfolio-hero.css";
 
 const PortfolioHero: FC = () => {
-  const t_Portfolio_PortfolioHero = useTranslations("Portfolio.PortfolioHero");
+  const t_PortfolioHero_Portfolio = useTranslations("Portfolio.PortfolioHero");
   const t_Common = useTranslations("Common");
 
   const { headline, subheadline, exploreOurWorksBtn, videoSRTxt } = {
-    headline: t_Portfolio_PortfolioHero("headline"),
-    subheadline: t_Portfolio_PortfolioHero("subheadline"),
-    exploreOurWorksBtn: t_Portfolio_PortfolioHero("exploreOurWorksBtn"),
-    videoSRTxt: t_Portfolio_PortfolioHero("videoSRTxt"),
+    headline: t_PortfolioHero_Portfolio("headline"),
+    subheadline: t_PortfolioHero_Portfolio("subheadline"),
+    exploreOurWorksBtn: t_PortfolioHero_Portfolio("exploreOurWorksBtn"),
+    videoSRTxt: t_PortfolioHero_Portfolio("videoSRTxt"),
   };
 
   const { bookASessionBtn, videoFallbackTxt } = {
@@ -78,5 +78,7 @@ const PortfolioHero: FC = () => {
     </section>
   );
 };
+
+PortfolioHero.displayName = "PortfolioHero";
 
 export default PortfolioHero;

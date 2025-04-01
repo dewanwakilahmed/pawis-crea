@@ -1,7 +1,11 @@
 {
   "Common": {
     "bookASessionBtn": "Reservar Una Sesión",
-    "videoFallbackTxt": "¡Ups! Parece que tu navegador no soporta la reproducción de video. ¡No te preocupes, aún puedes explorar nuestras impresionantes fotos!"
+    "videoFallbackTxt": "¡Ups! Parece que tu navegador no soporta la reproducción de video. ¡No te preocupes, aún puedes explorar nuestras impresionantes fotos!",
+    "CompanyLogo": {
+      "companyLogoAriaLabel": "Logotipo de la empresa que enlaza a la página de inicio",
+      "companyLogoAltText": "Logotipo de la empresa Pawis Crea"
+    }
   },
   "Header": {
     "nav": {

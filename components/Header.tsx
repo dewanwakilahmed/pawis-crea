@@ -1,37 +1,36 @@
-'use client';
+"use client";
 
-import React, { FC, useState } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
-import { Link, useRouter, usePathname } from '@/i18n/navigation';
+import React, { FC, useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
+import { Link, useRouter, usePathname } from "@/i18n/navigation";
 
 // CSS
-import '@/styles/header.css';
+import "@/styles/header.css";
 
 // Icons
-import { RiMenu3Fill, RiCloseFill } from 'react-icons/ri';
+import { RiMenu3Fill, RiCloseFill } from "react-icons/ri";
 
 // Component
-import CompanyLogo from '@/components/CompanyLogo';
+import CompanyLogo from "@/components/CompanyLogo";
 
 const Header: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
-  const t = useTranslations('Header.nav');
-  const tLang = useTranslations('Header.lang');
+  const t = useTranslations("Header.nav");
+  const tLang = useTranslations("Header.lang");
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
 
   const navItems = [
-    { key: 'home', href: '/' },
-    { key: 'about', href: '/about' },
-    { key: 'portfolio', href: '/portfolio' },
-    { key: 'services', href: '/services' },
-    { key: 'contact', href: '/contact' },
+    { key: "home", href: "/" },
+    { key: "about", href: "/about-us" },
+    { key: "portfolio", href: "/portfolio" },
+    { key: "contact", href: "/contact-us" },
   ];
 
-  const otherLocale = currentLocale === 'en' ? 'es' : 'en';
+  const otherLocale = currentLocale === "en" ? "es" : "en";
 
   const switchLang = (newLocale: string) => {
     router.push(pathname, { locale: newLocale });
@@ -41,7 +40,7 @@ const Header: FC = () => {
     <header className="header">
       <div className="header-container">
         <div className="company-logo-container">
-          <CompanyLogo />
+          <CompanyLogo position="header" />
         </div>
 
         <nav className="nav">
@@ -64,7 +63,7 @@ const Header: FC = () => {
             {tLang(`${otherLocale}_long`)}
           </button>
           <Link href="/book-session" className="book-a-session-header-btn">
-            {t('book_a_session')}
+            {t("book_a_session")}
           </Link>
 
           <button
@@ -106,7 +105,7 @@ const Header: FC = () => {
                   href="/book-session"
                   className="book-a-session-header-mobile-nav-btn"
                 >
-                  {t('book_a_session')}
+                  {t("book_a_session")}
                 </Link>
               </li>
             </ul>

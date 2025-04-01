@@ -6,15 +6,15 @@ import { Link } from "@/i18n/navigation";
 import "@/styles/contact-us/contact-us-hero.css";
 
 const ContactUsHero: FC = () => {
-  const t_ContactUs_ContactUsHero = useTranslations("ContactUs.ContactUsHero");
+  const t_ContactUsHero_ContactUs = useTranslations("ContactUs.ContactUsHero");
   const t_Common = useTranslations("Common");
 
   const { headline, subheadline, callUsBtn, leaveUsAMsgBtn, videoSRTxt } = {
-    headline: t_ContactUs_ContactUsHero("headline"),
-    subheadline: t_ContactUs_ContactUsHero("subheadline"),
-    callUsBtn: t_ContactUs_ContactUsHero("callUsBtn"),
-    leaveUsAMsgBtn: t_ContactUs_ContactUsHero("leaveUsAMsgBtn"),
-    videoSRTxt: t_ContactUs_ContactUsHero("videoSRTxt"),
+    headline: t_ContactUsHero_ContactUs("headline"),
+    subheadline: t_ContactUsHero_ContactUs("subheadline"),
+    callUsBtn: t_ContactUsHero_ContactUs("callUsBtn"),
+    leaveUsAMsgBtn: t_ContactUsHero_ContactUs("leaveUsAMsgBtn"),
+    videoSRTxt: t_ContactUsHero_ContactUs("videoSRTxt"),
   };
 
   const { videoFallbackTxt } = {
@@ -80,5 +80,7 @@ const ContactUsHero: FC = () => {
     </section>
   );
 };
+
+ContactUsHero.displayName = "ContactUsHero";
 
 export default ContactUsHero;

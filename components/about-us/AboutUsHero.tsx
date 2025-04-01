@@ -6,14 +6,14 @@ import { Link } from "@/i18n/navigation";
 import "@/styles/about-us/about-us-hero.css";
 
 const AboutUsHero: FC = () => {
-  const t_AboutUs_AboutUsHero = useTranslations("AboutUs.AboutUsHero");
+  const t_AboutUsHero_AboutUs = useTranslations("AboutUs.AboutUsHero");
   const t_Common = useTranslations("Common");
 
   const { headline, subheadline, exploreOurStoryBtn, videoSRTxt } = {
-    headline: t_AboutUs_AboutUsHero("headline"),
-    subheadline: t_AboutUs_AboutUsHero("subheadline"),
-    exploreOurStoryBtn: t_AboutUs_AboutUsHero("exploreOurStoryBtn"),
-    videoSRTxt: t_AboutUs_AboutUsHero("videoSRTxt"),
+    headline: t_AboutUsHero_AboutUs("headline"),
+    subheadline: t_AboutUsHero_AboutUs("subheadline"),
+    exploreOurStoryBtn: t_AboutUsHero_AboutUs("exploreOurStoryBtn"),
+    videoSRTxt: t_AboutUsHero_AboutUs("videoSRTxt"),
   };
 
   const { bookASessionBtn, videoFallbackTxt } = {
@@ -78,5 +78,7 @@ const AboutUsHero: FC = () => {
     </section>
   );
 };
+
+AboutUsHero.displayName = "AboutUsHero";
 
 export default AboutUsHero;

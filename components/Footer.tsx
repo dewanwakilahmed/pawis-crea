@@ -1,42 +1,42 @@
-'use client';
+"use client";
 
-import React, { FC } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
-import { Link, useRouter, usePathname } from '@/i18n/navigation';
+import React, { FC } from "react";
+import { useTranslations, useLocale } from "next-intl";
+import { Link, useRouter, usePathname } from "@/i18n/navigation";
 
 // CSS
-import '@/styles/footer.css';
+import "@/styles/footer.css";
 
 // Icons
-import { RiPhoneFill, RiMailFill, RiMapPinFill } from 'react-icons/ri';
+import { RiPhoneFill, RiMailFill, RiMapPinFill } from "react-icons/ri";
 
 // Component
-import CompanyLogo from '@/components/CompanyLogo';
+import CompanyLogo from "@/components/CompanyLogo";
 
 const Footer: FC = () => {
-  const t = useTranslations('Footer');
-  const tLang = useTranslations('Header.lang');
+  const t = useTranslations("Footer");
+  const tLang = useTranslations("Header.lang");
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
 
   const navItems = [
-    { key: 'home', href: '/' },
-    { key: 'about', href: '/about' },
-    { key: 'portfolio', href: '/portfolio' },
-    { key: 'services', href: '/services' },
-    { key: 'contact', href: '/contact' },
-    { key: 'book_a_session', href: '/book-session' },
+    { key: "home", href: "/" },
+    { key: "about", href: "/about" },
+    { key: "portfolio", href: "/portfolio" },
+    { key: "services", href: "/services" },
+    { key: "contact", href: "/contact" },
+    { key: "book_a_session", href: "/book-session" },
   ];
 
   const socialLinks = [
-    { key: 'instagram', href: 'https://instagram.com/pawiscrea' },
-    { key: 'facebook', href: 'https://facebook.com/pawiscrea' },
-    { key: 'vimeo', href: 'https://vimeo.com/pawiscrea' },
-    { key: 'youtube', href: 'https://youtube.com/pawiscrea' },
+    { key: "instagram", href: "https://instagram.com/pawiscrea" },
+    { key: "facebook", href: "https://facebook.com/pawiscrea" },
+    { key: "vimeo", href: "https://vimeo.com/pawiscrea" },
+    { key: "youtube", href: "https://youtube.com/pawiscrea" },
   ];
 
-  const otherLocale = currentLocale === 'en' ? 'es' : 'en';
+  const otherLocale = currentLocale === "en" ? "es" : "en";
 
   const switchLang = (newLocale: string) => {
     router.push(pathname, { locale: newLocale });
@@ -49,13 +49,13 @@ const Footer: FC = () => {
       <div className="footer-container">
         <div className="footer-top">
           <div className="footer-company-seal">
-            <CompanyLogo />
+            <CompanyLogo position="footer" />
 
-            <p className="footer-company-slogan">{t('slogan')}</p>
+            <p className="footer-company-slogan">{t("slogan")}</p>
           </div>
 
           <nav className="footer-nav-links">
-            <h3 className="footer-nav-links-heading">{t('quick_links')}</h3>
+            <h3 className="footer-nav-links-heading">{t("quick_links")}</h3>
 
             <ul className="footer-nav-links-list">
               {navItems.map((item) => (
@@ -69,7 +69,7 @@ const Footer: FC = () => {
           </nav>
 
           <address className="footer-contact-details">
-            <h3 className="footer-contact-details-heading">{t('contact')}</h3>
+            <h3 className="footer-contact-details-heading">{t("contact")}</h3>
 
             <div className="footer-contact-details-list">
               <p className="footer-contact-email">
@@ -132,7 +132,7 @@ const Footer: FC = () => {
           </address>
 
           <div className="footer-social-links">
-            <h3 className="footer-social-links-heading">{t('follow_us')}</h3>
+            <h3 className="footer-social-links-heading">{t("follow_us")}</h3>
 
             <ul className="footer-social-links-list">
               {socialLinks.map((link) => (
@@ -153,7 +153,7 @@ const Footer: FC = () => {
 
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © {currentYear} Pawis Crea. {t('rights_reserved')}
+            © {currentYear} Pawis Crea. {t("rights_reserved")}
           </p>
 
           <div className="footer-switch-lang">
@@ -167,10 +167,10 @@ const Footer: FC = () => {
 
           <div className="footer-legal-links">
             <Link href="/privacy" className="footer-privacy-policy">
-              {t('privacy_policy')}
+              {t("privacy_policy")}
             </Link>
             <Link href="/terms" className="footer-terms-of-service">
-              {t('terms_of_service')}
+              {t("terms_of_service")}
             </Link>
           </div>
         </div>
