@@ -1,7 +1,9 @@
-import React, { FC, use } from 'react';
-import { useTranslations } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
-import { routing } from '@/i18n/routing';
+import React, { FC, use } from "react";
+import { setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
+
+// Sections
+import HomeHero from "@/components/home/HomeHero";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -15,9 +17,11 @@ const HomePage: FC<HomePageProps> = ({ params }) => {
   const { locale } = use(params);
   setRequestLocale(locale);
 
-  const t = useTranslations('Home');
-
-  return <main className="home-page mt-36">{t('title')}</main>;
+  return (
+    <main className="home-page">
+      <HomeHero />
+    </main>
+  );
 };
 
 export default HomePage;

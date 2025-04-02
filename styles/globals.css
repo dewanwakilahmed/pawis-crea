@@ -4,7 +4,7 @@
 
 @layer utilities {
   .font-primary {
-    font-family: var(--font-primary), Impact, 'Arial Narrow', sans-serif;
+    font-family: var(--font-primary), Impact, "Arial Narrow", sans-serif;
   }
 
   .font-secondary {
@@ -12,7 +12,7 @@
   }
 
   .overlay {
-    content: '';
+    content: "";
     @apply absolute
     inset-0 
     bg-gradient-to-b from-neutral-900/70 via-neutral-900/70 to-neutral-900/70;
@@ -105,14 +105,10 @@ html {
 }
 
 body {
-  @apply bg-[url('/images/body-bg.svg')]
-  bg-fixed
-  bg-opacity-30
-  max-w-screen-2xl
-  mx-auto
+  @apply mx-auto
   antialiased
-  shadow-lg
-  font-secondary;
+  font-secondary
+  text-gray-50;
 }
 
 @keyframes slide-up-fade-in {

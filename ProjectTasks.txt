@@ -1,0 +1,4 @@
+- Finish PhotoGallery Section
+- Improve language switching
+- Improve Header
+- Improve Footer

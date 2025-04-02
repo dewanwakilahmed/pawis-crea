@@ -1,11 +1,11 @@
-import React, { FC, use } from 'react';
-import { setRequestLocale } from 'next-intl/server';
-import { routing } from '@/i18n/routing';
+import React, { FC, use } from "react";
+import { setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 
 // Sections
-import PortfolioHero from '@/components/portfolio/PortfolioHero';
-import PhotoGallery from '@/components/portfolio/PhotoGallery';
-import VideoGallery from '@/components/portfolio/VideoGallery';
+import PortfolioHero from "@/components/portfolio/PortfolioHero";
+import PhotoGallery from "@/components/portfolio/PhotoGallery";
+import AboutPawisCrea from "@/components/portfolio/AboutPawisCrea";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -21,9 +21,9 @@ const PortfolioPage: FC<PortfolioPageProps> = ({ params }) => {
 
   return (
     <main className="portfolio-page">
-      {/* <PortfolioHero /> */}
+      <PortfolioHero />
       {/* <PhotoGallery /> */}
-      <VideoGallery />
+      {/* <AboutPawisCrea /> */}
     </main>
   );
 };
