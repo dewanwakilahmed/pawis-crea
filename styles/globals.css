@@ -107,7 +107,8 @@ html {
 body {
   @apply mx-auto
   antialiased
-  font-secondary;
+  font-secondary
+  text-gray-50;
 }
 
 @keyframes slide-up-fade-in {

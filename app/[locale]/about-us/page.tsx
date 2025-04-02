@@ -4,6 +4,7 @@ import { routing } from "@/i18n/routing";
 
 // Sections
 import AboutUsHero from "@/components/about-us/AboutUsHero";
+import OurStory from "@/components/about-us/OurStory";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -20,6 +21,7 @@ const AboutUsPage: FC<AboutUsPageProps> = ({ params }) => {
   return (
     <main className="about-us-page">
       <AboutUsHero />
+      <OurStory />
     </main>
   );
 };
