@@ -118,6 +118,19 @@
   relative;
 }
 
+.lg-outer .lg-sub-html {
+  @apply !hidden;
+}
+
+.lg-outer .lg-progress-bar .lg-progress {
+  @apply bg-pink-500;
+}
+
+.lg-outer .lg-thumb-item.active,
+.lg-outer .lg-thumb-item:hover {
+  @apply !border-pink-500;
+}
+
 .img-loading-skeleton {
   @apply bg-gray-700
   animate-pulse
