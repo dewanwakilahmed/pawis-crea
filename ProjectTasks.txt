@@ -1,4 +1,7 @@
-- Finish PhotoGallery Section
+- Review OurPhotographyCollection tsx
+- Restyle OurPhotographyCollection styles
+- Review OurPhotographyCollection
+- Fix OurPhotographyCollection error on language switching
 - Improve language switching
 - Improve Header
 - Improve Footer
