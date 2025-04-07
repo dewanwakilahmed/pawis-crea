@@ -129,8 +129,8 @@ const OurPhotographyCollectionImage: FC<OurPhotographyCollectionImageProps> =
       <Image
         alt={img.alt}
         src={`/images/portfolio-img/${img.src}`}
-        width={img.width}
-        height={img.height}
+        width={img.width / 10}
+        height={img.height / 10}
         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw"
         layout="responsive"
         onLoadingComplete={() => onLoad(img.src)}
