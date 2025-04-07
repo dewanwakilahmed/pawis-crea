@@ -96,7 +96,7 @@
     },
     "OurPhotographyCollection": {
       "sectionHeading": "Nuestra Colección de Fotografía - Momentos en Foco",
-      "imgNotLoaded": "¡No hay imágenes disponibles en este momento! Por favor, vuelve a revisar más tarde"
+      "photographyCollectionNotLoaded": "¡No hay imágenes disponibles en este momento! Por favor, vuelve a revisar más tarde"
     }
   },
   "ContactUs": {

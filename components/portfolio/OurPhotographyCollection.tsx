@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, useState, useMemo } from "react";
+import React, { FC, useState, memo, useMemo, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import LightGallery from "lightgallery/react";
@@ -14,7 +14,7 @@ import lgRotate from "lightgallery/plugins/rotate";
 import Masonry from "react-masonry-css";
 
 // CSS
-import "@/styles/portfolio/photo-gallery.css";
+import "@/styles/portfolio/our-photography-collection.css";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
@@ -23,33 +23,18 @@ import "lightgallery/css/lg-fullscreen.css";
 import "lightgallery/css/lg-share.css";
 import "lightgallery/css/lg-rotate.css";
 
-// Icon
-import { MdArrowRightAlt } from "react-icons/md";
-
 // Image Data
 import portfolioImgData from "@/public/images/portfolio-img/portfolioImgData";
 
 interface Image {
+  category: string;
   src: string;
   alt: string;
   width: number;
   height: number;
-  category: string;
 }
 
-const getFilteredImages = (filter: string, categories: string[]): Image[] => {
-  if (filter === "all") return portfolioImgData;
-  if (filter === "featured") {
-    return categories
-      .map((category) =>
-        portfolioImgData.filter((img) => img.category === category).slice(0, 3)
-      )
-      .flat();
-  }
-  return portfolioImgData.filter((img) => img.category === filter);
-};
-
-const gallerySettings: Partial<LightGallerySettings> = {
+const GALLERY_SETTINGS: Partial<LightGallerySettings> = {
   speed: 500,
   plugins: [lgThumbnail, lgZoom, lgAutoplay, lgFullscreen, lgShare, lgRotate],
   autoplay: true,
@@ -59,12 +44,66 @@ const gallerySettings: Partial<LightGallerySettings> = {
   facebook: true,
   twitter: true,
   pinterest: true,
-  selector: ".photo-gallery-img",
+  selector: ".our-photography-collection-img",
 };
 
-const Skeleton: FC<{ width: number; height: number }> = ({ width, height }) => (
+const BREAKPOINT_COLS = {
+  default: 4,
+  1024: 3,
+  768: 2,
+  480: 1,
+};
+
+const getFilteredCategoryImages = (
+  filterCategory: string,
+  photoCollectionCategories: string[],
+  images: Image[]
+): Image[] => {
+  if (filterCategory === "all") return images;
+  if (filterCategory === "featured") {
+    return photoCollectionCategories
+      .map((photoCollectionCategory) =>
+        images
+          .filter((img) => img.category === photoCollectionCategory)
+          .slice(0, 3)
+      )
+      .flat();
+  }
+  return images.filter((img) => img.category === filterCategory);
+};
+
+interface FilterBtnProps {
+  filterCategory: string;
+  btnLabel: string;
+  isActive: boolean;
+  handleFilterByCategory: (filterCategory: string) => void;
+}
+
+const FilterBtn: FC<FilterBtnProps> = memo(
+  ({ filterCategory, btnLabel, isActive, handleFilterByCategory }) => (
+    <button
+      className={`filter-category-btn ${
+        isActive ? "active-filter-category" : ""
+      }`}
+      onClick={() => handleFilterByCategory(filterCategory)}
+      aria-label={btnLabel}
+      role="button"
+    >
+      {btnLabel}
+    </button>
+  )
+);
+
+FilterBtn.displayName = "FilterBtn";
+
+interface SkeletonProps {
+  width: number;
+  height: number;
+}
+
+const Skeleton: FC<SkeletonProps> = ({ width, height }) => (
   <div
-    className="img-loading-skeleton"
+    className="our-photography-collection-img-loading-skeleton"
     style={{
       width: "100%",
       paddingBottom: `${(height / width) * 100}%`,
@@ -72,39 +111,50 @@ const Skeleton: FC<{ width: number; height: number }> = ({ width, height }) => (
   />
 );
 
+Skeleton.displayName = "Skeleton";
+
+interface OurPhotographyCollectionImageProps {
+  img: Image;
+  isLoaded: boolean;
+  onLoad: (src: string) => void;
+}
+
+const OurPhotographyCollectionImage: FC<OurPhotographyCollectionImageProps> =
+  memo(({ img, isLoaded, onLoad }) => (
+    <a
+      href={`/images/portfolio-img/${img.src}`}
+      className="our-photography-collection-img"
+    >
+      {!isLoaded && <Skeleton width={img.width} height={img.height} />}
+      <Image
+        alt={img.alt}
+        src={`/images/portfolio-img/${img.src}`}
+        width={img.width}
+        height={img.height}
+        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw"
+        layout="responsive"
+        onLoadingComplete={() => onLoad(img.src)}
+        onError={() => console.error(`Failed to load ${img.src}`)}
+        className={`our-photography-collection-img-thumbnail ${
+          isLoaded
+            ? "our-photography-collection-img-loaded"
+            : "our-photography-collection-img-loading"
+        }`}
+      />
+    </a>
+  ));
+
 const OurPhotographyCollection: FC = () => {
   const t_OurPhotographyCollection_Portfolio = useTranslations(
     "Portfolio.OurPhotographyCollection"
   );
   const t_Common = useTranslations("Common");
 
-  const { sectionHeading, imgNotLoaded } = {
+  const { sectionHeading, photographyCollectionNotLoaded } = {
     sectionHeading: t_OurPhotographyCollection_Portfolio("sectionHeading"),
-    imgNotLoaded: t_OurPhotographyCollection_Portfolio("imgNotLoaded"),
-  };
-
-  const {
-    children,
-    djCoverage,
-    eventCoverage,
-    fashion,
-    gastronomy,
-    marriage,
-    musicVideosBts,
-    personal,
-    photoStudio,
-    quinceañera,
-  } = {
-    children: t_Common("portfolioCategories.children"),
-    djCoverage: t_Common("portfolioCategories.djCoverage"),
-    eventCoverage: t_Common("portfolioCategories.eventCoverage"),
-    fashion: t_Common("portfolioCategories.fashion"),
-    gastronomy: t_Common("portfolioCategories.gastronomy"),
-    marriage: t_Common("portfolioCategories.marriage"),
-    musicVideosBts: t_Common("portfolioCategories.musicVideosBts"),
-    personal: t_Common("portfolioCategories.personal"),
-    photoStudio: t_Common("portfolioCategories.photoStudio"),
-    quinceañera: t_Common("portfolioCategories.quinceañera"),
+    photographyCollectionNotLoaded: t_OurPhotographyCollection_Portfolio(
+      "photographyCollectionNotLoaded"
+    ),
   };
 
   const { featured, all } = {
@@ -112,7 +162,7 @@ const OurPhotographyCollection: FC = () => {
     all: t_Common("filterCategories.all"),
   };
 
-  const categoryKeys = [
+  const photoCollectionCategoriesKeys = [
     "children",
     "djCoverage",
     "eventCoverage",
@@ -125,111 +175,84 @@ const OurPhotographyCollection: FC = () => {
     "quinceañera",
   ];
 
-  const [filteredImages, setFilteredImages] = useState(() =>
-    getFilteredImages("featured", categoryKeys)
-  );
-  const [activeFilter, setActiveFilter] = useState("featured");
+  const [activeFilterCategory, setActiveFilterCategory] = useState("featured");
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
 
-  const handleFilter = (filter: string) => {
-    setFilteredImages(getFilteredImages(filter, categoryKeys));
-    setActiveFilter(filter);
+  const filteredCategoryImages = useMemo(
+    () =>
+      getFilteredCategoryImages(
+        activeFilterCategory,
+        photoCollectionCategoriesKeys,
+        portfolioImgData
+      ),
+    [activeFilterCategory, photoCollectionCategoriesKeys]
+  );
+
+  const handleImageLoad = useCallback((src: string) => {
+    setLoadedImages((prev) => new Set(prev).add(src));
+  }, []);
+
+  const handleFilterByCategory = (filterCategory: string) => {
+    setActiveFilterCategory(filterCategory);
     setLoadedImages(new Set());
   };
 
-  const handleImageLoad = (src: string) => {
-    setLoadedImages((prev) => new Set(prev).add(src));
-  };
-
   if (!portfolioImgData.length) {
-    return <p className="images-not-loaded">{imgNotLoaded}</p>;
+    return (
+      <p className="photography-collection-not-loaded">
+        {photographyCollectionNotLoaded}
+      </p>
+    );
   }
 
   return (
-    <section className="photo-gallery">
-      <div className="photo-gallery-container">
-        <h3 className="photo-gallery-heading">{sectionHeading}</h3>
+    <section className="our-photography-collection">
+      <div className="our-photography-collection-container">
+        <h3 className="our-photography-collection-heading">{sectionHeading}</h3>
 
-        <div className="photo-gallery-filter-bar">
-          <div className="photo-gallery-filters">
-            <button
-              className={`filter-btn ${
-                activeFilter === "featured" ? "active" : ""
-              }`}
-              onClick={() => handleFilter("featured")}
-              aria-label={featured}
-              role="button"
-            >
-              {featured}
-            </button>
-            {categoryKeys.map((categoryKey) => (
-              <button
-                key={categoryKey}
-                className={`filter-btn ${
-                  activeFilter === categoryKey ? "active" : ""
-                }`}
-                onClick={() => handleFilter(categoryKey)}
-                aria-label={categoryKey}
-                role="button"
-              >
-                {t_Common(`portfolioCategories.${categoryKey}`)}
-              </button>
+        <div className="our-photography-collection-filter-bar">
+          <div className="our-photography-collection-filter-categories">
+            <FilterBtn
+              filterCategory="featured"
+              btnLabel={featured}
+              isActive={activeFilterCategory === "featured"}
+              handleFilterByCategory={handleFilterByCategory}
+            />
+            {photoCollectionCategoriesKeys.map((photoCollectionCategoryKey) => (
+              <FilterBtn
+                key={photoCollectionCategoryKey}
+                filterCategory={photoCollectionCategoryKey}
+                btnLabel={t_Common(
+                  `portfolioCategories.${photoCollectionCategoryKey}`
+                )}
+                isActive={activeFilterCategory === photoCollectionCategoryKey}
+                handleFilterByCategory={handleFilterByCategory}
+              />
             ))}
-            <button
-              className={`filter-btn ${activeFilter === "all" ? "active" : ""}`}
-              onClick={() => handleFilter("all")}
-              aria-label={all}
-              role="button"
-            >
-              {all}
-            </button>
-          </div>
-          <div className="scroll-right">
-            <MdArrowRightAlt className="scroll-right-icon" />
+            <FilterBtn
+              filterCategory="all"
+              btnLabel={all}
+              isActive={activeFilterCategory === "all"}
+              handleFilterByCategory={handleFilterByCategory}
+            />
           </div>
         </div>
 
-        <div className="photo-gallery-content">
-          <LightGallery {...gallerySettings}>
+        <div className="our-photography-collection-content">
+          <LightGallery {...GALLERY_SETTINGS}>
             <Masonry
-              breakpointCols={{
-                default: 4,
-                1024: 3,
-                768: 2,
-                480: 1,
-              }}
+              breakpointCols={BREAKPOINT_COLS}
               className="my-masonry-grid"
               columnClassName="my-masonry-grid_column"
             >
-              {filteredImages.map((image) => {
-                const isLoaded = loadedImages.has(image.src);
-                return (
-                  <a
-                    key={image.src}
-                    href={`/images/portfolio-img/${image.src}`}
-                    className="photo-gallery-img"
-                  >
-                    {!isLoaded && (
-                      <Skeleton width={image.width} height={image.height} />
-                    )}
-                    <Image
-                      alt={image.alt}
-                      src={`/images/portfolio-img/${image.src}`}
-                      width={image.width}
-                      height={image.height}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw"
-                      layout="responsive"
-                      onLoadingComplete={() => handleImageLoad(image.src)}
-                      onError={() =>
-                        console.error(`Failed to load ${image.src}`)
-                      }
-                      className={`photo-gallery-img-thumbnail ${
-                        isLoaded ? "loaded" : "loading"
-                      }`}
-                    />
-                  </a>
-                );
-              })}
+              {filteredCategoryImages.map((img) => (
+                <OurPhotographyCollectionImage
+                  key={img.src}
+                  img={img}
+                  isLoaded={loadedImages.has(img.src)}
+                  onLoad={handleImageLoad}
+                />
+              ))}
             </Masonry>
           </LightGallery>
         </div>
@@ -237,5 +260,7 @@ const OurPhotographyCollection: FC = () => {
     </section>
   );
 };
+
+OurPhotographyCollection.displayName = "OurPhotographyCollection";
 
 export default OurPhotographyCollection;

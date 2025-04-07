@@ -1,13 +1,13 @@
-.photo-gallery {
+.our-photography-collection {
   @apply bg-gradient-to-tr from-stone-50 to-stone-300;
 }
 
-.photo-gallery-container {
+.our-photography-collection-container {
   @apply section-container
   relative;
 }
 
-.photo-gallery-heading {
+.our-photography-collection-heading {
   @apply text-2xl
   lg:text-3xl
   font-primary
@@ -23,7 +23,7 @@
   lg:mb-10;
 }
 
-.photo-gallery-filter-bar {
+.our-photography-collection-filter-bar {
   @apply sticky
   top-0
   z-50
@@ -58,7 +58,7 @@
   animation: leftToRIghtBackAndForthLoop 2s ease-in-out infinite;
 }
 
-.photo-gallery-filters {
+.our-photography-collection-filter-categories {
   @apply flex
   flex-nowrap
   overflow-x-auto
@@ -73,20 +73,23 @@
   -ms-overflow-style: none;
 }
 
-.photo-gallery-filters::-webkit-scrollbar {
+.our-photography-collection-filter-categories::-webkit-scrollbar {
   @apply hidden;
 }
 
-.filter-btn {
+.filter-category-btn {
   @apply btn
   btn-secondary
   flex-shrink-0;
 }
 
-.filter-btn.active {
+.active-filter-category {
   @apply bg-gray-50
   border-gray-50
   text-gray-950;
+}
+
+.our-photography-collection-content {
 }
 
 .my-masonry-grid {
@@ -112,7 +115,7 @@
   bg-none;
 }
 
-.photo-gallery-img {
+.our-photography-collection-img {
   @apply block
   w-full
   relative;
@@ -131,7 +134,7 @@
   @apply !border-pink-500;
 }
 
-.img-loading-skeleton {
+.our-photography-collection-img-loading-skeleton {
   @apply bg-gray-700
   animate-pulse
   rounded-lg
@@ -142,7 +145,7 @@
   left-0;
 }
 
-.photo-gallery-img-thumbnail {
+.our-photography-collection-img-thumbnail {
   @apply w-full
   h-auto
   block
@@ -156,21 +159,21 @@
   image-rendering: -webkit-optimize-contrast;
 }
 
-.photo-gallery-img-thumbnail.loading {
+.our-photography-collection-img-loading {
   @apply opacity-0;
 }
 
-.photo-gallery-img-thumbnail.loaded {
+.our-photography-collection-img-loaded {
   @apply opacity-100;
 }
 
 @media (max-width: 355px) {
-  .photo-gallery-heading {
+  .our-photography-collection-heading {
     @apply text-xl
     mb-8;
   }
 
-  .photo-gallery-filter-bar {
+  .our-photography-collection-filter-bar {
     @apply p-2.5
     mb-4;
   }
@@ -184,7 +187,7 @@
     @apply text-2xl;
   }
 
-  .photo-gallery-filters {
+  .our-photography-collection-filter-categories {
     @apply gap-1.5;
   }
 
