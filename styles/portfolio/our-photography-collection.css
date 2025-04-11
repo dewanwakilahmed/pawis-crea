@@ -8,7 +8,7 @@
 
 .our-photography-collection::before {
   @apply overlay
-  !bg-gradient-to-br from-neutral-900/[0.01] to-neutral-900/0;
+  !bg-gradient-to-b from-neutral-900/[0.01] to-neutral-900/0;
 }
 
 .our-photography-collection-container {
@@ -37,7 +37,8 @@
   shadow-lg
   
   flex
-  items-center;
+  items-center
+  justify-center;
 }
 
 .our-photography-collection-filter-categories {
@@ -46,9 +47,8 @@
   overflow-x-auto
   gap-2
   lg:gap-3
-  xl:gap-4
-  justify-start
-  whitespace-nowrap;
+  items-center
+  justify-start;
 
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -61,8 +61,7 @@
 
 .filter-category-btn {
   @apply btn
-  btn-secondary
-  flex-shrink-0;
+  btn-secondary;
 }
 
 .active-filter-category {
@@ -100,7 +99,14 @@
 .our-photography-collection-img {
   @apply block
   w-full
-  relative;
+  relative
+  border-2
+  border-pink-400/25
+  hover:border-pink-400
+  transition
+  rounded-lg
+  shadow-lg
+  overflow-hidden;
 }
 
 .lg-outer .lg-sub-html {
@@ -108,12 +114,12 @@
 }
 
 .lg-outer .lg-progress-bar .lg-progress {
-  @apply bg-pink-500;
+  @apply bg-pink-400;
 }
 
 .lg-outer .lg-thumb-item.active,
 .lg-outer .lg-thumb-item:hover {
-  @apply !border-pink-500;
+  @apply !border-pink-400;
 }
 
 .our-photography-collection-img-loading-skeleton {
@@ -131,14 +137,9 @@
   @apply w-full
   h-auto
   block
-  rounded-lg
-  shadow-lg
   relative
-  hover:scale-[1.025]
-  hover:brightness-125
+  hover:scale-[1.05]
   transition;
-
-  image-rendering: -webkit-optimize-contrast;
 }
 
 .our-photography-collection-img-loading {
@@ -157,6 +158,14 @@
 
   .our-photography-collection-filter-categories {
     @apply gap-1.5;
+  }
+
+  .my-masonry-grid {
+    @apply -ml-5;
+  }
+
+  .my-masonry-grid_column {
+    @apply pl-5;
   }
 
   .my-masonry-grid_column > a {
