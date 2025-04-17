@@ -6,6 +6,15 @@ import { useTranslations } from "next-intl";
 // CSS
 import "@/styles/contact-us/contact-us-form.css";
 
+interface ContactUsFormData {
+  fullName: string;
+  emailAddress: string;
+  phoneNumber: string;
+  message: string;
+}
+
+type ContactUsFormValidation = string | null;
+
 const ContactUsForm: FC = () => {
   const t_ContactUsForm_ContactUs = useTranslations("ContactUs.ContactUsForm");
   const t_Fields_Form_ContactUsForm_ContactUs = useTranslations(
@@ -41,28 +50,55 @@ const ContactUsForm: FC = () => {
       t_Fields_Form_ContactUsForm_ContactUs("messagePlaceholder"),
   };
 
-  const [contactUsFormData, setContactUsFormData] = useState({
-    fullName: "",
-    emailAddress: "",
-    phoneNumber: "",
-    message: "",
-  });
+  const [contactUsFormData, setContactUsFormData] = useState<ContactUsFormData>(
+    {
+      fullName: "",
+      emailAddress: "",
+      phoneNumber: "",
+      message: "",
+    }
+  );
 
-  const [error, setError] = useState<string | null>(null);
+  const [contactUsFormValidationError, setContactUsFormValidationError] =
+    useState<ContactUsFormValidation>(null);
+
+  const validateContactUsForm = (
+    contactUsFormData: ContactUsFormData
+  ): ContactUsFormValidation => {
+    if (!contactUsFormData.emailAddress && !contactUsFormData.phoneNumber) {
+      return bothEmailAndPhoneInputMissingError;
+    }
+    if (
+      contactUsFormData.emailAddress &&
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactUsFormData.emailAddress)
+    ) {
+      return "Please enter a valid email address.";
+    }
+    if (
+      contactUsFormData.phoneNumber &&
+      !/^\+?[\d\s-]{7,}$/.test(contactUsFormData.phoneNumber)
+    ) {
+      return "Please enter a valid phone number.";
+    }
+    return null;
+  };
 
   const handleContactUsFormInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setContactUsFormData((prev) => ({ ...prev, [name]: value }));
-    setError(null);
+    setContactUsFormValidationError(null);
   };
 
   const handleContactUsFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!contactUsFormData.emailAddress && !contactUsFormData.phoneNumber) {
-      setError(`${bothEmailAndPhoneInputMissingError} 😄`);
+    const contactUsFormValidationResult =
+      validateContactUsForm(contactUsFormData);
+
+    if (contactUsFormValidationResult) {
+      setContactUsFormValidationError(contactUsFormValidationResult);
       return;
     }
 
@@ -74,6 +110,8 @@ const ContactUsForm: FC = () => {
       phoneNumber: "",
       message: "",
     });
+
+    setContactUsFormValidationError(null);
   };
 
   return (
@@ -165,9 +203,9 @@ const ContactUsForm: FC = () => {
             {submitBtn}
           </button>
 
-          {error && (
-            <p className="contact-form-error" role="alert">
-              {error}
+          {contactUsFormValidationError && (
+            <p className="contact-form-validation-error" role="alert">
+              {contactUsFormValidationError}
             </p>
           )}
         </form>
