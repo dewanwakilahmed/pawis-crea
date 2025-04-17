@@ -106,21 +106,22 @@
       "callUsBtn": "Call Us",
       "leaveUsAMsgBtn": "Leave Us A Message",
       "videoSRTxt": "Behind-the-scenes footage of a music artist outdoor photo shoot"
-    }
-  },
-  "ContactUsForm": {
-    "sectionHeading": "Reach Out - Connect with Us",
-    "form": {
-      "title": "Share Your Thoughts with Us",
-      "fields": {
-        "fullNameLabel": "Full Name",
-        "emailAdressLabel": "Email Address",
-        "phoneNumberLabel": "Phone Number",
-        "messageLabel": "Message",
-        "messagePlaceholder": "Whether it’s a question, feedback, or just a hello — we’re all ears!"
-      }
     },
-    "submitBtn": "Submit"
+    "ContactUsForm": {
+      "sectionHeading": "Reach Out - Connect with Us",
+      "form": {
+        "title": "Share Your Thoughts with Us",
+        "fields": {
+          "fullNameLabel": "Full Name",
+          "emailAdressLabel": "Email Address",
+          "phoneNumberLabel": "Phone Number",
+          "messageLabel": "Message",
+          "messagePlaceholder": "Whether it’s a question, feedback, or just a hello — we’re all ears!"
+        },
+        "emailOrPhoneError": "Yo! Drop us your email or phone, your pick!"
+      },
+      "submitBtn": "Submit"
+    }
   },
   "Footer": {
     "slogan": "Dare to Dream",

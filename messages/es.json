@@ -106,21 +106,22 @@
       "callUsBtn": "Llámanos",
       "leaveUsAMsgBtn": "Déjanos Un Mensaje",
       "videoSRTxt": "Imágenes detrás de escena de una sesión de fotos al aire libre de un artista musical"
-    }
-  },
-  "ContactUsForm": {
-    "sectionHeading": "Contáctanos - Conecta con Nosotros",
-    "form": {
-      "title": "Comparte tus Pensamientos con Nosotros",
-      "fields": {
-        "fullNameLabel": "Nombre Completo",
-        "emailAdressLabel": "Dirección de Correo Electrónico",
-        "phoneNumberLabel": "Número de Teléfono",
-        "messageLabel": "Mensaje",
-        "messagePlaceholder": "Ya sea una pregunta, comentario o simplemente un saludo, ¡estamos todo oídos!"
-      }
     },
-    "submitBtn": "Enviar"
+    "ContactUsForm": {
+      "sectionHeading": "Contáctanos - Conecta con Nosotros",
+      "form": {
+        "title": "Comparte tus Pensamientos con Nosotros",
+        "fields": {
+          "fullNameLabel": "Nombre Completo",
+          "emailAdressLabel": "Dirección de Correo Electrónico",
+          "phoneNumberLabel": "Número de Teléfono",
+          "messageLabel": "Mensaje",
+          "messagePlaceholder": "Ya sea una pregunta, comentario o simplemente un saludo, ¡estamos todo oídos!"
+        },
+        "emailOrPhoneError": "¡Oye! Déjanos tu correo o teléfono, ¡tú eliges!"
+      },
+      "submitBtn": "Enviar"
+    }
   },
   "Footer": {
     "slogan": "Atrévete a Soñar",
