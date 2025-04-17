@@ -6,14 +6,14 @@ import { useTranslations } from "next-intl";
 // CSS
 import "@/styles/contact-us/contact-us-form.css";
 
-interface ContactUsFormData {
+interface ContactUsFormDataTypes {
   fullName: string;
   emailAddress: string;
   phoneNumber: string;
   message: string;
 }
 
-type ContactUsFormValidation = string | null;
+type ContactUsFormValidationMessageType = string | null;
 
 const ContactUsForm: FC = () => {
   const t_ContactUsForm_ContactUs = useTranslations("ContactUs.ContactUsForm");
@@ -50,21 +50,20 @@ const ContactUsForm: FC = () => {
       t_Fields_Form_ContactUsForm_ContactUs("messagePlaceholder"),
   };
 
-  const [contactUsFormData, setContactUsFormData] = useState<ContactUsFormData>(
-    {
+  const [contactUsFormData, setContactUsFormData] =
+    useState<ContactUsFormDataTypes>({
       fullName: "",
       emailAddress: "",
       phoneNumber: "",
       message: "",
-    }
-  );
+    });
 
   const [contactUsFormValidationError, setContactUsFormValidationError] =
-    useState<ContactUsFormValidation>(null);
+    useState<ContactUsFormValidationMessageType>(null);
 
-  const validateContactUsForm = (
-    contactUsFormData: ContactUsFormData
-  ): ContactUsFormValidation => {
+  const validateContactUsFormInput = (
+    contactUsFormData: ContactUsFormDataTypes
+  ): ContactUsFormValidationMessageType => {
     if (!contactUsFormData.emailAddress && !contactUsFormData.phoneNumber) {
       return bothEmailAndPhoneInputMissingError;
     }
@@ -95,7 +94,7 @@ const ContactUsForm: FC = () => {
     e.preventDefault();
 
     const contactUsFormValidationResult =
-      validateContactUsForm(contactUsFormData);
+      validateContactUsFormInput(contactUsFormData);
 
     if (contactUsFormValidationResult) {
       setContactUsFormValidationError(contactUsFormValidationResult);
