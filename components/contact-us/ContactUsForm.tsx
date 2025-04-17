@@ -12,10 +12,17 @@ const ContactUsForm: FC = () => {
     "ContactUs.ContactUsForm.form.fields"
   );
 
-  const { sectionHeading, formTitle, emailOrPhoneError, submitBtn } = {
+  const {
+    sectionHeading,
+    formTitle,
+    bothEmailAndPhoneInputMissingError,
+    submitBtn,
+  } = {
     sectionHeading: t_ContactUsForm_ContactUs("sectionHeading"),
     formTitle: t_ContactUsForm_ContactUs("form.title"),
-    emailOrPhoneError: t_ContactUsForm_ContactUs("form.emailOrPhoneError"),
+    bothEmailAndPhoneInputMissingError: t_ContactUsForm_ContactUs(
+      "form.bothEmailAndPhoneInputMissingError"
+    ),
     submitBtn: t_ContactUsForm_ContactUs("submitBtn"),
   };
 
@@ -41,6 +48,8 @@ const ContactUsForm: FC = () => {
     message: "",
   });
 
+  const [error, setError] = useState<string | null>(null);
+
   const handleContactUsFormInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -49,17 +58,22 @@ const ContactUsForm: FC = () => {
     setError(null);
   };
 
-  const [error, setError] = useState<string | null>(null);
-
   const handleContactUsFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!contactUsFormData.emailAddress && !contactUsFormData.phoneNumber) {
-      setError(`${emailOrPhoneError} 😄`);
+      setError(`${bothEmailAndPhoneInputMissingError} 😄`);
       return;
     }
 
     console.log("Form submitted:", contactUsFormData);
+
+    setContactUsFormData({
+      fullName: "",
+      emailAddress: "",
+      phoneNumber: "",
+      message: "",
+    });
   };
 
   return (
@@ -152,7 +166,7 @@ const ContactUsForm: FC = () => {
           </button>
 
           {error && (
-            <p className="form-error" role="alert">
+            <p className="contact-form-error" role="alert">
               {error}
             </p>
           )}

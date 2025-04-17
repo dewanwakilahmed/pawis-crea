@@ -118,7 +118,7 @@
           "messageLabel": "Mensaje",
           "messagePlaceholder": "Ya sea una pregunta, comentario o simplemente un saludo, ¡estamos todo oídos!"
         },
-        "emailOrPhoneError": "¡Oye! Déjanos tu correo o teléfono, ¡tú eliges!"
+        "bothEmailAndPhoneInputMissingError": "¡Oye! Déjanos tu correo o teléfono, ¡tú eliges!"
       },
       "submitBtn": "Enviar"
     }
