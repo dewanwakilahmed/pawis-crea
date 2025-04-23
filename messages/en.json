@@ -109,6 +109,10 @@
     },
     "ContactUsForm": {
       "sectionHeading": "Reach Out - Connect with Us",
+      "companyIntro": {
+        "companyIntroHeading": "Dare to Dream",
+        "companyIntroMessage": "At Pawis Crea, we turn your dreams into timeless stories. From the spark of a wedding vow to the bold vision of your arts, events and brand, we capture every moment with passion and creativity. Let’s make your dreams unforgettable—reach out today."
+      },
       "form": {
         "title": "Share Your Thoughts with Us",
         "fields": {
@@ -118,7 +122,13 @@
           "messageLabel": "Message",
           "messagePlaceholder": "Whether it’s a question, feedback, or just a hello — we’re all ears!"
         },
-        "bothEmailAndPhoneInputMissingError": "Yo! Drop us your email or phone, your pick!"
+        "validationErrorMessages": {
+          "missingFullName": "Hey, we need your full name to keep things personal!",
+          "missingMessage": "Oops, you forgot to add a message. Tell us what's up!",
+          "incorrectEmailFormat": "That email seems off. Please enter a valid email address (e.g., john.doe@gmail.com)!",
+          "incorrectPhoneNumberFormat": "Hmm, that phone number doesn't look right. Please use a valid format (e.g., +507 6208-2646)!",
+          "bothEmailAndPhoneMissing": "Yo! Drop us your email or phone, your pick!"
+        }
       },
       "submitBtn": "Submit"
     }

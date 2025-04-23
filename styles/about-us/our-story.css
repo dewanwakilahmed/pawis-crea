@@ -8,7 +8,7 @@
 
 .our-story::before {
   @apply overlay
-  !bg-gradient-to-br from-neutral-900/[0.01] to-neutral-900/0;
+  !bg-gradient-to-br from-neutral-900/75 to-neutral-900/0;
 }
 
 .our-story-container {
@@ -27,17 +27,19 @@
   overflow-hidden
   grid
   grid-cols-1
-  xl:grid-cols-2
+  lg:grid-cols-2
   justify-center
   items-center;
 }
 
 .our-story-img-content {
+  @apply overflow-hidden
+  sm:h-96
+  lg:h-[26rem];
 }
 
 .our-story-img {
-  @apply object-cover
-  mx-auto;
+  @apply object-cover;
 }
 
 .our-story-text-content {

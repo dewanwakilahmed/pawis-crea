@@ -118,7 +118,13 @@
           "messageLabel": "Mensaje",
           "messagePlaceholder": "Ya sea una pregunta, comentario o simplemente un saludo, ¡estamos todo oídos!"
         },
-        "bothEmailAndPhoneInputMissingError": "¡Oye! Déjanos tu correo o teléfono, ¡tú eliges!"
+        "validationErrorMessages": {
+          "missingFullName": "¡Oye, necesitamos tu nombre completo para mantener las cosas personales!",
+          "missingMessage": "¡Ups, olvidaste agregar un mensaje! ¡Cuéntanos qué pasa!",
+          "incorrectEmailFormat": "Ese correo parece incorrecto. ¡Por favor, introduce una dirección de correo válida (por ejemplo, john.doe@gmail.com)!",
+          "incorrectMobileNumberFormat": "Hmm, ese número de teléfono no parece correcto. ¡Por favor, usa un formato válido (por ejemplo, +507 6208-2646)!",
+          "bothEmailAndPhoneMissing": "¡Ey! ¡Déjanos tu correo o teléfono, tú eliges!"
+        }
       },
       "submitBtn": "Enviar"
     }
