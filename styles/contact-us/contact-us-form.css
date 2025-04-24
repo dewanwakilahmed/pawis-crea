@@ -21,11 +21,41 @@
 
 .contact-us-form-content {
   @apply grid
-  grid-cols-2;
+  grid-cols-2
+  gap-8;
+}
+
+.company-intro {
+  @apply flex
+  flex-col
+  items-center
+  justify-center
+  bg-gradient-to-tl from-pink-200/15 to-pink-300/15
+  backdrop-blur-sm
+  rounded-lg
+  shadow-lg
+  overflow-hidden
+  p-6
+  lg:p-8;
+}
+
+.company-intro-heading {
+}
+
+.company-intro-img {
+  @apply object-cover
+  !w-72
+  rounded-full
+  border
+  border-pink-400;
+}
+
+.company-intro-message {
+  @apply text-center;
 }
 
 .contact-form {
-  @apply bg-neutral-700/50
+  @apply bg-neutral-100/15
   backdrop-blur-sm
   rounded-lg
   shadow-lg

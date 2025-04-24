@@ -20,7 +20,7 @@
 }
 
 .our-story-content {
-  @apply bg-neutral-700/50
+  @apply bg-neutral-100/15
   backdrop-blur-sm
   rounded-lg
   shadow-lg

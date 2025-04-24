@@ -174,6 +174,7 @@ const ContactUsForm: FC = () => {
 
         <div className="contact-us-form-content">
           <div className="company-intro">
+            <h3 className="company-intro-heading">Dare to Dream</h3>
             <Image
               src={contactUsFormImgSrc}
               width={1440}
@@ -186,7 +187,6 @@ const ContactUsForm: FC = () => {
               placeholder="blur"
               layout="responsive"
             />
-            <h3 className="company-intro-heading">Dare to Dream</h3>
             <p className="company-intro-message">
               At Pawis Crea, we turn your dreams into timeless stories. Let’s
               make your dreams unforgettable—reach out today!
