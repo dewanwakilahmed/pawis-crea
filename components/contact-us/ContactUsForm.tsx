@@ -93,6 +93,9 @@ const ContactUsForm: FC = () => {
   const [contactUsFormValidationError, setContactUsFormValidationError] =
     useState<ContactUsFormValidationMessageType>(null);
 
+  const [isContactFormMsgToUserModalOpen, setIsContactFormMsgToUserModalOpen] =
+    useState(false);
+
   const [userCountry, setUserCountry] = useState<UserCountryType>("US");
 
   useEffect(() => {
@@ -132,11 +135,13 @@ const ContactUsForm: FC = () => {
     const { name, value } = e.target;
     setContactUsFormData((prev) => ({ ...prev, [name]: value }));
     setContactUsFormValidationError(null);
+    setIsContactFormMsgToUserModalOpen(false);
   };
 
   const handleContactUsPhoneInputChange = (value: string | undefined) => {
     setContactUsFormData((prev) => ({ ...prev, phoneNumber: value || "" }));
     setContactUsFormValidationError(null);
+    setIsContactFormMsgToUserModalOpen(false);
   };
 
   const handleContactUsFormSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -147,6 +152,7 @@ const ContactUsForm: FC = () => {
 
     if (contactUsFormValidationResult) {
       setContactUsFormValidationError(contactUsFormValidationResult);
+      setIsContactFormMsgToUserModalOpen(true);
       return;
     }
 
@@ -160,10 +166,17 @@ const ContactUsForm: FC = () => {
     });
 
     setContactUsFormValidationError(null);
+    setIsContactFormMsgToUserModalOpen(false);
+  };
+
+  const closeContactFormMsgToUserModal = () => {
+    setIsContactFormMsgToUserModalOpen(false);
+    setContactUsFormValidationError(null);
   };
 
   return (
     <section
+      id="contact-us-form"
       className="contact-us-form"
       aria-labelledby="contact-us-form-heading"
     >
@@ -174,7 +187,7 @@ const ContactUsForm: FC = () => {
 
         <div className="contact-us-form-content">
           <div className="company-intro">
-            <h3 className="company-intro-heading">Dare to Dream</h3>
+            {/* <h3 className="company-intro-heading">Dare to Dream</h3> */}
             <Image
               src={contactUsFormImgSrc}
               width={1440}
@@ -192,68 +205,71 @@ const ContactUsForm: FC = () => {
               make your dreams unforgettable—reach out today!
             </p>
           </div>
+
           <div className="contact-form-container">
             <form onSubmit={handleContactUsFormSubmit} className="contact-form">
-              <p className="contact-form-title">{formTitle}</p>
+              {/* <p className="contact-form-title">{formTitle}</p> */}
 
-              <div className="contact-form-group-full-name">
-                <label
-                  htmlFor="fullName"
-                  className="contact-form-label-full-name"
-                >
-                  {fullNameLabel}
-                </label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={contactUsFormData.fullName}
-                  onChange={handleContactUsFormInputChange}
-                  className="contact-form-input-full-name"
-                  autoComplete="name"
-                  placeholder="John Doe"
-                />
-              </div>
+              <div className="contact-form-user-info">
+                <div className="contact-form-group-full-name">
+                  <label
+                    htmlFor="fullName"
+                    className="contact-form-label-full-name"
+                  >
+                    {fullNameLabel}
+                  </label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    value={contactUsFormData.fullName}
+                    onChange={handleContactUsFormInputChange}
+                    className="contact-form-input-full-name"
+                    autoComplete="name"
+                    placeholder="John Doe"
+                  />
+                </div>
 
-              <div className="contact-form-group-email-address">
-                <label
-                  htmlFor="emailAddress"
-                  className="contact-form-label-email-address"
-                >
-                  {emailAdressLabel}
-                </label>
-                <input
-                  type="email"
-                  id="emailAddress"
-                  name="emailAddress"
-                  value={contactUsFormData.emailAddress}
-                  onChange={handleContactUsFormInputChange}
-                  className="contact-form-input-email-address"
-                  autoComplete="email"
-                  placeholder="john.doe@gmail.com"
-                />
-              </div>
+                <div className="contact-form-group-email-address">
+                  <label
+                    htmlFor="emailAddress"
+                    className="contact-form-label-email-address"
+                  >
+                    {emailAdressLabel}
+                  </label>
+                  <input
+                    type="email"
+                    id="emailAddress"
+                    name="emailAddress"
+                    value={contactUsFormData.emailAddress}
+                    onChange={handleContactUsFormInputChange}
+                    className="contact-form-input-email-address"
+                    autoComplete="email"
+                    placeholder="john.doe@gmail.com"
+                  />
+                </div>
 
-              <div className="contact-form-group-phone-number">
-                <label
-                  htmlFor="phoneNumber"
-                  className="contact-form-label-phone-number"
-                >
-                  {phoneNumberLabel}
-                </label>
-                <PhoneInput
-                  id="phoneNumber"
-                  name="phoneNumber"
-                  international
-                  defaultCountry={userCountry as any}
-                  value={contactUsFormData.phoneNumber}
-                  onChange={handleContactUsPhoneInputChange}
-                  className="contact-form-input-phone-number"
-                  placeholder="+507 6123-4567"
-                  addInternationalOption={false}
-                  aria-label={phoneNumberLabel}
-                  autoComplete="tel"
-                />
+                <div className="contact-form-group-phone-number">
+                  <label
+                    htmlFor="phoneNumber"
+                    className="contact-form-label-phone-number"
+                  >
+                    {phoneNumberLabel}
+                  </label>
+                  <PhoneInput
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    international
+                    defaultCountry={userCountry as any}
+                    value={contactUsFormData.phoneNumber}
+                    onChange={handleContactUsPhoneInputChange}
+                    className="contact-form-input-phone-number"
+                    placeholder="+507 6123-4567"
+                    addInternationalOption={false}
+                    aria-label={phoneNumberLabel}
+                    autoComplete="tel"
+                  />
+                </div>
               </div>
 
               <div className="contact-form-group-message">
@@ -265,10 +281,8 @@ const ContactUsForm: FC = () => {
                   name="message"
                   value={contactUsFormData.message}
                   onChange={handleContactUsFormInputChange}
-                  required
                   className="contact-form-textarea-message"
                   placeholder={messagePlaceholder}
-                  rows={5}
                   autoComplete="off"
                 ></textarea>
               </div>
@@ -276,13 +290,29 @@ const ContactUsForm: FC = () => {
               <button type="submit" className="contact-form-submit-btn">
                 {submitBtn}
               </button>
-
-              {contactUsFormValidationError && (
-                <p className="contact-form-validation-error-msg" role="alert">
-                  {contactUsFormValidationError}
-                </p>
-              )}
             </form>
+
+            {isContactFormMsgToUserModalOpen &&
+              contactUsFormValidationError && (
+                <div
+                  className="contact-form-msg-to-usermodal"
+                  role="dialog"
+                  aria-modal="true"
+                >
+                  <div className="contact-form-msg-to-user-modal-content">
+                    <p className="contact-form-msg-to-user" role="alert">
+                      {contactUsFormValidationError}
+                    </p>
+                    <button
+                      className="contact-form-msg-to-user-modal-close-btn"
+                      onClick={closeContactFormMsgToUserModal}
+                      aria-label="Contact form message to user modal close button"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              )}
           </div>
         </div>
       </div>
