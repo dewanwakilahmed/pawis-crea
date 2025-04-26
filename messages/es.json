@@ -121,7 +121,7 @@
           "messageLabel": "Mensaje",
           "messagePlaceholder": "Ya sea una pregunta, comentario o simplemente un saludo, ¡estamos todo oídos!"
         },
-        "validationErrorMessages": {
+        "msgToUser": {
           "missingFullName": "¡Oye, necesitamos tu nombre completo para mantener las cosas personales!",
           "missingMessage": "¡Ups, olvidaste agregar un mensaje! ¡Cuéntanos qué pasa!",
           "incorrectEmailFormat": "Ese correo parece incorrecto. ¡Por favor, introduce una dirección de correo válida (por ejemplo, john.doe@gmail.com)!",
