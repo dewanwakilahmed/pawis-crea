@@ -24,7 +24,7 @@ interface ContactUsFormDataTypes {
   message: string;
 }
 
-type ContactUsFormValidationMessageType = string | null;
+type ContactUsFormMsgToUserType = string | null;
 
 type UserCountryType = string;
 
@@ -33,12 +33,12 @@ const ContactUsForm: FC = () => {
   const t_Fields_Form_ContactUsForm_ContactUs = useTranslations(
     "ContactUs.ContactUsForm.form.fields"
   );
-  const t_ValidationErrorMessages_Form_ContactUsForm_ContactUs =
-    useTranslations("ContactUs.ContactUsForm.form.validationErrorMessages");
+  const t_MsgToUser_Form_ContactUsForm_ContactUs = useTranslations(
+    "ContactUs.ContactUsForm.form.msgToUser"
+  );
 
-  const { sectionHeading, formTitle, submitBtn } = {
+  const { sectionHeading, submitBtn } = {
     sectionHeading: t_ContactUsForm_ContactUs("sectionHeading"),
-    formTitle: t_ContactUsForm_ContactUs("form.title"),
     submitBtn: t_ContactUsForm_ContactUs("submitBtn"),
   };
 
@@ -63,23 +63,21 @@ const ContactUsForm: FC = () => {
     incorrectEmailFormat,
     incorrectPhoneNumberFormat,
     bothEmailAndPhoneMissing,
+    formSubmitted,
   } = {
     missingFullName:
-      t_ValidationErrorMessages_Form_ContactUsForm_ContactUs("missingFullName"),
-    missingMessage:
-      t_ValidationErrorMessages_Form_ContactUsForm_ContactUs("missingMessage"),
-    incorrectEmailFormat:
-      t_ValidationErrorMessages_Form_ContactUsForm_ContactUs(
-        "incorrectEmailFormat"
-      ),
-    incorrectPhoneNumberFormat:
-      t_ValidationErrorMessages_Form_ContactUsForm_ContactUs(
-        "incorrectPhoneNumberFormat"
-      ),
-    bothEmailAndPhoneMissing:
-      t_ValidationErrorMessages_Form_ContactUsForm_ContactUs(
-        "bothEmailAndPhoneMissing"
-      ),
+      t_MsgToUser_Form_ContactUsForm_ContactUs("missingFullName"),
+    missingMessage: t_MsgToUser_Form_ContactUsForm_ContactUs("missingMessage"),
+    incorrectEmailFormat: t_MsgToUser_Form_ContactUsForm_ContactUs(
+      "incorrectEmailFormat"
+    ),
+    incorrectPhoneNumberFormat: t_MsgToUser_Form_ContactUsForm_ContactUs(
+      "incorrectPhoneNumberFormat"
+    ),
+    bothEmailAndPhoneMissing: t_MsgToUser_Form_ContactUsForm_ContactUs(
+      "bothEmailAndPhoneMissing"
+    ),
+    formSubmitted: t_MsgToUser_Form_ContactUsForm_ContactUs("formSubmitted"),
   };
 
   const [contactUsFormData, setContactUsFormData] =
@@ -90,8 +88,8 @@ const ContactUsForm: FC = () => {
       message: "",
     });
 
-  const [contactUsFormValidationError, setContactUsFormValidationError] =
-    useState<ContactUsFormValidationMessageType>(null);
+  const [contactUsFormMsgToUser, setContactUsFormMsgToUser] =
+    useState<ContactUsFormMsgToUserType>(null);
 
   const [isContactFormMsgToUserModalOpen, setIsContactFormMsgToUserModalOpen] =
     useState(false);
@@ -116,11 +114,17 @@ const ContactUsForm: FC = () => {
 
   const validateContactUsFormInput = (
     contactUsFormData: ContactUsFormDataTypes
-  ): ContactUsFormValidationMessageType => {
-    if (!contactUsFormData.emailAddress && !contactUsFormData.phoneNumber) {
+  ): ContactUsFormMsgToUserType => {
+    if (!contactUsFormData.fullName) {
+      return missingFullName;
+    } else if (!contactUsFormData.message) {
+      return missingMessage;
+    } else if (
+      !contactUsFormData.emailAddress &&
+      !contactUsFormData.phoneNumber
+    ) {
       return bothEmailAndPhoneMissing;
-    }
-    if (
+    } else if (
       contactUsFormData.phoneNumber &&
       !isValidPhoneNumber(contactUsFormData.phoneNumber, userCountry as any)
     ) {
@@ -134,13 +138,13 @@ const ContactUsForm: FC = () => {
   ) => {
     const { name, value } = e.target;
     setContactUsFormData((prev) => ({ ...prev, [name]: value }));
-    setContactUsFormValidationError(null);
+    setContactUsFormMsgToUser(null);
     setIsContactFormMsgToUserModalOpen(false);
   };
 
   const handleContactUsPhoneInputChange = (value: string | undefined) => {
     setContactUsFormData((prev) => ({ ...prev, phoneNumber: value || "" }));
-    setContactUsFormValidationError(null);
+    setContactUsFormMsgToUser(null);
     setIsContactFormMsgToUserModalOpen(false);
   };
 
@@ -151,7 +155,7 @@ const ContactUsForm: FC = () => {
       validateContactUsFormInput(contactUsFormData);
 
     if (contactUsFormValidationResult) {
-      setContactUsFormValidationError(contactUsFormValidationResult);
+      setContactUsFormMsgToUser(contactUsFormValidationResult);
       setIsContactFormMsgToUserModalOpen(true);
       return;
     }
@@ -165,13 +169,13 @@ const ContactUsForm: FC = () => {
       message: "",
     });
 
-    setContactUsFormValidationError(null);
+    setContactUsFormMsgToUser(null);
     setIsContactFormMsgToUserModalOpen(false);
   };
 
   const closeContactFormMsgToUserModal = () => {
     setIsContactFormMsgToUserModalOpen(false);
-    setContactUsFormValidationError(null);
+    setContactUsFormMsgToUser(null);
   };
 
   return (
@@ -292,27 +296,26 @@ const ContactUsForm: FC = () => {
               </button>
             </form>
 
-            {isContactFormMsgToUserModalOpen &&
-              contactUsFormValidationError && (
-                <div
-                  className="contact-form-msg-to-usermodal"
-                  role="dialog"
-                  aria-modal="true"
-                >
-                  <div className="contact-form-msg-to-user-modal-content">
-                    <p className="contact-form-msg-to-user" role="alert">
-                      {contactUsFormValidationError}
-                    </p>
-                    <button
-                      className="contact-form-msg-to-user-modal-close-btn"
-                      onClick={closeContactFormMsgToUserModal}
-                      aria-label="Contact form message to user modal close button"
-                    >
-                      Close
-                    </button>
-                  </div>
+            {isContactFormMsgToUserModalOpen && contactUsFormMsgToUser && (
+              <div
+                className="contact-form-msg-to-usermodal"
+                role="dialog"
+                aria-modal="true"
+              >
+                <div className="contact-form-msg-to-user-modal-content">
+                  <p className="contact-form-msg-to-user" role="alert">
+                    {contactUsFormMsgToUser}
+                  </p>
+                  <button
+                    className="contact-form-msg-to-user-modal-close-btn"
+                    onClick={closeContactFormMsgToUserModal}
+                    aria-label="Contact form message to user modal close button"
+                  >
+                    Close
+                  </button>
                 </div>
-              )}
+              </div>
+            )}
           </div>
         </div>
       </div>
