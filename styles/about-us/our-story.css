@@ -43,8 +43,8 @@
 }
 
 .our-story-text-content {
-  @apply p-6
-  lg:p-8
+  @apply p-5
+  lg:p-6
   text-center
   xl:text-start;
 }

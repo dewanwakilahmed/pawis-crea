@@ -23,7 +23,7 @@
 .our-photography-collection-filter-bar {
   @apply sticky
   top-0
-  z-50
+  z-40
 
   p-3
   lg:p-4

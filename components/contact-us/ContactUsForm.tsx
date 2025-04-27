@@ -37,9 +37,10 @@ const ContactUsForm: FC = () => {
     "ContactUs.ContactUsForm.form.msgToUser"
   );
 
-  const { sectionHeading, submitBtn } = {
+  const { sectionHeading, submitBtn, companyIntroMessage } = {
     sectionHeading: t_ContactUsForm_ContactUs("sectionHeading"),
     submitBtn: t_ContactUsForm_ContactUs("submitBtn"),
+    companyIntroMessage: t_ContactUsForm_ContactUs("companyIntroMessage"),
   };
 
   const {
@@ -191,7 +192,6 @@ const ContactUsForm: FC = () => {
 
         <div className="contact-us-form-content">
           <div className="company-intro">
-            {/* <h3 className="company-intro-heading">Dare to Dream</h3> */}
             <Image
               src={contactUsFormImgSrc}
               width={1440}
@@ -204,101 +204,94 @@ const ContactUsForm: FC = () => {
               placeholder="blur"
               layout="responsive"
             />
-            <p className="company-intro-message">
-              At Pawis Crea, we turn your dreams into timeless stories. Let’s
-              make your dreams unforgettable—reach out today!
-            </p>
+            <p className="company-intro-message">{companyIntroMessage}</p>
           </div>
 
-          <div className="contact-form-container">
-            <form onSubmit={handleContactUsFormSubmit} className="contact-form">
-              {/* <p className="contact-form-title">{formTitle}</p> */}
-
-              <div className="contact-form-user-info">
-                <div className="contact-form-group-full-name">
-                  <label
-                    htmlFor="fullName"
-                    className="contact-form-label-full-name"
-                  >
-                    {fullNameLabel}
-                  </label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    value={contactUsFormData.fullName}
-                    onChange={handleContactUsFormInputChange}
-                    className="contact-form-input-full-name"
-                    autoComplete="name"
-                    placeholder="John Doe"
-                  />
-                </div>
-
-                <div className="contact-form-group-email-address">
-                  <label
-                    htmlFor="emailAddress"
-                    className="contact-form-label-email-address"
-                  >
-                    {emailAdressLabel}
-                  </label>
-                  <input
-                    type="email"
-                    id="emailAddress"
-                    name="emailAddress"
-                    value={contactUsFormData.emailAddress}
-                    onChange={handleContactUsFormInputChange}
-                    className="contact-form-input-email-address"
-                    autoComplete="email"
-                    placeholder="john.doe@gmail.com"
-                  />
-                </div>
-
-                <div className="contact-form-group-phone-number">
-                  <label
-                    htmlFor="phoneNumber"
-                    className="contact-form-label-phone-number"
-                  >
-                    {phoneNumberLabel}
-                  </label>
-                  <PhoneInput
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    international
-                    defaultCountry={userCountry as any}
-                    value={contactUsFormData.phoneNumber}
-                    onChange={handleContactUsPhoneInputChange}
-                    className="contact-form-input-phone-number"
-                    placeholder="+507 6123-4567"
-                    addInternationalOption={false}
-                    aria-label={phoneNumberLabel}
-                    autoComplete="tel"
-                  />
-                </div>
-              </div>
-
-              <div className="contact-form-group-message">
-                <label htmlFor="message" className="contact-form-label-message">
-                  {messageLabel}
+          <form onSubmit={handleContactUsFormSubmit} className="contact-form">
+            <div className="contact-form-user-info">
+              <div className="contact-form-group-full-name">
+                <label
+                  htmlFor="fullName"
+                  className="contact-form-label-full-name"
+                >
+                  {fullNameLabel}
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={contactUsFormData.message}
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  value={contactUsFormData.fullName}
                   onChange={handleContactUsFormInputChange}
-                  className="contact-form-textarea-message"
-                  placeholder={messagePlaceholder}
-                  autoComplete="off"
-                ></textarea>
+                  className="contact-form-input-full-name"
+                  autoComplete="name"
+                  placeholder="John Doe"
+                />
               </div>
 
-              <button type="submit" className="contact-form-submit-btn">
-                {submitBtn}
-              </button>
-            </form>
+              <div className="contact-form-group-email-address">
+                <label
+                  htmlFor="emailAddress"
+                  className="contact-form-label-email-address"
+                >
+                  {emailAdressLabel}
+                </label>
+                <input
+                  type="email"
+                  id="emailAddress"
+                  name="emailAddress"
+                  value={contactUsFormData.emailAddress}
+                  onChange={handleContactUsFormInputChange}
+                  className="contact-form-input-email-address"
+                  autoComplete="email"
+                  placeholder="john.doe@gmail.com"
+                />
+              </div>
+
+              <div className="contact-form-group-phone-number">
+                <label
+                  htmlFor="phoneNumber"
+                  className="contact-form-label-phone-number"
+                >
+                  {phoneNumberLabel}
+                </label>
+                <PhoneInput
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  international
+                  defaultCountry={userCountry as any}
+                  value={contactUsFormData.phoneNumber}
+                  onChange={handleContactUsPhoneInputChange}
+                  className="contact-form-input-phone-number"
+                  placeholder="+507 6123-4567"
+                  addInternationalOption={false}
+                  aria-label={phoneNumberLabel}
+                  autoComplete="tel"
+                />
+              </div>
+            </div>
+
+            <div className="contact-form-group-message">
+              <label htmlFor="message" className="contact-form-label-message">
+                {messageLabel}
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={contactUsFormData.message}
+                onChange={handleContactUsFormInputChange}
+                className="contact-form-textarea-message"
+                placeholder={messagePlaceholder}
+                autoComplete="off"
+              ></textarea>
+            </div>
+
+            <button type="submit" className="contact-form-submit-btn">
+              {submitBtn}
+            </button>
 
             {isContactFormMsgToUserModalOpen && contactUsFormMsgToUser && (
               <div
-                className="contact-form-msg-to-usermodal"
+                className="contact-form-msg-to-user-modal"
                 role="dialog"
                 aria-modal="true"
               >
@@ -316,7 +309,7 @@ const ContactUsForm: FC = () => {
                 </div>
               </div>
             )}
-          </div>
+          </form>
         </div>
       </div>
     </section>
