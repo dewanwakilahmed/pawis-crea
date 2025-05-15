@@ -1,4 +1,7 @@
-- Create ContactUsForm Section
+- Create Services Overview Section
+
+- Change Marriage to Wedding in OurPhotographyCollection
+- Improve ContactUsForm Section
 - Fix OurPhotographyCollection error on language switching
 - Improve filtering images in OurPhotographyCollection
 - Improve language switching

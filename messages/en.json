@@ -50,32 +50,42 @@
       "exploreOurServicesBtn": "Explore Our Services",
       "videoSRTxt": "A showcase of our best photography and videography scenes"
     },
-    "aboutPawisCrea": {
-      "sectionHeading": "Our Story - Through Our Lens",
-      "imgAltText": "The founder of Pawis Crea capturing a moment with their camera",
-      "imgCaption": "Capturing moments, creating stories - one frame at a time",
-      "slogan": "Dare to Dream",
-      "description": "At Pawis Crea, we craft stories through photography and videography, turning fleeting moments into timeless treasures. Our passionate team collaborates with clients—artists, couples, businesses—to bring their visions to life with expressive portraits, dynamic event coverage, and impactful brand visuals. We capture the beauty and emotion of each moment, creating memories that resonate long after the shutter clicks",
-      "uspAriaLabel": "Our Unique Selling Points",
-      "usps": {
-        "expertise": {
-          "heading": "Over 4 Years of Expertise",
-          "description": "With more than four years of professional photography and videography, we bring a proven track record of excellence to every project"
+    "ServicesOverview": {
+      "sectionHeading": "Our Services – Framing Dreams Into Reality",
+      "sectionDescription": "From artists and music creators to couples and corporate teams, we capture every story with heart—turning your moments into lasting visual art",
+      "services": {
+        "weddingsQuinceañeras": {
+          "heading": "Weddings & Quinceañeras",
+          "subheading": "Unforgettable Celebrations made Timeless",
+          "description": "From heartfelt vows to vibrant quinceañera celebrations, we capture the love, color, and candid emotions of your unforgettable day with cinematic flair"
         },
-        "collaboration": {
-          "heading": "Your Story, Our Craft",
-          "description": "We listen closely and collaborate with you, turning your vision into authentic visuals that resonate with emotion"
+        "musicArtistsBTS": {
+          "heading": "Music Artists & BTS",
+          "subheading": "Your Sound, In Focus",
+          "description": "We collaborate with music artists to create striking behind-the-scenes footage and visuals that showcase your creative process and passion"
         },
-        "moments": {
-          "heading": "Masters of the Moment",
-          "description": "From candid shots to cinematic videos, we specialize in capturing the details that tell your unique story"
+        "eventsCorporateCoverage": {
+          "heading": "Events & Corporate Coverage",
+          "subheading": "Capture the Energy",
+          "description": "Whether it’s a corporate gala or a high-energy DJ set, we document the excitement and atmosphere of your events with dynamic photos and videos"
         },
-        "versatility": {
-          "heading": "Creative Versatility",
-          "description": "Whether it’s an artist’s portfolio, a wedding day, or a corporate brand, our artistic vision and technical excellence deliver timeless results"
+        "personalFashionPortraits": {
+          "heading": "Personal & Fashion Shoots",
+          "subheading": "Bold. Stylish. You.",
+          "description": "Strike a pose or express your essence with intimate personal portraits or bold fashion shoots"
+        },
+        "brandStoryTellingGastronomy": {
+          "heading": "Brand Storytelling & Gastronomy",
+          "subheading": "Crafted to Connect",
+          "description": "From compelling brand narratives to culinary masterpieces, we create compelling visuals that captivate audiences—turning products into icons and dishes into desire"
+        },
+        "childrenStudioPortraits": {
+          "heading": "Children & Studio Portraits",
+          "subheading": "Joy in Every Smile",
+          "description": "From the playful energy of childhood to the timeless elegance of studio sessions, we create heartwarming and professional portraits that capture personalities and milestones"
         }
       },
-      "bookSessionBtn": "Book a Session"
+      "exploreOurPortfolioBtn": "Explore Our Portfolio"
     }
   },
   "AboutUs": {
