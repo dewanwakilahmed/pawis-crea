@@ -1,6 +1,7 @@
 - Create Services Overview Section
 
 - Change Marriage to Wedding in OurPhotographyCollection
+- Recheck spanish translations
 - Improve ContactUsForm Section
 - Fix OurPhotographyCollection error on language switching
 - Improve filtering images in OurPhotographyCollection
@@ -8,3 +9,4 @@
 - Improve Header
 - Improve Footer
 - Add Vercel Analytics
+- Add Page Loading Progress bar with website primary colors

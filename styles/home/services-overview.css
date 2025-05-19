@@ -1,0 +1,38 @@
+.services-overview {
+  @apply bg-[url("/images/sections-bg/section-bg-9.svg")]
+  bg-cover
+  bg-center
+  bg-no-repeat
+  relative;
+}
+
+.services-overview::before {
+  @apply overlay
+  !bg-gradient-to-br from-neutral-900/75 to-neutral-900/0;
+}
+
+.services-overview-container {
+  @apply section-container;
+}
+
+.services-overview-heading {
+  @apply section-heading;
+}
+
+.services-overview-description {
+  @apply text-sm
+  lg:text-base
+  text-center
+  tracking-widest
+  italic
+  font-[300]
+  text-gray-50
+  max-w-2xl
+  mx-auto;
+}
+
+@media (max-width: 355px) {
+  .services-overview-description {
+    @apply text-xs;
+  }
+}

@@ -49,6 +49,43 @@
       "subheadline": "Servicios Profesionales de Fotografía y Videografía Que Cuentan Tu Historia",
       "exploreOurServicesBtn": "Explora Nuestros Servicios",
       "videoSRTxt": "Una muestra de nuestras mejores escenas de fotografía y videografía"
+    },
+    "ServicesOverview": {
+      "sectionHeading": "Nuestros Servicios – Enmarcando Sueños en Realidad",
+      "sectionDescription": "Desde artistas y creadores musicales hasta parejas y equipos corporativos, capturamos cada historia con corazón, transformando tus momentos en arte visual duradero",
+      "services": {
+        "weddingsQuinceañeras": {
+          "heading": "Bodas y Quinceañeras",
+          "subheading": "Celebraciones Inolvidables Hechas Eternas",
+          "description": "Desde votos sinceros hasta vibrantes celebraciones de quinceañeras, capturamos el amor, el color y las emociones espontáneas de tu día inolvidable con un toque cinematográfico"
+        },
+        "musicArtistsBTS": {
+          "heading": "Artistas Musicales y BTS",
+          "subheading": "Tu Sonido, en el Foco",
+          "description": "Colaboramos con artistas musicales para crear impactantes imágenes detrás de escena y visuales que muestran tu proceso creativo y pasión"
+        },
+        "eventsCorporateCoverage": {
+          "heading": "Eventos y Cobertura Corporativa",
+          "subheading": "Captura la Energía",
+          "description": "Ya sea una gala corporativa o un set de DJ de alta energía, documentamos la emoción y el ambiente de tus eventos con fotos y videos dinámicos"
+        },
+        "personalFashionPortraits": {
+          "heading": "Sesiones Personales y de Moda",
+          "subheading": "Audaz. Elegante. Tú.",
+          "description": "Posa o expresa tu esencia con retratos personales íntimos o sesiones de moda audaces"
+        },
+        "brandStoryTellingGastronomy": {
+          "heading": "Narración de Marca y Gastronomía",
+          "subheading": "Creado para Conectar",
+          "description": "Desde narrativas de marca convincentes hasta obras maestras culinarias, creamos visuales atractivos que cautivan a las audiencias, transformando productos en íconos y platillos en deseos"
+        },
+        "childrenStudioPortraits": {
+          "heading": "Retratos de Niños y de Estudio",
+          "subheading": "Alegría en Cada Sonrisa",
+          "description": "Desde la energía juguetona de la infancia hasta la elegancia atemporal de las sesiones de estudio, creamos retratos cálidos y profesionales que capturan personalidades y momentos clave"
+        }
+      },
+      "exploreOurPortfolioBtn": "Explora Nuestro Portafolio"
     }
   },
   "AboutUs": {
