@@ -57,32 +57,68 @@
         "weddingsQuinceañeras": {
           "heading": "Weddings & Quinceañeras",
           "subheading": "Unforgettable Celebrations made Timeless",
-          "description": "From heartfelt vows to vibrant quinceañera celebrations, we capture the love, color, and candid emotions of your unforgettable day with cinematic flair"
+          "description": "From heartfelt vows to vibrant quinceañera celebrations, we capture the love, color, and candid emotions of your unforgettable day with cinematic flair",
+          "images": {
+            "img1Description": "A newlywed couple embracing on the dance floor",
+            "img2Description": "A 15-year-old princess, crowned and glowing, holding her drink at her quinceañera celebration",
+            "img3Description": "Newlyweds sharing a kiss after exchanging vows",
+            "img4Description": "A crowned princess in an elegant dress at her quinceañera celebration"
+          }
         },
         "musicArtistsBTS": {
           "heading": "Music Artists & BTS",
           "subheading": "Your Sound, In Focus",
-          "description": "We collaborate with music artists to create striking behind-the-scenes footage and visuals that showcase your creative process and passion"
+          "description": "We collaborate with music artists to create striking behind-the-scenes footage and visuals that showcase your creative process and passion",
+          "images": {
+            "img1Description": "A candid collage capturing music artists enjoying a card game outside their garage",
+            "img2Description": "A vibrant behind-the-scenes shot of music artists and their crew striking poses before filming their music video",
+            "img3Description": "A captivating collage of a music artist performing on a music video set",
+            "img4Description": "A behind-the-scenes photo of music artists and their partners posing during a break from music video filming"
+          }
         },
         "eventsCorporateCoverage": {
           "heading": "Events & Corporate Coverage",
           "subheading": "Capture the Energy",
-          "description": "Whether it’s a corporate gala or a high-energy DJ set, we document the excitement and atmosphere of your events with dynamic photos and videos"
+          "description": "Whether it’s a corporate gala or a high-energy DJ set, we document the excitement and atmosphere of your events with dynamic photos and videos",
+          "images": {
+            "img1Description": "A DJ performing at a daytime DJ event",
+            "img2Description": "An employee confidently holding her drink at a corporate event",
+            "img3Description": "A DJ, passionately spinning tracks at a lively nightclub party",
+            "img4Description": "Group photo of all women employees at a corporate event"
+          }
         },
         "personalFashionPortraits": {
           "heading": "Personal & Fashion Shoots",
           "subheading": "Bold. Stylish. You.",
-          "description": "Strike a pose or express your essence with intimate personal portraits or bold fashion shoots"
+          "description": "Strike a pose or express your essence with intimate personal portraits or bold fashion shoots",
+          "images": {
+            "img1Description": "A woman enjoying an outdoor fashion photo shoot with her morning latte",
+            "img2Description": "A woman strikes a confident pose in a wonderful woolen jacket at a fashion show",
+            "img3Description": "A woman posing for a cover during a personal photoshoot at a car wash",
+            "img4Description": "A man modeling the back of his custom-designed t-shirt at a fashion fest"
+          }
         },
         "brandStoryTellingGastronomy": {
           "heading": "Brand Storytelling & Gastronomy",
           "subheading": "Crafted to Connect",
-          "description": "From compelling brand narratives to culinary masterpieces, we create compelling visuals that captivate audiences—turning products into icons and dishes into desire"
+          "description": "From compelling brand narratives to culinary masterpieces, we create compelling visuals that captivate audiences—turning products into icons and dishes into desire",
+          "images": {
+            "img1Description": "A golden lucky cat statue beside a vibrant sesame chicken dish, set against a scenic ocean view at a chic rooftop restaurant",
+            "img2Description": "A refreshing orange cocktail with lemon slice, elegantly presented on a sleek table with a scenic backdrop",
+            "img3Description": "An assortment of gourmet dishes, including crispy pork, savory tacos, and mini sliders, artfully arranged on a sophisticated marble table",
+            "img4Description": "A rich espresso martini with creamy foam and coffee beans, served on a stylish glass table"
+          }
         },
         "childrenStudioPortraits": {
           "heading": "Children & Studio Portraits",
           "subheading": "Joy in Every Smile",
-          "description": "From the playful energy of childhood to the timeless elegance of studio sessions, we create heartwarming and professional portraits that capture personalities and milestones"
+          "description": "From the playful energy of childhood to the timeless elegance of studio sessions, we create heartwarming and professional portraits that capture personalities and milestones",
+          "images": {
+            "img1Description": "A 3-month-old sleeps serenely on her hand, wrapped in a little fairy outfit for a tranquil childhood portrait",
+            "img2Description": "A portrait of a woman in a black top and jeans poses confidently with wavy hair and sunglasses against a clean backdrop",
+            "img3Description": "A joyful toddler in a yellow dress claps beside balloons and playful frog toy on her 1st birthday",
+            "img4Description": "A portrait of a man in a black shirt and gold chain stands confidently against a minimalist backdrop"
+          }
         }
       },
       "exploreOurPortfolioBtn": "Explore Our Portfolio"
