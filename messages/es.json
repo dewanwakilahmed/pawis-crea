@@ -56,33 +56,69 @@
       "services": {
         "weddingsQuinceañeras": {
           "heading": "Bodas y Quinceañeras",
-          "subheading": "Celebraciones Inolvidables Hechas Eternas",
-          "description": "Desde votos sinceros hasta vibrantes celebraciones de quinceañeras, capturamos el amor, el color y las emociones espontáneas de tu día inolvidable con un toque cinematográfico"
+          "subheading": "Celebraciones Inolvidables",
+          "description": "Desde votos sinceros hasta vibrantes celebraciones de quinceañeras, capturamos el amor, el color y las emociones espontáneas de tu día inolvidable con un toque cinematográfico",
+          "images": {
+            "img1Description": "Una pareja de recién casados abrazándose en la pista de baile",
+            "img2Description": "Una princesa de 15 años, coronada y radiante, sosteniendo su bebida en su celebración de quinceañera",
+            "img3Description": "Recién casados compartiendo un beso tras intercambiar votos",
+            "img4Description": "Una princesa coronada en un elegante vestido en su celebración de quinceañera"
+          }
         },
         "musicArtistsBTS": {
           "heading": "Artistas Musicales y BTS",
           "subheading": "Tu Sonido, en el Foco",
-          "description": "Colaboramos con artistas musicales para crear impactantes imágenes detrás de escena y visuales que muestran tu proceso creativo y pasión"
+          "description": "Colaboramos con artistas musicales para crear impactantes imágenes detrás de escena y visuales dinámicos que muestran tu proceso creativo, pasión y trayectoria artística",
+          "images": {
+            "img1Description": "Un collage espontáneo capturando a artistas musicales disfrutando de un juego de cartas fuera de su garaje",
+            "img2Description": "Una vibrante toma detrás de escena de artistas musicales y su equipo posando antes de filmar su video musical",
+            "img3Description": "Un collage cautivador de un artista musical actuando en el set de un video musical",
+            "img4Description": "Una foto detrás de escena de artistas musicales y sus compañeros posando durante una pausa en la filmación de un video musical"
+          }
         },
         "eventsCorporateCoverage": {
           "heading": "Eventos y Cobertura Corporativa",
           "subheading": "Captura la Energía",
-          "description": "Ya sea una gala corporativa o un set de DJ de alta energía, documentamos la emoción y el ambiente de tus eventos con fotos y videos dinámicos"
+          "description": "Ya sea una gala corporativa o un set de DJ de alta energía, documentamos la emoción, energía y ambiente de tus eventos con narrativa visual dinámica",
+          "images": {
+            "img1Description": "Un DJ actuando en un evento diurno de DJ",
+            "img2Description": "Una empleada sosteniendo su bebida con confianza en un evento corporativo",
+            "img3Description": "Un DJ girando pistas con pasión en una animada fiesta en un club nocturno",
+            "img4Description": "Foto grupal de todas las empleadas mujeres en un evento corporativo"
+          }
         },
         "personalFashionPortraits": {
           "heading": "Sesiones Personales y de Moda",
           "subheading": "Audaz. Elegante. Tú.",
-          "description": "Posa o expresa tu esencia con retratos personales íntimos o sesiones de moda audaces"
+          "description": "Posa y expresa tu esencia única a través de retratos personales íntimos y sesiones de moda audaces que celebran tu estilo individual y personalidad",
+          "images": {
+            "img1Description": "Una mujer disfrutando de una sesión de fotos de moda al aire libre con su café matutino",
+            "img2Description": "Una mujer posando con confianza en una chaqueta de lana maravillosa en un desfile de moda",
+            "img3Description": "Una mujer posando para una portada durante una sesión de fotos personal en un lavadero de autos",
+            "img4Description": "Un hombre modelando la parte trasera de su camiseta de diseño personalizado en un festival de moda"
+          }
         },
-        "brandStoryTellingGastronomy": {
-          "heading": "Narración de Marca y Gastronomía",
+        "brandStoryGastronomy": {
+          "heading": "Historia de Marca y Gastronomía",
           "subheading": "Creado para Conectar",
-          "description": "Desde narrativas de marca convincentes hasta obras maestras culinarias, creamos visuales atractivos que cautivan a las audiencias, transformando productos en íconos y platillos en deseos"
+          "description": "Desde narrativas de marca convincentes hasta obras maestras culinarias, creamos visuales cautivadores que conectan con audiencias—transformando productos en íconos y platillos en puro deseo",
+          "images": {
+            "img1Description": "Una estatua de gato de la suerte dorada junto a un vibrante plato de pollo al sésamo, ambientado con una vista escénica al océano en un elegante restaurante en la azotea",
+            "img2Description": "Un refrescante cóctel de naranja con una rodaja de limón, presentado elegantemente en una mesa elegante con un fondo escénico",
+            "img3Description": "Una variedad de platos gourmet, incluyendo cerdo crujiente, tacos sabrosos y mini hamburguesas, dispuestos artísticamente en una sofisticada mesa de mármol",
+            "img4Description": "Un rico martini de espresso con espuma cremosa y granos de café, servido en una elegante mesa de cristal"
+          }
         },
         "childrenStudioPortraits": {
           "heading": "Retratos de Niños y de Estudio",
           "subheading": "Alegría en Cada Sonrisa",
-          "description": "Desde la energía juguetona de la infancia hasta la elegancia atemporal de las sesiones de estudio, creamos retratos cálidos y profesionales que capturan personalidades y momentos clave"
+          "description": "Desde la energía juguetona de la infancia hasta la elegancia atemporal de estudio, creamos retratos cálidos y profesionales que capturan hermosamente personalidades, momentos clave y recuerdos preciosos",
+          "images": {
+            "img1Description": "Un bebé de 3 meses duerme serenamente sobre su mano, envuelto en un pequeño traje de hada para un retrato infantil tranquilo",
+            "img2Description": "Un retrato de una mujer en una camiseta negra y jeans posa con confianza con cabello ondulado y gafas de sol contra un fondo limpio",
+            "img3Description": "Un niño pequeño alegre en un vestido amarillo aplaude junto a globos y un juguete de rana juguetón en su primer cumpleaños",
+            "img4Description": "Un retrato de un hombre en una camiseta negra y cadena de oro posa con confianza contra un fondo minimalista"
+          }
         }
       },
       "exploreOurPortfolioBtn": "Explora Nuestro Portafolio"

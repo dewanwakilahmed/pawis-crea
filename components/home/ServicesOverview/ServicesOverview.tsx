@@ -5,6 +5,9 @@ import { Link } from "@/i18n/navigation";
 // CSS
 import "@/styles/home/services-overview.css";
 
+// Components
+import EmblaCarousel from "./EmblaCarousel";
+
 const ServicesOverview: FC = () => {
   const t_Section = useTranslations("Home.ServicesOverview");
   const t_Common = useTranslations("Common");
@@ -51,7 +54,7 @@ const ServicesOverview: FC = () => {
       description: t_Section("services.musicArtistsBTS.description"),
       images: [
         {
-          src: "/images/sections-img/services-overview/music-artists-bts/music-artists-bts-1.jpg",
+          src: "/images/sections-img/services-overview/music-artists-bts/music-artists-bts-1.png",
           alt: t_Section("services.musicArtistsBTS.images.img1Description"),
         },
         {
@@ -59,7 +62,7 @@ const ServicesOverview: FC = () => {
           alt: t_Section("services.musicArtistsBTS.images.img2Description"),
         },
         {
-          src: "/images/sections-img/services-overview/music-artists-bts/music-artists-bts-3.jpg",
+          src: "/images/sections-img/services-overview/music-artists-bts/music-artists-bts-3.png",
           alt: t_Section("services.musicArtistsBTS.images.img3Description"),
         },
         {
@@ -133,35 +136,33 @@ const ServicesOverview: FC = () => {
       ],
     },
     {
-      key: "brandStoryTellingGastronomy",
-      heading: t_Section("services.brandStoryTellingGastronomy.heading"),
-      subheading: t_Section("services.brandStoryTellingGastronomy.subheading"),
-      description: t_Section(
-        "services.brandStoryTellingGastronomy.description"
-      ),
+      key: "brandStoryGastronomy",
+      heading: t_Section("services.brandStoryGastronomy.heading"),
+      subheading: t_Section("services.brandStoryGastronomy.subheading"),
+      description: t_Section("services.brandStoryGastronomy.description"),
       images: [
         {
-          src: "/images/sections-img/services-overview/brand-storytelling-gastronomy/brand-storytelling-gastronomy-1.jpg",
+          src: "/images/sections-img/services-overview/brand-story-gastronomy/brand-story-gastronomy-1.jpg",
           alt: t_Section(
-            "services.brandStoryTellingGastronomy.images.img1Description"
+            "services.brandStoryGastronomy.images.img1Description"
           ),
         },
         {
-          src: "/images/sections-img/services-overview/brand-storytelling-gastronomy/brand-storytelling-gastronomy-2.jpg",
+          src: "/images/sections-img/services-overview/brand-story-gastronomy/brand-story-gastronomy-2.jpg",
           alt: t_Section(
-            "services.brandStoryTellingGastronomy.images.img2Description"
+            "services.brandStoryGastronomy.images.img2Description"
           ),
         },
         {
-          src: "/images/sections-img/services-overview/brand-storytelling-gastronomy/brand-storytelling-gastronomy-3.jpg",
+          src: "/images/sections-img/services-overview/brand-story-gastronomy/brand-story-gastronomy-3.jpg",
           alt: t_Section(
-            "services.brandStoryTellingGastronomy.images.img3Description"
+            "services.brandStoryGastronomy.images.img3Description"
           ),
         },
         {
-          src: "/images/sections-img/services-overview/brand-storytelling-gastronomy/brand-storytelling-gastronomy-4.jpg",
+          src: "/images/sections-img/services-overview/brand-story-gastronomy/brand-story-gastronomy-4.jpg",
           alt: t_Section(
-            "services.brandStoryTellingGastronomy.images.img4Description"
+            "services.brandStoryGastronomy.images.img4Description"
           ),
         },
       ],
@@ -214,10 +215,29 @@ const ServicesOverview: FC = () => {
         >
           {sectionHeading}
         </h2>
-
         <p className="services-overview-description">{sectionDescription}</p>
-
-        <div className="services-overview-services"></div>
+        <div className="services-overview-services">
+          {services.map((service) => (
+            <div
+              key={service.key}
+              className="service-item"
+              aria-labelledby={`${service.key}-heading`}
+            >
+              <EmblaCarousel
+                slides={[0, 1, 2, 3]}
+                options={{ loop: true, containScroll: false }}
+                images={service.images}
+              />
+              <div className="service-text">
+                <h3 id={`${service.key}-heading`} className="service-heading">
+                  {service.heading}
+                </h3>
+                <p className="service-subheading">{service.subheading}</p>
+                <p className="service-description">{service.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

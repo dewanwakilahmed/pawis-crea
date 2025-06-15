@@ -56,8 +56,8 @@
       "services": {
         "weddingsQuinceañeras": {
           "heading": "Weddings & Quinceañeras",
-          "subheading": "Unforgettable Celebrations made Timeless",
-          "description": "From heartfelt vows to vibrant quinceañera celebrations, we capture the love, color, and candid emotions of your unforgettable day with cinematic flair",
+          "subheading": "Unforgettable Celebrations",
+          "description": "We beautifully document the emotions, details, and joy of weddings and quinceañeras, blending cinematic visuals with authentic moments to preserve your most unforgettable celebrations",
           "images": {
             "img1Description": "A newlywed couple embracing on the dance floor",
             "img2Description": "A 15-year-old princess, crowned and glowing, holding her drink at her quinceañera celebration",
@@ -68,7 +68,7 @@
         "musicArtistsBTS": {
           "heading": "Music Artists & BTS",
           "subheading": "Your Sound, In Focus",
-          "description": "We collaborate with music artists to create striking behind-the-scenes footage and visuals that showcase your creative process and passion",
+          "description": "We team up with music artists to craft energetic behind-the-scenes visuals that spotlight your process, passion, and personality—putting your sound and story in full focus",
           "images": {
             "img1Description": "A candid collage capturing music artists enjoying a card game outside their garage",
             "img2Description": "A vibrant behind-the-scenes shot of music artists and their crew striking poses before filming their music video",
@@ -79,7 +79,7 @@
         "eventsCorporateCoverage": {
           "heading": "Events & Corporate Coverage",
           "subheading": "Capture the Energy",
-          "description": "Whether it’s a corporate gala or a high-energy DJ set, we document the excitement and atmosphere of your events with dynamic photos and videos",
+          "description": "From energetic parties to formal corporate galas, we capture your event's atmosphere and key moments with dynamic photography and video that brings the entire experience to life",
           "images": {
             "img1Description": "A DJ performing at a daytime DJ event",
             "img2Description": "An employee confidently holding her drink at a corporate event",
@@ -90,7 +90,7 @@
         "personalFashionPortraits": {
           "heading": "Personal & Fashion Shoots",
           "subheading": "Bold. Stylish. You.",
-          "description": "Strike a pose or express your essence with intimate personal portraits or bold fashion shoots",
+          "description": "Whether it’s bold fashion or an intimate portrait, our shoots empower you to express your unique style and story through visually striking and emotionally rich imagery",
           "images": {
             "img1Description": "A woman enjoying an outdoor fashion photo shoot with her morning latte",
             "img2Description": "A woman strikes a confident pose in a wonderful woolen jacket at a fashion show",
@@ -98,10 +98,10 @@
             "img4Description": "A man modeling the back of his custom-designed t-shirt at a fashion fest"
           }
         },
-        "brandStoryTellingGastronomy": {
-          "heading": "Brand Storytelling & Gastronomy",
+        "brandStoryGastronomy": {
+          "heading": "Brand Story & Gastronomy",
           "subheading": "Crafted to Connect",
-          "description": "From compelling brand narratives to culinary masterpieces, we create compelling visuals that captivate audiences—turning products into icons and dishes into desire",
+          "description": "We craft striking content that highlights your brand’s identity or culinary artistry—transforming products into icons and food into captivating, mouthwatering experiences",
           "images": {
             "img1Description": "A golden lucky cat statue beside a vibrant sesame chicken dish, set against a scenic ocean view at a chic rooftop restaurant",
             "img2Description": "A refreshing orange cocktail with lemon slice, elegantly presented on a sleek table with a scenic backdrop",
@@ -112,7 +112,7 @@
         "childrenStudioPortraits": {
           "heading": "Children & Studio Portraits",
           "subheading": "Joy in Every Smile",
-          "description": "From the playful energy of childhood to the timeless elegance of studio sessions, we create heartwarming and professional portraits that capture personalities and milestones",
+          "description": "With warmth and creativity, we create timeless portraits—whether playful childhood moments or elegant studio shots—that showcase authentic personalities and lasting memories",
           "images": {
             "img1Description": "A 3-month-old sleeps serenely on her hand, wrapped in a little fairy outfit for a tranquil childhood portrait",
             "img2Description": "A portrait of a woman in a black top and jeans poses confidently with wavy hair and sunglasses against a clean backdrop",
