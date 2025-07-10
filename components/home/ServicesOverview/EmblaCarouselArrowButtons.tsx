@@ -1,6 +1,7 @@
 "use client";
 
 import React, {
+  FC,
   ComponentPropsWithRef,
   useCallback,
   useEffect,
@@ -56,7 +57,7 @@ export const usePrevNextButtons = (
 
 type PropType = ComponentPropsWithRef<"button">;
 
-export const PrevButton: React.FC<PropType> = (props) => {
+export const PrevButton: FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return (
@@ -76,7 +77,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
   );
 };
 
-export const NextButton: React.FC<PropType> = (props) => {
+export const NextButton: FC<PropType> = (props) => {
   const { children, ...restProps } = props;
 
   return (

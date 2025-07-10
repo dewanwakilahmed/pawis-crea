@@ -1,4 +1,5 @@
 - Create Services Overview Section
+- Fix objectPosition sequence of slide images
 
 - Change Marriage to Wedding in OurPhotographyCollection
 - Recheck spanish translations
