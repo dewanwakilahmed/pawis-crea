@@ -125,7 +125,7 @@
     .section-heading {
       @apply text-xl
       pb-2.5
-      mb-5;
+      mb-6;
     }
 
     .section-heading::after {
