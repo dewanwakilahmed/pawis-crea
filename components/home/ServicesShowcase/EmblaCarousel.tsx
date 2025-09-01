@@ -4,7 +4,6 @@ import React, { FC, CSSProperties } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Fade from "embla-carousel-fade";
-import Autoplay from "embla-carousel-autoplay";
 import {
   NextButton,
   PrevButton,
@@ -28,15 +27,11 @@ type PropType = {
     };
   }[];
   options?: EmblaOptionsType;
-  delay: number;
 };
 
 const EmblaCarousel: FC<PropType> = (props) => {
-  const { slides, images, options, delay } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    Fade(),
-    Autoplay({ delay: delay, stopOnInteraction: true }),
-  ]);
+  const { slides, images, options } = props;
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Fade()]);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);

@@ -448,7 +448,6 @@ const ServicesShowcase: FC = () => {
                 slides={[0, 1, 2, 3]}
                 options={{ loop: true, containScroll: false }}
                 images={service.images}
-                delay={service.delay}
               />
               <div className="services-showcase__service-details">
                 <h3
