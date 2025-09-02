@@ -35,6 +35,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 60%",
             xxl: "50% 75%",
           },
+          width: 1600,
+          height: 2400,
         },
         {
           src: "/images/sections-img/services-showcase/weddings-quinceaneras/weddings-quinceaneras-2.webp",
@@ -50,6 +52,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 30%",
             xxl: "50% 35%",
           },
+          width: 1600,
+          height: 2400,
         },
         {
           src: "/images/sections-img/services-showcase/weddings-quinceaneras/weddings-quinceaneras-3.webp",
@@ -65,6 +69,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 37.5%",
             xxl: "50% 40%",
           },
+          width: 1600,
+          height: 2400,
         },
         {
           src: "/images/sections-img/services-showcase/weddings-quinceaneras/weddings-quinceaneras-4.webp",
@@ -80,9 +86,10 @@ const ServicesShowcase: FC = () => {
             xl: "50% 45%",
             xxl: "50% 50%",
           },
+          width: 1600,
+          height: 2400,
         },
       ],
-      delay: 3000,
     },
     {
       key: "musicArtistsBTS",
@@ -102,6 +109,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 50%",
             xxl: "50% 50%",
           },
+          width: 1179,
+          height: 2087,
         },
 
         {
@@ -116,6 +125,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 40%",
             xxl: "50% 45%",
           },
+          width: 1600,
+          height: 2400,
         },
         {
           src: "/images/sections-img/services-showcase/music-artists-bts/music-artists-bts-3.webp",
@@ -129,6 +140,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 50%",
             xxl: "50% 50%",
           },
+          width: 1179,
+          height: 2097,
         },
         {
           src: "/images/sections-img/services-showcase/music-artists-bts/music-artists-bts-4.webp",
@@ -142,9 +155,10 @@ const ServicesShowcase: FC = () => {
             xl: "60% 50%",
             xxl: "60% 50%",
           },
+          width: 1600,
+          height: 2400,
         },
       ],
-      delay: 3250,
     },
     {
       key: "eventsCorporateCoverage",
@@ -166,6 +180,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 15%",
             xxl: "50% 20%",
           },
+          width: 4000,
+          height: 6000,
         },
         {
           src: "/images/sections-img/services-showcase/events-corporate-coverage/events-corporate-coverage-2.webp",
@@ -181,6 +197,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 22.5%",
             xxl: "50% 25%",
           },
+          width: 4000,
+          height: 6000,
         },
         {
           src: "/images/sections-img/services-showcase/events-corporate-coverage/events-corporate-coverage-3.webp",
@@ -196,6 +214,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 50%",
             xxl: "50% 50%",
           },
+          width: 3072,
+          height: 4096,
         },
         {
           src: "/images/sections-img/services-showcase/events-corporate-coverage/events-corporate-coverage-4.webp",
@@ -211,9 +231,10 @@ const ServicesShowcase: FC = () => {
             xl: "50% 50%",
             xxl: "40% 50%",
           },
+          width: 6000,
+          height: 4000,
         },
       ],
-      delay: 3500,
     },
     {
       key: "personalFashionPortraits",
@@ -235,6 +256,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 62.5%",
             xxl: "50% 55%",
           },
+          width: 1080,
+          height: 1619,
         },
         {
           src: "/images/sections-img/services-showcase/personal-fashion-portraits/personal-fashion-portraits-2.webp",
@@ -250,6 +273,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 20%",
             xxl: "50% 22.5%",
           },
+          width: 1365,
+          height: 2048,
         },
         {
           src: "/images/sections-img/services-showcase/personal-fashion-portraits/personal-fashion-portraits-3.webp",
@@ -265,6 +290,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 85%",
             xxl: "50% 90%",
           },
+          width: 683,
+          height: 1024,
         },
         {
           src: "/images/sections-img/services-showcase/personal-fashion-portraits/personal-fashion-portraits-4.webp",
@@ -280,9 +307,10 @@ const ServicesShowcase: FC = () => {
             xl: "50% 50%",
             xxl: "50% 50%",
           },
+          width: 1600,
+          height: 1685,
         },
       ],
-      delay: 3750,
     },
     {
       key: "brandStoryGastronomy",
@@ -304,6 +332,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 100%",
             xxl: "50% 100%",
           },
+          width: 3024,
+          height: 4032,
         },
         {
           src: "/images/sections-img/services-showcase/brand-story-gastronomy/brand-story-gastronomy-2.webp",
@@ -319,6 +349,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 50%",
             xxl: "50% 50%",
           },
+          width: 4000,
+          height: 6000,
         },
         {
           src: "/images/sections-img/services-showcase/brand-story-gastronomy/brand-story-gastronomy-3.webp",
@@ -334,6 +366,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 30%",
             xxl: "50% 50%",
           },
+          width: 2400,
+          height: 1600,
         },
         {
           src: "/images/sections-img/services-showcase/brand-story-gastronomy/brand-story-gastronomy-4.webp",
@@ -349,9 +383,10 @@ const ServicesShowcase: FC = () => {
             xl: "50% 80%",
             xxl: "50% 80%",
           },
+          width: 1600,
+          height: 2208,
         },
       ],
-      delay: 4000,
     },
     {
       key: "childrenStudioPortraits",
@@ -373,6 +408,8 @@ const ServicesShowcase: FC = () => {
             xl: "80% 50%",
             xxl: "80% 50%",
           },
+          width: 2400,
+          height: 1600,
         },
         {
           src: "/images/sections-img/services-showcase/children-studio-portraits/children-studio-portraits-2.webp",
@@ -388,6 +425,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 5%",
             xxl: "50% 5%",
           },
+          width: 1600,
+          height: 2400,
         },
         {
           src: "/images/sections-img/services-showcase/children-studio-portraits/children-studio-portraits-3.webp",
@@ -403,6 +442,8 @@ const ServicesShowcase: FC = () => {
             xl: "50% 65%",
             xxl: "50% 67.5%",
           },
+          width: 1600,
+          height: 2400,
         },
         {
           src: "/images/sections-img/services-showcase/children-studio-portraits/children-studio-portraits-4.webp",
@@ -418,9 +459,10 @@ const ServicesShowcase: FC = () => {
             xl: "50% 5%",
             xxl: "50% 5%",
           },
+          width: 1984,
+          height: 2976,
         },
       ],
-      delay: 4250,
     },
   ];
   const exploreOurPortfolioBtn = t_Section("exploreOurPortfolioBtn");
@@ -442,12 +484,13 @@ const ServicesShowcase: FC = () => {
             <div
               key={service.key}
               className="services-showcase__service"
-              aria-labelledby={`${service.key}-name`}
+              aria-labelledby={`${service.name} Service`}
             >
               <EmblaCarousel
                 slides={[0, 1, 2, 3]}
                 options={{ loop: true, containScroll: false }}
                 images={service.images}
+                ariaLabel={`Slide show for ${service.name}`}
               />
               <div className="services-showcase__service-details">
                 <h3

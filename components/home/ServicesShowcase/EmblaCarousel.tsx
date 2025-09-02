@@ -1,9 +1,11 @@
 "use client";
 
 import React, { FC, CSSProperties } from "react";
+import Image from "next/image";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Fade from "embla-carousel-fade";
+import Autoplay from "embla-carousel-autoplay";
 import {
   NextButton,
   PrevButton,
@@ -16,6 +18,8 @@ type PropType = {
   images: {
     src: string;
     alt: string;
+    width: number;
+    height: number;
     objectPosition?: {
       default: string;
       xs?: string;
@@ -27,11 +31,15 @@ type PropType = {
     };
   }[];
   options?: EmblaOptionsType;
+  ariaLabel?: string;
 };
 
 const EmblaCarousel: FC<PropType> = (props) => {
-  const { slides, images, options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Fade()]);
+  const { slides, images, options, ariaLabel } = props;
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    Fade(),
+    Autoplay({ delay: 3500, stopOnInteraction: true }),
+  ]);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
@@ -43,15 +51,17 @@ const EmblaCarousel: FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <div className="carousel">
+    <div className="carousel" role="region" aria-label={ariaLabel}>
       <div className="carousel__viewport" ref={emblaRef}>
         <div className="carousel__track">
           {slides.map((index) => (
             <div className="carousel__slide" key={index}>
-              <img
+              <Image
                 className="carousel__slide-img"
                 src={images[index].src}
                 alt={images[index].alt}
+                width={images[index].width}
+                height={images[index].height}
                 style={
                   images[index].objectPosition
                     ? ({
