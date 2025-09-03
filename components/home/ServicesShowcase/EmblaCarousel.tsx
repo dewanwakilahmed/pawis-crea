@@ -19,14 +19,14 @@ type PropType = {
     alt: string;
     width: number;
     height: number;
-    objectPosition?: {
+    objectPosition: {
+      xs: string;
       default: string;
-      xs?: string;
-      sm?: string;
-      md?: string;
-      lg?: string;
-      xl?: string;
-      xxl?: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      xxl: string;
     };
   }[];
   options?: EmblaOptionsType;

@@ -57,9 +57,8 @@
   flex-col
   border
   border-neutral-50/10
-  transition-all 
-  duration-700 
-  ease-out
+  transition
+  relative
   hover:bg-neutral-50/10
   hover:border-neutral-50/20
   hover:shadow-neutral-50/10
@@ -406,6 +405,20 @@
 }
 
 @media (max-width: 355px) {
+  .services-showcase__intro {
+    @apply text-xs
+    mb-7
+    py-1.5;
+  }
+
+  .services-showcase__services {
+    @apply gap-4;
+  }
+
+  .carousel__slide-img {
+    @apply h-60;
+  }
+
   .carousel__controls {
     @apply mt-3
     px-4;
@@ -431,10 +444,13 @@
     h-0.5;
   }
 
-  .services-showcase__intro {
-    @apply text-xs
-    mb-7
-    py-1.5;
+  .carousel__slide-img {
+    @apply h-60;
+
+    object-position: var(
+      --object-position-xs,
+      var(--object-position-default, 50% 50%)
+    );
   }
 
   .services-showcase__service-details {
@@ -453,15 +469,6 @@
   .services-showcase__service-summary {
     @apply mt-2.5
     text-xs;
-  }
-
-  .carousel__slide-img {
-    @apply h-60;
-
-    object-position: var(
-      --object-position-xs,
-      var(--object-position-default, 50% 50%)
-    );
   }
 
   .services-showcase__actions {
