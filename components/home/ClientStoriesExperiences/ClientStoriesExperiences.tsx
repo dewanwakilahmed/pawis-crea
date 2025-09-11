@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import EmblaCarousel from "./EmblaCarousel";
 
-// CSS
 import "@/styles/home/client-stories-experiences.css";
 
 const ClientStoriesExperiences: FC = () => {
@@ -65,15 +65,12 @@ const ClientStoriesExperiences: FC = () => {
           {sectionTitle}
         </h2>
         <p className="client-stories-experiences__intro">{sectionIntro}</p>
-        <div className="client-stories-experience__clent-stories">
-          {clientStoriesData.map((clientStory, index) => (
-            <div
-              key={index}
-              className="client-storie-experience__client-story"
-              aria-labelledby={`Story of ${clientStory.clientInfo}`}
-            ></div>
-          ))}
-        </div>
+        <EmblaCarousel
+          slides={[0, 1, 2, 3]}
+          options={{ loop: true, containScroll: false }}
+          clientStoriesData={clientStoriesData}
+          ariaLabel="Client Stories Slideshow"
+        />
       </div>
     </section>
   );

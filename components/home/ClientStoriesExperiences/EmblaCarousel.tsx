@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
@@ -7,14 +9,26 @@ import {
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
+import Image from "next/image";
+
+type ClientStoryType = {
+  imgSrc: string;
+  imgWidth: number;
+  imgHeight: number;
+  imgAlt: string;
+  testimonial: string;
+  clientInfo: string;
+};
 
 type PropType = {
   slides: number[];
   options?: EmblaOptionsType;
+  clientStoriesData: ClientStoryType[];
+  ariaLabel: string;
 };
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+  const { slides, options, clientStoriesData, ariaLabel } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -28,14 +42,35 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <section className="embla">
+    <section className="embla" aria-label={ariaLabel}>
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">{index + 1}</div>
-            </div>
-          ))}
+          {slides.map((index) => {
+            const story = clientStoriesData[index];
+            return (
+              <div className="embla__slide" key={index}>
+                <div className="embla__slide__content">
+                  <div className="embla__slide__image">
+                    <Image
+                      src={story.imgSrc}
+                      width={story.imgWidth}
+                      height={story.imgHeight}
+                      alt={story.imgAlt}
+                      className="embla__slide__img"
+                    />
+                  </div>
+                  <div className="embla__slide__details">
+                    <blockquote className="embla__slide__testimonial">
+                      {story.testimonial}
+                    </blockquote>
+                    <cite className="embla__slide__client-info">
+                      {story.clientInfo}
+                    </cite>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
