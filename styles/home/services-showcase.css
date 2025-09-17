@@ -85,15 +85,15 @@
   bg-gradient-to-r from-transparent via-pink-400/30 to-transparent;
 }
 
-.carousel {
+.services-showcase-carousel {
   @apply w-full;
 }
 
-.carousel__viewport {
+.services-showcase-carousel__viewport {
   @apply overflow-hidden;
 }
 
-.carousel__track {
+.services-showcase-carousel__track {
   @apply flex;
 }
 

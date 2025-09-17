@@ -71,7 +71,7 @@ const Carousel: FC<CarouselPropsType> = (props) => {
   return (
     <div className={`${section}-carousel`} role="region" aria-label={ariaLabel}>
       <div className={`${section}-carousel__viewport`} ref={emblaRef}>
-        <div className="carousel__track">
+        <div className={`${section}-carousel__track`}>
           {section === "services-showcase" &&
             slides.map((index) => (
               <div className="service__slide" key={index}>
