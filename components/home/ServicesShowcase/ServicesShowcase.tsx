@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 import "@/styles/home/services-showcase.css";
 
 // Components
-import EmblaCarousel from "./EmblaCarousel";
+import Carousel from "../../CommonComponents/Carousel";
 
 const ServicesShowcase: FC = () => {
   const t_Section = useTranslations("Home.ServicesShowcase");

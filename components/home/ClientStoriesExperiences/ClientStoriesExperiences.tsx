@@ -1,9 +1,12 @@
 import React, { FC } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import EmblaCarousel from "./EmblaCarousel";
 
+// CSS
 import "@/styles/home/client-stories-experiences.css";
+
+// Components
+import Carousel from "../../CommonComponents/Carousel";
 
 const ClientStoriesExperiences: FC = () => {
   const t_Section = useTranslations("Home.ClientStoriesExperiences");
@@ -14,39 +17,39 @@ const ClientStoriesExperiences: FC = () => {
 
   const clientStoriesData = [
     {
-      imgSrc:
+      clientImgSrc:
         "/images/sections-img/client-stories-experiences/marriage-testimonial.jpg",
-      imgWidth: 1600,
-      imgHeight: 2400,
-      imgAlt: t_Section("clientStories.0.imgDescription"),
-      testimonial: t_Section("clientStories.0.testimonial"),
+      clientImgWidth: 1600,
+      clientImgHeight: 2400,
+      clientImgDesc: t_Section("clientStories.0.imgDesc"),
+      clientTestimonial: t_Section("clientStories.0.testimonial"),
       clientInfo: t_Section("clientStories.0.clientInfo"),
     },
     {
-      imgSrc:
+      clientImgSrc:
         "/images/sections-img/client-stories-experiences/quinceanera-testimonial.jpg",
-      imgWidth: 6000,
-      imgHeight: 4000,
-      imgAlt: t_Section("clientStories.1.imgDescription"),
-      testimonial: t_Section("clientStories.1.testimonial"),
+      clientImgWidth: 6000,
+      clientImgHeight: 4000,
+      clientImgDesc: t_Section("clientStories.1.imgDesc"),
+      clientTestimonial: t_Section("clientStories.1.testimonial"),
       clientInfo: t_Section("clientStories.1.clientInfo"),
     },
     {
-      imgSrc:
+      clientImgSrc:
         "/images/sections-img/client-stories-experiences/event-coverage-testimonial.jpg",
-      imgWidth: 4000,
-      imgHeight: 6000,
-      imgAlt: t_Section("clientStories.2.imgDescription"),
-      testimonial: t_Section("clientStories.2.testimonial"),
+      clientImgWidth: 4000,
+      clientImgHeight: 6000,
+      clientImgDesc: t_Section("clientStories.2.imgDesc"),
+      clientTestimonial: t_Section("clientStories.2.testimonial"),
       clientInfo: t_Section("clientStories.2.clientInfo"),
     },
     {
-      imgSrc:
+      clientImgSrc:
         "/images/sections-img/client-stories-experiences/personal-testimonial.jpg",
-      imgWidth: 4000,
-      imgHeight: 6000,
-      imgAlt: t_Section("clientStories.3.imgDescription"),
-      testimonial: t_Section("clientStories.3.testimonial"),
+      clientImgWidth: 4000,
+      clientImgHeight: 6000,
+      clientImgDesc: t_Section("clientStories.3.imgDesc"),
+      clientTestimonial: t_Section("clientStories.3.testimonial"),
       clientInfo: t_Section("clientStories.3.clientInfo"),
     },
   ];
@@ -65,11 +68,12 @@ const ClientStoriesExperiences: FC = () => {
           {sectionTitle}
         </h2>
         <p className="client-stories-experiences__intro">{sectionIntro}</p>
-        <EmblaCarousel
+        <Carousel
           slides={[0, 1, 2, 3]}
           options={{ loop: true, containScroll: false }}
           clientStoriesData={clientStoriesData}
           ariaLabel="Client Stories Slideshow"
+          section="client-stories-experiences"
         />
       </div>
     </section>

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { FC, CSSProperties } from "react";
-import Image from "next/image";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Fade from "embla-carousel-fade";
@@ -11,6 +10,7 @@ import {
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButtons";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
+import Image from "next/image";
 
 type PropType = {
   slides: number[];
@@ -104,6 +104,7 @@ const EmblaCarousel: FC<PropType> = (props) => {
           ))}
         </div>
       </div>
+
       <div className="carousel__controls">
         <div className="carousel__arrow-btns">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />

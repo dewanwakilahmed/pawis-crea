@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { FC } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 import {
@@ -27,7 +27,7 @@ type PropType = {
   ariaLabel: string;
 };
 
-const EmblaCarousel: React.FC<PropType> = (props) => {
+const EmblaCarousel: FC<PropType> = (props) => {
   const { slides, options, clientStoriesData, ariaLabel } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
@@ -59,6 +59,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                       className="embla__slide__img"
                     />
                   </div>
+
                   <div className="embla__slide__details">
                     <blockquote className="embla__slide__testimonial">
                       {story.testimonial}
