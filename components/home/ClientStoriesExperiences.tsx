@@ -6,7 +6,7 @@ import { Link } from "@/i18n/navigation";
 import "@/styles/home/client-stories-experiences.css";
 
 // Components
-import Carousel from "../../CommonComponents/Carousel";
+import Carousel from "../CommonComponents/Carousel";
 
 const ClientStoriesExperiences: FC = () => {
   const t_Section = useTranslations("Home.ClientStoriesExperiences");

@@ -51,7 +51,7 @@ const Carousel: FC<CarouselPropsType> = (props) => {
 
   const carouselPlugins = [];
 
-  if (section !== "services-showcase") {
+  if (section == "services-showcase") {
     carouselPlugins.push(Fade());
   }
 

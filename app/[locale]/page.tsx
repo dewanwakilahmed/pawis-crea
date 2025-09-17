@@ -4,8 +4,8 @@ import { routing } from "@/i18n/routing";
 
 // Sections
 import HomeHero from "@/components/home/HomeHero";
-import ServicesShowcase from "@/components/home/ServicesShowcase/ServicesShowcase";
-import ClientStoriesExperiences from "@/components/home/ClientStoriesExperiences/ClientStoriesExperiences";
+import ServicesShowcase from "@/components/home/ServicesShowcase";
+import ClientStoriesExperiences from "@/components/home/ClientStoriesExperiences";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
