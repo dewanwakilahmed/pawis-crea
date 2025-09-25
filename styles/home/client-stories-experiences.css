@@ -106,7 +106,8 @@
 }
 
 .client-stories-experiences-carousel {
-  @apply w-full;
+  @apply w-full
+  relative;
 }
 
 .client-stories-experiences-carousel__viewport {
@@ -120,7 +121,15 @@
 
 .client-story__slide {
   @apply w-full 
-  flex-shrink-0 
+  flex-shrink-0;
+}
+
+.client-story__content {
+  @apply grid
+  grid-cols-[3fr_5fr]
+  items-center
+  max-w-[60rem]
+  mx-auto
   py-8 
   lg:py-12 
   px-4 
@@ -132,14 +141,6 @@
   border-[rgba(236,72,153,0.2)] 
   shadow-[0_8px_32px_rgba(0,0,0,0.3)] 
   bg-[linear-gradient(135deg,rgba(236,72,153,0.08)_0%,rgba(236,72,153,0.03)_30%,rgba(17,24,39,0.15)_70%,rgba(236,72,153,0.08)_100%)];
-}
-
-.client-story__content {
-  @apply grid
-  grid-cols-[3fr_5fr]
-  items-center
-  max-w-[60rem]
-  mx-auto;
 }
 
 .client-story__image {
@@ -310,7 +311,6 @@
   flex
   items-center
   justify-between
-  relative
   max-w-4xl
   mx-auto;
 }
@@ -336,10 +336,8 @@
   lg:h-11
   border
   border-pink-400/30
-  relative
   overflow-hidden
-  transition-all
-  duration-300;
+  transition;
 }
 
 .client-stories-experiences-carousel__arrow-btns
@@ -350,8 +348,7 @@
   p-px
   rounded-lg
   opacity-0
-  transition-opacity
-  duration-300;
+  transition;
   background: linear-gradient(
     45deg,
     rgba(236, 72, 153, 0.8) 0%,
@@ -384,9 +381,14 @@
   h-4
   lg:h-5
   text-pink-400
-  relative
   z-10;
   filter: drop-shadow(0 0 5px rgba(236, 72, 153, 0.8));
+}
+
+.client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn--prev {
+}
+
+.client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn--next {
 }
 
 .client-stories-experiences-carousel__dot-btns {
@@ -402,8 +404,7 @@
   lg:w-7
   h-1.5
   cursor-pointer
-  transition-all
-  duration-300;
+  transition;
 }
 
 .client-stories-experiences-carousel__dot-btns > .carousel__dot-btn--selected {
