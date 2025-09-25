@@ -94,12 +94,13 @@
 }
 
 .services-showcase-carousel__track {
-  @apply flex;
+  @apply flex
+  flex-row;
 }
 
 .service__slide {
-  @apply flex-shrink-0 
-  w-full;
+  @apply w-full
+  flex-shrink-0;
 }
 
 .service__slide-img {

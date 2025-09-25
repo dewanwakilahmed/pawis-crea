@@ -12,6 +12,9 @@ import {
 import { DotButton, useDotButton } from "./CarouselDotButton";
 import Image from "next/image";
 
+// Icons
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
+
 // For Client Stories Experiences Section Carousels Only
 type ClientStoryType = {
   clientImgSrc: string;
@@ -124,7 +127,7 @@ const Carousel: FC<CarouselPropsType> = (props) => {
 
                     <div className="client-story__details">
                       <blockquote className="client-story__testimonial">
-                        {story.clientTestimonial}
+                        "{story.clientTestimonial}"
                       </blockquote>
                       <cite className="client-story__client-info">
                         {story.clientInfo}
