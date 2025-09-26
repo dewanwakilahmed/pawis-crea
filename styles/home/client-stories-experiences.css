@@ -128,7 +128,7 @@
   @apply grid
   grid-cols-[3fr_5fr]
   items-center
-  max-w-[60rem]
+  max-w-5xl
   mx-auto
   py-8 
   lg:py-12 
@@ -250,6 +250,137 @@
   bg-gradient-to-r from-transparent via-pink-500 to-transparent;
 }
 
+.client-stories-experiences-carousel__controls {
+  @apply absolute
+  inset-0
+  pointer-events-none;
+}
+
+.client-stories-experiences-carousel__arrow-btns {
+  @apply absolute
+  top-1/2
+  -translate-y-1/2
+  left-0
+  right-0
+  flex
+  justify-between;
+}
+
+.client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn {
+  @apply bg-neutral-900/50
+  backdrop-blur-md
+  rounded-lg
+  p-2.5
+  lg:p-3
+  flex
+  items-center
+  justify-center
+  w-10
+  lg:w-12
+  h-10
+  lg:h-12
+  border
+  border-pink-400/40
+  transition
+  pointer-events-auto
+  relative
+  overflow-hidden;
+}
+
+.client-stories-experiences-carousel__arrow-btns
+  > .carousel__arrow-btn::before {
+  content: "";
+  @apply absolute
+  inset-0
+  bg-gradient-to-br
+  from-pink-400/20
+  to-transparent
+  opacity-0
+  transition;
+}
+
+.client-stories-experiences-carousel__arrow-btns
+  > .carousel__arrow-btn:hover:not(:disabled)::before {
+  @apply opacity-100;
+}
+
+.client-stories-experiences-carousel__arrow-btns
+  > .carousel__arrow-btn:hover:not(:disabled) {
+  @apply bg-pink-400/30
+  border-pink-400/70;
+  box-shadow: 0 0 40px rgba(236, 72, 153, 0.5), 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+
+.client-stories-experiences-carousel__arrow-btns
+  > .carousel__arrow-btn:disabled {
+  @apply opacity-30
+  cursor-not-allowed
+  border-gray-700/50;
+  box-shadow: none;
+}
+
+.client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn__svg {
+  @apply w-5
+  lg:w-6
+  h-5
+  lg:h-6
+  text-pink-300
+  relative
+  z-10;
+  filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.6));
+}
+
+.client-stories-experiences-carousel__dot-btns {
+  @apply absolute
+  -bottom-4
+  lg:-bottom-5
+  left-1/2
+  -translate-x-1/2
+  translate-y-full
+  flex
+  gap-3
+  lg:gap-4
+  bg-black/60
+  backdrop-blur-xl
+  rounded-lg
+  px-6
+  lg:px-8
+  py-3
+  lg:py-4
+  border
+  border-pink-400/25
+  pointer-events-auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.client-stories-experiences-carousel__dot-btns > .carousel__dot-btn {
+  @apply w-3
+  lg:w-3.5
+  h-3
+  lg:h-3.5
+  rounded-lg
+  bg-gray-500/60
+  cursor-pointer
+  transition;
+}
+
+.client-stories-experiences-carousel__dot-btns > .carousel__dot-btn--selected {
+  @apply bg-pink-400
+  w-8
+  lg:w-10;
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.7);
+}
+
+.client-stories-experiences-carousel__dot-btns
+  > .carousel__dot-btn:hover:not(.carousel__dot-btn--selected) {
+  @apply bg-pink-300/70;
+}
+
+.client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn:focus,
+.client-stories-experiences-carousel__dot-btns > .carousel__dot-btn:focus {
+  @apply outline-none;
+}
+
 @media (max-width: 355px) {
   .client-stories-experiences__title {
     @apply text-xl
@@ -300,123 +431,32 @@
     text-[0.65rem]
     tracking-[0.2em];
   }
-}
 
-/* 10 - GEMINI */
-.client-stories-experiences-carousel__controls {
-  @apply mt-6
-  lg:mt-8
-  px-4
-  lg:px-6
-  flex
-  items-center
-  justify-between
-  max-w-4xl
-  mx-auto;
-}
+  .client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn {
+    @apply p-2
+    w-8
+    h-8;
+  }
 
-.client-stories-experiences-carousel__arrow-btns {
-  @apply flex
-  gap-3
-  lg:gap-4;
-}
+  .client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn__svg {
+    @apply w-4
+    h-4;
+  }
 
-.client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn {
-  @apply bg-neutral-900/50
-  backdrop-blur-md
-  rounded-lg
-  p-2.5
-  lg:p-3
-  flex
-  items-center
-  justify-center
-  w-10
-  lg:w-11
-  h-10
-  lg:h-11
-  border
-  border-pink-400/30
-  overflow-hidden
-  transition;
-}
+  .client-stories-experiences-carousel__dot-btns {
+    @apply -bottom-3
+    gap-2
+    px-4
+    py-1.5;
+  }
 
-.client-stories-experiences-carousel__arrow-btns
-  > .carousel__arrow-btn::before {
-  content: "";
-  @apply absolute
-  inset-0
-  p-px
-  rounded-lg
-  opacity-0
-  transition;
-  background: linear-gradient(
-    45deg,
-    rgba(236, 72, 153, 0.8) 0%,
-    rgba(236, 72, 153, 0.1) 50%,
-    rgba(236, 72, 153, 0.8) 100%
-  );
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  box-shadow: 0 0 15px rgba(236, 72, 153, 0.6);
-}
+  .client-stories-experiences-carousel__dot-btns > .carousel__dot-btn {
+    @apply w-2.5
+    h-2.5;
+  }
 
-.client-stories-experiences-carousel__arrow-btns
-  > .carousel__arrow-btn:hover:not(:disabled)::before {
-  @apply opacity-100;
-}
-
-.client-stories-experiences-carousel__arrow-btns
-  > .carousel__arrow-btn:disabled {
-  @apply opacity-30
-  cursor-not-allowed
-  border-gray-700/50
-  shadow-none;
-}
-
-.client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn__svg {
-  @apply w-4
-  lg:w-5
-  h-4
-  lg:h-5
-  text-pink-400
-  z-10;
-  filter: drop-shadow(0 0 5px rgba(236, 72, 153, 0.8));
-}
-
-.client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn--prev {
-}
-
-.client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn--next {
-}
-
-.client-stories-experiences-carousel__dot-btns {
-  @apply flex
-  gap-2.5
-  lg:gap-3;
-}
-
-.client-stories-experiences-carousel__dot-btns > .carousel__dot-btn {
-  @apply bg-gray-500/50
-  rounded-sm
-  w-6
-  lg:w-7
-  h-1.5
-  cursor-pointer
-  transition;
-}
-
-.client-stories-experiences-carousel__dot-btns > .carousel__dot-btn--selected {
-  @apply bg-pink-400;
-  box-shadow: 0 0 10px rgba(236, 72, 153, 0.7);
-}
-
-.client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn:focus,
-.client-stories-experiences-carousel__dot-btns > .carousel__dot-btn:focus {
-  @apply outline-none
-  ring-1
-  ring-pink-400/80
-  ring-offset-2
-  ring-offset-neutral-900;
+  .client-stories-experiences-carousel__dot-btns
+    > .carousel__dot-btn--selected {
+    @apply w-6;
+  }
 }
