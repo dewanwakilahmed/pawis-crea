@@ -126,7 +126,8 @@
 
 .client-story__content {
   @apply grid
-  grid-cols-[3fr_5fr]
+  grid-cols-1
+  lg:grid-cols-[3fr_5fr]
   items-center
   max-w-5xl
   mx-auto
@@ -267,11 +268,11 @@
 }
 
 .client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn {
-  @apply bg-neutral-900/50
+  @apply bg-neutral-900/70
   backdrop-blur-md
-  rounded-lg
-  p-2.5
-  lg:p-3
+  rounded-none
+  p-3
+  lg:p-4
   flex
   items-center
   justify-center
@@ -279,36 +280,21 @@
   lg:w-12
   h-10
   lg:h-12
-  border
-  border-pink-400/40
+  border-y
+  border-x-0
+  border-pink-400/50 
   transition
   pointer-events-auto
   relative
   overflow-hidden;
-}
-
-.client-stories-experiences-carousel__arrow-btns
-  > .carousel__arrow-btn::before {
-  content: "";
-  @apply absolute
-  inset-0
-  bg-gradient-to-br
-  from-pink-400/20
-  to-transparent
-  opacity-0
-  transition;
-}
-
-.client-stories-experiences-carousel__arrow-btns
-  > .carousel__arrow-btn:hover:not(:disabled)::before {
-  @apply opacity-100;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .client-stories-experiences-carousel__arrow-btns
   > .carousel__arrow-btn:hover:not(:disabled) {
-  @apply bg-pink-400/30
-  border-pink-400/70;
-  box-shadow: 0 0 40px rgba(236, 72, 153, 0.5), 0 4px 25px rgba(0, 0, 0, 0.4);
+  @apply bg-pink-400/20 
+  border-pink-400/90;
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .client-stories-experiences-carousel__arrow-btns
@@ -324,10 +310,10 @@
   lg:w-6
   h-5
   lg:h-6
-  text-pink-300
+  text-gray-50
   relative
   z-10;
-  filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.6));
+  filter: drop-shadow(0 0 6px rgba(236, 72, 153, 0.8));
 }
 
 .client-stories-experiences-carousel__dot-btns {
@@ -340,17 +326,18 @@
   flex
   gap-3
   lg:gap-4
-  bg-black/60
-  backdrop-blur-xl
-  rounded-lg
+  bg-gradient-to-t from-black/80 to-black/30 
+  backdrop-blur-sm
+  rounded-full
   px-6
   lg:px-8
   py-3
   lg:py-4
-  border
-  border-pink-400/25
+  border-t
+  border-b
+  border-pink-400/20
   pointer-events-auto;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
 }
 
 .client-stories-experiences-carousel__dot-btns > .carousel__dot-btn {
@@ -358,27 +345,31 @@
   lg:w-3.5
   h-3
   lg:h-3.5
-  rounded-lg
-  bg-gray-500/60
+  bg-gray-600/80
   cursor-pointer
   transition;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
 .client-stories-experiences-carousel__dot-btns > .carousel__dot-btn--selected {
   @apply bg-pink-400
-  w-8
-  lg:w-10;
-  box-shadow: 0 0 15px rgba(236, 72, 153, 0.7);
+  transform
+  scale-125;
+  box-shadow: 0 0 15px rgba(236, 72, 153, 1);
 }
 
 .client-stories-experiences-carousel__dot-btns
   > .carousel__dot-btn:hover:not(.carousel__dot-btn--selected) {
-  @apply bg-pink-300/70;
+  @apply bg-pink-300/60;
 }
 
 .client-stories-experiences-carousel__arrow-btns > .carousel__arrow-btn:focus,
 .client-stories-experiences-carousel__dot-btns > .carousel__dot-btn:focus {
-  @apply outline-none;
+  @apply outline-none
+  ring-1
+  ring-pink-400/80
+  ring-offset-2
+  ring-offset-neutral-900;
 }
 
 @media (max-width: 355px) {
@@ -453,10 +444,5 @@
   .client-stories-experiences-carousel__dot-btns > .carousel__dot-btn {
     @apply w-2.5
     h-2.5;
-  }
-
-  .client-stories-experiences-carousel__dot-btns
-    > .carousel__dot-btn--selected {
-    @apply w-6;
   }
 }
