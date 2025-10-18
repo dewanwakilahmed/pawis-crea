@@ -12,9 +12,6 @@ import {
 import { DotButton, useDotButton } from "./CarouselDotButton";
 import Image from "next/image";
 
-// Icons
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
-
 // For Client Stories Experiences Section Carousels Only
 type ClientStoryType = {
   clientImgSrc: string;

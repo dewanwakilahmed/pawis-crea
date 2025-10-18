@@ -124,27 +124,27 @@
       "exploreOurPortfolioBtn": "Explore Our Portfolio"
     },
     "ClientStoriesExperiences": {
-      "sectionTitle": "Stories from Our Lens - What Our Clients Say",
-      "sectionIntro": "Real experiences from the people who trusted us to capture their most precious moments and boldest visions",
+      "sectionTitle": "Moments That Matter - Stories from Our Clients",
+      "sectionIntro": "Don't just take our word for it. Discover the experiences of those who entrusted us with their most important moments. Their stories are the heart of what we do",
       "clientStories": [
         {
-          "imgDesc": "Newly wed husband and wife holding each other at a wedding ceremony",
-          "testimonial": "Pawis Crea captured every tear, laugh, and dance at our wedding. The photos and video feel like reliving the day—pure magic!",
+          "imgDesc": "Joyful newlywed couple embracing, captured in a warm, candid moment",
+          "testimonial": "Every single moment was captured beautifully—from the quiet tears during our vows to the wild energy on the dance floor. Looking through our album feels like stepping back into the best day of our lives",
           "clientInfo": "Maria & Juan | Newlyweds | Panama City | Wedding Ceremony"
         },
         {
-          "imgDesc": "A girl in the middle with her parents at her quincenera celebration",
-          "testimonial": "From my grand entrance to the last dance, Pawis Crea made my quinceañera feel like a fairy tale. Every photo captures the joy and elegance of my special day!",
+          "imgDesc": "Smiling quinceañera posing in her elegant gown with her parents at her celebration",
+          "testimonial": "They made me feel like a princess from start to finish. The way they captured my entrance, the traditions, and all those little moments with my family—it's everything I dreamed of and more",
           "clientInfo": "Sofia Martinez | Quinceañera | San Miguelito | Quinceañera Celebration"
         },
         {
-          "imgDesc": "An office girl in her party attire holding her drink at an office party",
-          "testimonial": "Pawis Crea transformed our corporate event into something truly memorable. They captured the professional atmosphere while highlighting the genuine connections between our team!",
+          "imgDesc": "A stylish professional woman in festive attire, joyfully raising her glass at a lively corporate gathering",
+          "testimonial": "Pawis Crea elevated our company gala with professional, engaging coverage that showcased our brand's energy and our team's spirit. The final deliverables exceeded every expectation!",
           "clientInfo": "Ana Rodriguez | Marketing Manager | Business District | Corporate Event Coverage"
         },
         {
-          "imgDesc": "A model posing sensually for a magazine cover",
-          "testimonial": "Working with Pawis Crea was an incredible experience. They brought out my confidence and created stunning images that perfectly showcase my unique style and personality!",
+          "imgDesc": "Confident fashion model in dramatic studio lighting for high-fashion editorial shoot",
+          "testimonial": "Working with Pawis Crea was inspiring. They captured my unique style and personality, creating stunning, high-confidence images that are perfect for my portfolio",
           "clientInfo": "Lucia Fernandez | Fashion Model | Studio Location | Fashion Portrait Session"
         }
       ]

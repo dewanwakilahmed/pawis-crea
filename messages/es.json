@@ -124,28 +124,28 @@
       "exploreOurPortfolioBtn": "Explora Nuestro Portafolio"
     },
     "ClientStoriesExperiences": {
-      "sectionTitle": "Historias a Través de Nuestra Lente - Lo que Dicen Nuestros Clientes",
-      "sectionIntro": "Experiencias reales de las personas que confiaron en nosotros para capturar sus momentos más preciados y sus visiones más audaces",
+      "sectionTitle": "Momentos Que Importan - Historias de Nuestros Clientes",
+      "sectionIntro": "No solo confíes en nuestra palabra. Conoce las experiencias de quienes nos confiaron sus momentos más importantes. Sus historias son el corazón de lo que hacemos",
       "clientStories": [
         {
-          "imgDesc": "Esposo y esposa recién casados abrazándose en una ceremonia de boda",
-          "testimonial": "Pawis Crea capturó cada lágrima, risa y baile en nuestra boda. ¡Las fotos y el video hacen que revivamos ese día como si fuera magia!",
-          "clientInfo": "María y Juan | Recién Casados | Ciudad de Panamá | Ceremonia de Boda"
+          "imgDesc": "Pareja de recién casados abrazándose con alegría, capturados en un momento cálido y espontáneo",
+          "testimonial": "Capturaron cada momento de forma hermosa—desde las lágrimas durante nuestros votos hasta la energía increíble en la pista de baile. Ver nuestro álbum es como volver a vivir el mejor día de nuestras vidas",
+          "clientInfo": "Maria & Juan | Recién Casados | Ciudad de Panamá | Ceremonia de Boda"
         },
         {
-          "imgDesc": "Una chica en el centro con sus padres en su celebración de quinceañera",
-          "testimonial": "Desde mi gran entrada hasta el último baile, Pawis Crea hizo que mi quinceañera pareciera un cuento de hadas. ¡Cada foto captura la alegría y la elegancia de mi día especial!",
-          "clientInfo": "Sofía Martínez | Quinceañera | San Miguelito | Celebración de Quinceañera"
+          "imgDesc": "Quinceañera sonriente posando en su elegante vestido junto a sus padres en su celebración",
+          "testimonial": "Me hicieron sentir como una princesa de principio a fin. La forma en que capturaron mi entrada, las tradiciones y todos esos momentitos con mi familia—es todo lo que soñé y más",
+          "clientInfo": "Sofia Martinez | Quinceañera | San Miguelito | Celebración de Quinceañera"
         },
         {
-          "imgDesc": "Una chica de oficina en su atuendo de fiesta sosteniendo su bebida en una fiesta corporativa",
-          "testimonial": "Pawis Crea transformó nuestro evento corporativo en algo realmente memorable. ¡Capturaron la atmósfera profesional mientras destacaban las conexiones genuinas entre nuestro equipo!",
-          "clientInfo": "Ana Rodríguez | Gerente de Marketing | Distrito Empresarial | Cobertura de Evento Corporativo"
+          "imgDesc": "Profesional elegante en atuendo festivo, alzando su copa con alegría en una animada celebración corporativa",
+          "testimonial": "Pawis Crea elevó nuestra gala empresarial con una cobertura profesional y dinámica que resaltó la energía de nuestra marca y el espíritu de nuestro equipo. ¡Los resultados superaron todas nuestras expectativas!",
+          "clientInfo": "Ana Rodriguez | Gerente de Marketing | Distrito de Negocios | Cobertura de Evento Corporativo"
         },
         {
-          "imgDesc": "Una modelo posando sensualmente para una portada de revista",
-          "testimonial": "Trabajar con Pawis Crea fue una experiencia increíble. ¡Sacaron a relucir mi confianza y crearon imágenes impresionantes que muestran perfectamente mi estilo y personalidad únicos!",
-          "clientInfo": "Lucía Fernández | Modelo de Moda | Ubicación de Estudio | Sesión de Retrato de Moda"
+          "imgDesc": "Modelo segura de sí misma con iluminación dramática de estudio para sesión editorial de alta moda",
+          "testimonial": "Trabajar con Pawis Crea fue inspirador. Capturaron mi estilo único y personalidad, creando imágenes impresionantes y llenas de confianza que son perfectas para mi portafolio",
+          "clientInfo": "Lucia Fernandez | Modelo de Moda | Locación de Estudio | Sesión de Retrato Fashion"
         }
       ]
     }
