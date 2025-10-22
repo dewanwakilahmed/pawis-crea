@@ -17,6 +17,15 @@ type ClientStoryType = {
   clientImgSrc: string;
   clientImgWidth: number;
   clientImgHeight: number;
+  clientImgPosition: {
+    xs: string;
+    default: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+    xxl: string;
+  };
   clientImgDesc: string;
   clientTestimonial: string;
   clientInfo: string;
@@ -114,11 +123,31 @@ const Carousel: FC<CarouselPropsType> = (props) => {
                   <div className="client-story__content">
                     <div className="client-story__image">
                       <Image
+                        className="client-story__img"
                         src={story.clientImgSrc}
+                        alt={story.clientImgDesc}
                         width={story.clientImgWidth}
                         height={story.clientImgHeight}
-                        alt={story.clientImgDesc}
-                        className="client-story__img"
+                        style={
+                          story.clientImgPosition
+                            ? ({
+                                "--object-position-xs":
+                                  story.clientImgPosition!.xs,
+                                "--object-position-default":
+                                  story.clientImgPosition!.default,
+                                "--object-position-sm":
+                                  story.clientImgPosition!.sm,
+                                "--object-position-md":
+                                  story.clientImgPosition!.md,
+                                "--object-position-lg":
+                                  story.clientImgPosition!.lg,
+                                "--object-position-xl":
+                                  story.clientImgPosition!.xl,
+                                "--object-position-xxl":
+                                  story.clientImgPosition!.xxl,
+                              } as CSSProperties)
+                            : undefined
+                        }
                       />
                     </div>
 

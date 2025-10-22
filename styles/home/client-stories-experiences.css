@@ -29,8 +29,8 @@
   mb-7 
   lg:mb-9 
   mx-auto 
-  max-w-[42rem]
-  lg:max-w-[52rem]
+  max-w-[50rem]
+  lg:max-w-[64rem]
   bg-[#171717b3] 
   shadow-[0_10px_35px_rgba(0,0,0,0.4)]
   rounded-lg 
@@ -180,6 +180,37 @@
   object-cover 
   border-2 
   border-white;
+  object-position: var(--object-position-default);
+}
+
+@screen sm {
+  .client-story__img {
+    object-position: var(--object-position-sm);
+  }
+}
+
+@screen md {
+  .client-story__img {
+    object-position: var(--object-position-md);
+  }
+}
+
+@screen lg {
+  .client-story__img {
+    object-position: var(--object-position-lg);
+  }
+}
+
+@screen xl {
+  .client-story__img {
+    object-position: var(--object-position-xl);
+  }
+}
+
+@screen 2xl {
+  .client-story__img {
+    object-position: var(--object-position-xxl);
+  }
 }
 
 .client-story__details {
@@ -231,7 +262,7 @@
   @apply absolute
   bottom-0
   left-1/2
-  lg:left-[4rem]
+  lg:left-[3.75rem]
   w-24 
   lg:w-32
   h-px
@@ -420,6 +451,7 @@
   .client-story__img {
     @apply w-52
     h-52;
+    object-position: var(--object-position-xs);
   }
 
   .client-story__details {
