@@ -22,8 +22,8 @@ const HomePage: FC<HomePageProps> = ({ params }) => {
   return (
     <main className="home-page">
       <HomeHero />
-      <ServicesShowcase />
-      <ClientStoriesExperiences />
+      {/* <ServicesShowcase /> */}
+      {/* <ClientStoriesExperiences /> */}
     </main>
   );
 };

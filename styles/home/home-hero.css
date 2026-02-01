@@ -36,8 +36,8 @@
   @apply text-3xl
   lg:text-4xl
   tracking-widest
-  font-primary
-  font-[900]
+  font-display
+  font-[600]
   uppercase
   text-center
   text-gray-50
@@ -51,8 +51,9 @@
   @apply text-lg
   lg:text-xl
   tracking-wider
-  font-primary
-  font-[700]
+  font-accent
+  italic
+  font-[500]
   text-center
   text-gray-50;
 

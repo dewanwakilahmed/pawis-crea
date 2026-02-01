@@ -26,7 +26,7 @@
 }
 
 .footer-company-slogan {
-  @apply font-primary
+  @apply font-display
   text-sm
   lg:text-base
   font-[300]
@@ -112,7 +112,7 @@
 .footer-nav-links-heading,
 .footer-contact-details-heading,
 .footer-social-links-heading {
-  @apply font-primary
+  @apply font-display
   text-sm
   lg:text-base
   tracking-widest
@@ -147,8 +147,8 @@
   @apply text-gray-50
   text-sm
   lg:text-base
-  font-primary
-  font-[700]
+  font-display
+  font-[500]
   tracking-widest
   hover:text-pink-200
   transition;
@@ -181,7 +181,8 @@
   text-gray-400
   text-sm
   lg:text-base
-  font-primary
+  font-accent
+  italic
   font-[300]
   tracking-widest;
 }

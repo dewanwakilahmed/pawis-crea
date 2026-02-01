@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 @layer utilities {
-  .font-primary {
+  /* .font-primary {
     font-family: var(--font-primary), Impact, "Arial Narrow", sans-serif;
   }
 
   .font-secondary {
     font-family: var(--font-secondary), Arial, Helvetica, sans-serif;
-  }
+  } */
 
   .overlay {
     content: "";
@@ -50,8 +50,8 @@
     @apply text-2xl 
     lg:text-3xl 
     tracking-widest 
-    font-primary
-    font-[900]
+    font-display
+    font-[500]
     text-center
     text-transparent 
     bg-clip-text 
@@ -82,8 +82,8 @@
     lg:text-base
     tracking-widest
     whitespace-nowrap
-    font-primary
-    font-[700]
+    font-display
+    font-[400]
     text-center
     px-4
     lg:px-[1.125rem]
@@ -151,7 +151,7 @@ html {
 body {
   @apply mx-auto
   antialiased
-  font-secondary
+  font-body
   text-gray-50;
 }
 

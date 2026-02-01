@@ -42,8 +42,8 @@
   xl:w-24
   text-gray-50
   tracking-widest
-  font-[700]
-  font-primary
+  font-[400]
+  font-display
   whitespace-nowrap
   text-center
   lg:text-base
@@ -137,7 +137,7 @@
 .mobile-nav-link {
   @apply block
   text-gray-50
-  font-primary
+  font-display
   text-base
   lg:text-lg
   font-[700]
@@ -148,7 +148,7 @@
   @apply block
   md:hidden
   btn
-  btn-primary
+  font-display
   mt-1
   lg:mt-2
   w-40

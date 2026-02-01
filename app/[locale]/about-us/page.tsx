@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 // Sections
 import AboutUsHero from "@/components/about-us/AboutUsHero";
 import OurStory from "@/components/about-us/OurStory";
+import WhyChoosePawisCrea from "@/components/about-us/WhyChoosePawisCrea";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -22,6 +23,7 @@ const AboutUsPage: FC<AboutUsPageProps> = ({ params }) => {
     <main className="about-us-page">
       <AboutUsHero />
       <OurStory />
+      <WhyChoosePawisCrea />
     </main>
   );
 };
