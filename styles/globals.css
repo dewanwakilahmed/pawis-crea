@@ -5,7 +5,6 @@
    ═══════════════════════════════════════════════════════════════════ */
 
 @theme {
-  /* Renamed to map directly to font-display, font-accent, etc. */
   --font-display:
     var(--font-display), Georgia, Cambria, "Iowan Old Style",
     "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
