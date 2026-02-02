@@ -1,21 +1,18 @@
-import React, { FC, use } from "react";
+import React, { FC } from "react";
 import { setRequestLocale } from "next-intl/server";
-import { routing } from "@/i18n/routing";
 
 // Sections
 import ContactUsHero from "@/components/contact-us/ContactUsHero";
 import ContactUsForm from "@/components/contact-us/ContactUsForm";
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
-
 interface ContactUsPageProps {
   params: Promise<{ locale: string }>;
 }
 
-const ContactUsPage: FC<ContactUsPageProps> = ({ params }) => {
-  const { locale } = use(params);
+const ContactUsPage: FC<ContactUsPageProps> = async ({ params }) => {
+  // Next.js 16: params is now async, must await
+  const { locale } = await params;
+
   setRequestLocale(locale);
 
   return (

@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 .portfolio-hero {
   @apply relative
   min-h-screen;
@@ -96,3 +98,4 @@
     gap-3;
   }
 }
+

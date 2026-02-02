@@ -1,3 +1,7 @@
+@reference "tailwindcss";
+
+@reference "./globals.css";
+
 .header {
   @apply fixed
   z-30

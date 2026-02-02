@@ -1,3 +1,7 @@
+@reference "tailwindcss";
+
+@reference "../globals.css";
+
 .services-showcase {
   @apply bg-[url("/images/sections-bg/section-bg-9.svg")]
   bg-cover
@@ -296,7 +300,9 @@
   tracking-wider 
   font-[600] 
   text-gray-50;
-  text-shadow: 0 0 6px rgba(236, 72, 153, 0.4), 0 0 15px rgba(236, 72, 153, 0.2);
+  text-shadow:
+    0 0 6px rgba(236, 72, 153, 0.4),
+    0 0 15px rgba(236, 72, 153, 0.2);
 }
 
 .services-showcase__service-tagline {

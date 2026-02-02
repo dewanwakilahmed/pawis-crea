@@ -1,3 +1,7 @@
+@reference "tailwindcss";
+
+@reference "./globals.css";
+
 .footer {
   @apply bg-neutral-900
   border-t

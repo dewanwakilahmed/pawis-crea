@@ -1,159 +1,278 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer utilities {
-  /* .font-primary {
-    font-family: var(--font-primary), Impact, "Arial Narrow", sans-serif;
+/* ═══════════════════════════════════════════════════════════════════
+   Tailwind v4 Theme Configuration
+   ═══════════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* Renamed to map directly to font-display, font-accent, etc. */
+  --font-display:
+    var(--font-display), Georgia, Cambria, "Iowan Old Style",
+    "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+
+  --font-accent:
+    var(--font-accent), Garamond, "Book Antiqua", Baskerville,
+    "Baskerville Old Face", Didot, "Hoefler Text", "Palatino Linotype",
+    Palatino, Georgia, Cambria, "Times New Roman", serif;
+
+  --font-body:
+    var(--font-body), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Gill Sans", "Gill Sans MT", Verdana, Roboto, "Trebuchet MS",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Custom Utility Classes (Wrapped in @utility for @apply support)
+   ═══════════════════════════════════════════════════════════════════ */
+
+@utility section-content-width {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (max-width: 355px) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media (min-width: 1024px) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  @media (min-width: 1280px) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  @media (min-width: 1536px) {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
 
-  .font-secondary {
-    font-family: var(--font-secondary), Arial, Helvetica, sans-serif;
-  } */
+@utility section-content-height {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 
-  .overlay {
+  @media (max-width: 355px) {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @media (min-width: 768px) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 1024px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  @media (min-width: 1280px) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  @media (min-width: 1536px) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+@utility overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(23 23 23 / 0.7);
+}
+
+@utility section-container {
+  position: relative;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+
+  @media (max-width: 355px) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @media (min-width: 768px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 1024px) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    text-align: start;
+  }
+  @media (min-width: 1280px) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  @media (min-width: 1536px) {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+@utility section-heading {
+  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(
+    to right,
+    rgb(249 168 212),
+    rgb(236 72 153)
+  );
+  position: relative;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.75rem;
+
+  &::after {
     content: "";
-    @apply absolute
-    inset-0 
-    bg-neutral-900/70;
-  }
-
-  .section-content-width {
-    @apply px-4
-    sm:px-6
-    md:px-8
-    lg:px-10
-    xl:px-12
-    2xl:px-14;
-  }
-
-  .section-content-height {
-    @apply py-10
-    sm:py-12
-    md:py-16
-    lg:py-20
-    xl:py-24
-    2xl:py-28;
-  }
-
-  .section-container {
-    @apply relative
-    max-w-7xl
-    mx-auto
-    section-content-height
-    section-content-width
-    text-center
-    lg:text-start;
-  }
-
-  .section-heading {
-    @apply text-2xl 
-    lg:text-3xl 
-    tracking-widest 
-    font-display
-    font-[500]
-    text-center
-    text-transparent 
-    bg-clip-text 
-    bg-gradient-to-r from-pink-300 to-pink-500
-    relative
-    pb-3
-    lg:pb-3.5
-    mb-7
-    lg:mb-9;
-  }
-
-  .section-heading::after {
-    content: "";
-    @apply absolute 
-    bottom-0 
-    left-1/2
-    w-16
-    lg:w-20 
-    h-1
-    lg:h-[0.3125rem] 
-    bg-gradient-to-r from-pink-500 to-pink-300
-    rounded-full
-    -translate-x-1/2;
-  }
-
-  .btn {
-    @apply text-sm
-    lg:text-base
-    tracking-widest
-    whitespace-nowrap
-    font-display
-    font-[400]
-    text-center
-    px-4
-    lg:px-[1.125rem]
-    py-2
-    lg:py-2.5
-    border-2
-    rounded-lg
-    shadow-lg
-    active:scale-95
-    active:shadow-lg
-    transition;
-  }
-
-  .btn-primary {
-    @apply bg-pink-600
-    text-gray-50
-    border-pink-600
-    hover:bg-pink-200
-    hover:border-pink-200
-    hover:text-gray-900;
-  }
-
-  .btn-secondary {
-    @apply bg-transparent
-    text-gray-50
-    border-gray-50
-    hover:bg-pink-200
-    hover:border-pink-200
-    hover:text-gray-900;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 4rem;
+    height: 0.25rem;
+    background-image: linear-gradient(
+      to right,
+      rgb(236 72 153),
+      rgb(249 168 212)
+    );
+    border-radius: 9999px;
+    transform: translateX(-50%);
   }
 
   @media (max-width: 355px) {
-    .section-content-width {
-      @apply px-2;
+    font-size: 1.25rem;
+    padding-bottom: 0.625rem;
+    margin-bottom: 1.5rem;
+    &::after {
+      width: 3.5rem;
+      height: 0.1875rem;
     }
+  }
 
-    .section-content-height {
-      @apply py-5;
-    }
-
-    .section-heading {
-      @apply text-xl
-      pb-2.5
-      mb-6;
-    }
-
-    .section-heading::after {
-      @apply w-14 
-      h-[0.1875rem];
-    }
-
-    .btn {
-      @apply text-xs
-      font-[600]
-      px-3
-      py-1.5;
+  @media (min-width: 1024px) {
+    font-size: 1.875rem;
+    padding-bottom: 0.875rem;
+    margin-bottom: 2.25rem;
+    &::after {
+      width: 5rem;
+      height: 0.3125rem;
     }
   }
 }
+
+@utility btn {
+  font-size: 0.875rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-width: 2px;
+  border-radius: 0.5rem;
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @media (max-width: 355px) {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1rem;
+    padding: 0.625rem 1.125rem;
+  }
+}
+
+@utility btn-primary {
+  background-color: rgb(219 39 119);
+  color: rgb(249 250 251);
+  border-color: rgb(219 39 119);
+
+  &:hover {
+    background-color: rgb(251 207 232);
+    border-color: rgb(251 207 232);
+    color: rgb(17 24 39);
+  }
+}
+
+@utility btn-secondary {
+  background-color: transparent;
+  color: rgb(249 250 251);
+  border-color: rgb(249 250 251);
+
+  &:hover {
+    background-color: rgb(251 207 232);
+    border-color: rgb(251 207 232);
+    color: rgb(17 24 39);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Global Styles
+   ═══════════════════════════════════════════════════════════════════ */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply mx-auto
-  antialiased
-  font-body
-  text-gray-50;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-body);
+  color: rgb(249 250 251);
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   Animations
+   ═══════════════════════════════════════════════════════════════════ */
 
 @keyframes slide-up-fade-in {
   0% {

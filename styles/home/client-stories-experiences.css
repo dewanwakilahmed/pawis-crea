@@ -1,3 +1,7 @@
+@reference "tailwindcss";
+
+@reference "../globals.css";
+
 .client-stories-experiences {
   @apply bg-[url("/images/sections-bg/section-bg-11.svg")]
   bg-cover
@@ -35,7 +39,9 @@
   shadow-[0_10px_35px_rgba(0,0,0,0.4)]
   rounded-lg 
   backdrop-blur-lg;
-  text-shadow: 0 0 18px rgba(236, 72, 153, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4);
+  text-shadow:
+    0 0 18px rgba(236, 72, 153, 0.6),
+    0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .client-stories-experiences__title::before {
@@ -53,9 +59,13 @@
     rgba(236, 72, 153, 0.2) 75%,
     rgba(236, 72, 153, 0.8) 100%
   );
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   mask-composite: subtract;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
 }
 
@@ -238,9 +248,12 @@
   relative
   py-2
   lg:py-3;
-  text-shadow: 0 0 12px rgba(236, 72, 153, 0.8),
-    0 0 24px rgba(236, 72, 153, 0.6), 0 0 36px rgba(236, 72, 153, 0.4),
-    0 0 48px rgba(236, 72, 153, 0.2), 0 2px 4px rgba(0, 0, 0, 0.4),
+  text-shadow:
+    0 0 12px rgba(236, 72, 153, 0.8),
+    0 0 24px rgba(236, 72, 153, 0.6),
+    0 0 36px rgba(236, 72, 153, 0.4),
+    0 0 48px rgba(236, 72, 153, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.4),
     0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -341,7 +354,9 @@
   > .carousel__arrow-btn:hover:not(:disabled) {
   @apply bg-pink-400/20 
   border-pink-400/90;
-  box-shadow: 0 0 30px rgba(236, 72, 153, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0 0 30px rgba(236, 72, 153, 0.8),
+    0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .client-stories-experiences-carousel__arrow-btns

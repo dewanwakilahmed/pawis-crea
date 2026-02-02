@@ -1,3 +1,7 @@
+@reference "tailwindcss";
+
+@reference "../globals.css";
+
 .home-hero {
   @apply relative
   min-h-screen;

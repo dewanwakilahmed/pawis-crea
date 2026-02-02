@@ -1,3 +1,7 @@
+@reference "tailwindcss";
+
+@reference "./globals.css";
+
 .company-logo {
   @apply tracking-widest
   uppercase

@@ -1,3 +1,7 @@
+@reference "tailwindcss";
+
+@reference "../globals.css";
+
 .our-photography-collection {
   @apply bg-[url("/images/sections-bg/section-bg-9.svg")]
   bg-cover

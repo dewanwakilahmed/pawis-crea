@@ -4,10 +4,12 @@ import { NextRequest, NextResponse } from "next/server";
 
 const intlMiddleware = createMiddleware(routing);
 
-const middleware = (req: NextRequest): NextResponse => {
+// Next.js 16: middleware.ts → proxy.ts, and export function is named "proxy"
+const proxy = (req: NextRequest): NextResponse => {
   const response = intlMiddleware(req);
 
   let userCountry = req.cookies.get("userCountry")?.value;
+
   if (!userCountry) {
     userCountry = req.headers.get("x-vercel-ip-country") || "US";
     response.cookies.set("userCountry", userCountry, {
@@ -19,7 +21,7 @@ const middleware = (req: NextRequest): NextResponse => {
   return response;
 };
 
-export default middleware;
+export default proxy;
 
 export const config = {
   matcher: ["/", "/(en|es)/:path*"],
