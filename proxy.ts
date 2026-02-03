@@ -4,7 +4,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 const intlMiddleware = createMiddleware(routing);
 
-// Next.js 16: middleware.ts → proxy.ts, and export function is named "proxy"
 const proxy = (req: NextRequest): NextResponse => {
   const response = intlMiddleware(req);
 

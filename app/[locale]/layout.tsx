@@ -23,7 +23,6 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  // Next.js 16: params is now async, must await
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Common.metadata" });
 
@@ -49,7 +48,6 @@ interface RootLayoutProps {
 }
 
 const RootLayout: FC<RootLayoutProps> = async ({ children, params }) => {
-  // Next.js 16: params is now async, must await
   const { locale } = await params;
 
   if (!routing.locales.includes(locale as any)) {
