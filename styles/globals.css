@@ -13,12 +13,12 @@
     "Gill Sans", "Gill Sans MT", Verdana, Roboto, "Trebuchet MS",
     "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  --animate-slide-up-fade-in: slide-up-fade-in 0.6s ease-out;
+  --animate-slide-up-fade-in: slide-up-fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 
   @keyframes slide-up-fade-in {
     from {
       opacity: 0;
-      transform: translateY(40px);
+      transform: translateY(30px);
     }
     to {
       opacity: 1;
@@ -38,151 +38,40 @@
 }
 
 @utility section-content-width {
-  @apply max-[355px]:px-2 
-  px-4 
-  sm:px-6 
-  md:px-8 
-  lg:px-10 
-  xl:px-12 
-  2xl:px-14;
+  @apply max-[355px]:px-2 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-14;
 }
 
 @utility section-content-height {
-  @apply max-[355px]:py-5 
-  py-10 
-  sm:py-12 
-  md:py-16 
-  lg:py-20 
-  xl:py-24 
-  2xl:py-28;
+  @apply max-[355px]:py-5 py-10 sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-28;
 }
 
-/* @utility overlay {
-  @apply content-['']
-  absolute 
-  inset-0 
-  bg-neutral-900/70;
-} */
-
 @utility section-container {
-  @apply relative 
-  max-w-7xl 
-  mx-auto 
-  text-center 
-  max-[355px]:px-2 
-  max-[355px]:py-5 
-  px-4 
-  py-10 
-  sm:px-6 
-  sm:py-12 
-  md:px-8 
-  md:py-16 
-  lg:px-10 
-  lg:py-20 
-  lg:text-start 
-  xl:px-12 
-  xl:py-24 
-  2xl:px-14 
-  2xl:py-28;
+  @apply relative max-w-7xl mx-auto text-center max-[355px]:px-2 max-[355px]:py-5 px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-10 lg:py-20 lg:text-start xl:px-12 xl:py-24 2xl:px-14 2xl:py-28;
 }
 
 @utility section-heading {
-  @apply text-2xl 
-  font-display 
-  font-medium 
-  tracking-widest 
-  text-center 
-  text-transparent 
-  bg-clip-text 
-  bg-gradient-to-r from-pink-300 to-pink-600
-  relative 
-  pb-3 
-  mb-7
-  max-[355px]:text-xl 
-  max-[355px]:pb-2.5 
-  max-[355px]:mb-6
-  lg:text-3xl lg:pb-3.5 lg:mb-9;
+  @apply text-2xl font-display font-medium tracking-widest text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-pink-600 relative pb-3 mb-7 max-[355px]:text-xl max-[355px]:pb-2.5 max-[355px]:mb-6 lg:text-3xl lg:pb-3.5 lg:mb-9;
 
   &::after {
-    @apply content-[''] 
-    absolute 
-    bottom-0 
-    left-1/2 
-    -translate-x-1/2
-    w-16 
-    h-1 
-    bg-gradient-to-r from-pink-600 to-pink-300 rounded-full
-    max-[355px]:w-14 
-    max-[355px]:h-[3px]
-    lg:w-20 
-    lg:h-[5px];
+    @apply content-[''] absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-pink-600 to-pink-300 rounded-full max-[355px]:w-14 max-[355px]:h-[3px] lg:w-20 lg:h-[5px];
   }
 }
 
 @utility btn {
-  @apply text-sm 
-  font-display 
-  italic 
-  font-[500] 
-  tracking-[0.25rem] 
-  whitespace-nowrap
-  text-center
-  py-2 
-  px-4 
-  border-0 
-  rounded-lg 
-  shadow-2xl 
-  hover:scale-105
-  active:scale-100
-  transition-all
-  duration-300
-  max-[355px]:text-xs 
-  max-[355px]:py-1.5 
-  max-[355px]:px-3
-  lg:text-base 
-  lg:py-2.5 
-  lg:px-[1.125rem];
+  @apply text-sm font-display italic font-[500] tracking-[0.25rem] whitespace-nowrap text-center py-2 px-4 border-0 rounded-lg shadow-2xl hover:scale-105 active:scale-100 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] max-[355px]:text-xs max-[355px]:py-1.5 max-[355px]:px-3 lg:text-base lg:py-2.5 lg:px-[1.125rem];
 }
 
 @utility btn-primary {
-  @apply btn
-  relative
-  bg-pink-600
-  text-zinc-50
-  overflow-hidden
-  shadow-pink-600/50
-  hover:shadow-pink-500/70;
+  @apply btn relative bg-pink-600 text-zinc-50 overflow-hidden shadow-pink-600/50 hover:shadow-pink-500/70;
 
   &::before {
-    @apply content-['']
-    absolute
-    inset-[-3px]
-    bg-gradient-to-r
-    from-pink-500
-    via-cyan-400
-    via-pink-400
-    to-pink-500
-    rounded-lg
-    z-[-1]
-    opacity-100;
+    @apply content-[''] absolute inset-[-3px] bg-gradient-to-r from-pink-500 via-cyan-400 via-pink-400 to-pink-500 rounded-lg z-[-1] opacity-100;
     background-size: 200% 200%;
     animation: gradient-shift 4s ease infinite;
   }
 
   &::after {
-    @apply content-['']
-    absolute
-    top-0
-    left-[-100%]
-    w-full
-    h-full
-    bg-gradient-to-r
-    from-transparent
-    via-white/40
-    to-transparent
-    skew-x-[-25deg]
-    transition-all
-    duration-500;
+    @apply content-[''] absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)];
   }
 
   &:hover::after {
@@ -191,28 +80,11 @@
 }
 
 @utility btn-secondary {
-  @apply btn 
-  relative 
-  bg-transparent 
-  text-zinc-50 
-  border 
-  border-zinc-400/40 
-  overflow-hidden 
-  shadow-cyan-400/30 
-  transition-all 
-  duration-300;
-
+  @apply btn relative bg-transparent text-zinc-50 border border-zinc-400/40 overflow-hidden shadow-cyan-400/30 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)];
   @apply hover:shadow-cyan-400/60 hover:border-cyan-400/60;
 
   &::before {
-    @apply content-[''] 
-    absolute 
-    inset-0 
-    -z-10 
-    opacity-0 
-    transition-opacity 
-    duration-500 
-    rounded-lg;
+    @apply content-[''] absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] rounded-lg;
     background: linear-gradient(
       90deg,
       rgba(236, 72, 153, 0.2),
@@ -224,19 +96,7 @@
   }
 
   &::after {
-    @apply content-[''] 
-    absolute 
-    top-0 
-    left-[-100%] 
-    w-full 
-    h-full 
-    bg-gradient-to-r 
-    from-transparent 
-    via-cyan-400/30 
-    to-transparent 
-    skew-x-[-25deg] 
-    transition-all 
-    duration-700;
+    @apply content-[''] absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent skew-x-[-25deg] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)];
   }
 
   &:hover::before {
@@ -253,8 +113,5 @@ html {
 }
 
 body {
-  @apply mx-auto 
-  antialiased 
-  font-body 
-  text-gray-50;
+  @apply mx-auto antialiased font-body text-gray-50;
 }
