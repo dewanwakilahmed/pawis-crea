@@ -13,6 +13,13 @@
     "Gill Sans", "Gill Sans MT", Verdana, Roboto, "Trebuchet MS",
     "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+  --hero-animation-duration: 0.7s;
+  --hero-subheadline-duration: 0.8s;
+  --hero-subheadline-delay: 0.7s;
+  --hero-cta-delay: 1.5s;
+  --hero-glow-delay: 1.5s;
+  --hero-animation-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
+
   @keyframes gradient-shift {
     0%,
     100% {
@@ -20,6 +27,60 @@
     }
     50% {
       background-position: 100% 50%;
+    }
+  }
+
+  @keyframes flash-sync-lift {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+      filter: brightness(2) contrast(1.2);
+      text-shadow: 0 0 50px rgba(236, 72, 153, 0.8);
+    }
+    50% {
+      opacity: 0.8;
+      filter: brightness(1.5) contrast(1.1);
+      text-shadow: 0 0 30px rgba(6, 182, 212, 0.6);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: brightness(1) contrast(1);
+      text-shadow: 0 0 0px transparent;
+    }
+  }
+
+  @keyframes letter-reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) rotateX(-90deg);
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotateX(0deg);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes headline-float-in {
+    from {
+      opacity: 0;
+      transform: translateY(60px) scale(0.94);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
     }
   }
 }
@@ -42,6 +103,51 @@
   &::after {
     @apply content-[''] absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-pink-600 to-pink-300 rounded-full max-[355px]:w-14 max-[355px]:h-[3px] lg:w-20 lg:h-[5px];
   }
+}
+
+@utility hero-headline {
+  @apply relative text-3xl lg:text-4xl font-display font-[600] tracking-widest uppercase text-center text-zinc-50 mb-4 lg:mb-5 p-1;
+  animation: flash-sync-lift var(--hero-animation-duration)
+    var(--hero-animation-easing) both;
+
+  &::before {
+    @apply content-[''] absolute inset-0 blur-2xl opacity-60 z-[-1];
+    background: linear-gradient(
+      90deg,
+      rgba(236, 72, 153, 0.45),
+      rgba(6, 182, 212, 0.35)
+    );
+  }
+
+  &::after {
+    @apply content-[''] absolute inset-0 mix-blend-overlay;
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.15),
+      transparent 70%
+    );
+  }
+}
+
+@utility hero-subheadline {
+  @apply relative text-zinc-100 text-lg lg:text-xl tracking-widest font-accent italic font-[500] py-1 px-10 block mx-auto w-fit text-center;
+  animation: letter-reveal var(--hero-subheadline-duration)
+    var(--hero-animation-easing) var(--hero-subheadline-delay) both;
+
+  &::before {
+    @apply content-[''] absolute top-0 left-0 w-3 h-3 border-l border-t border-cyan-400/60;
+    animation: glow-pulse 2s ease-in-out var(--hero-glow-delay) infinite;
+  }
+
+  &::after {
+    @apply content-[''] absolute bottom-0 right-0 w-3 h-3 border-r border-b border-cyan-400/60;
+  }
+}
+
+@utility hero-cta-base {
+  @apply mt-8 lg:mt-9 flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-5 opacity-0 scale-95;
+  animation: headline-float-in var(--hero-animation-duration)
+    var(--hero-animation-easing) var(--hero-cta-delay) forwards;
 }
 
 @utility btn {

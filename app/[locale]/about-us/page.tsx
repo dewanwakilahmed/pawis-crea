@@ -19,8 +19,8 @@ const AboutUsPage: FC<AboutUsPageProps> = async ({ params }) => {
   return (
     <main className="about-us-page">
       <AboutUsHero />
-      <OurStory />
-      <WhyChoosePawisCrea />
+      {/* <OurStory />
+      <WhyChoosePawisCrea /> */}
     </main>
   );
 };

@@ -18,7 +18,7 @@ const ContactUsPage: FC<ContactUsPageProps> = async ({ params }) => {
   return (
     <main className="contact-us-page">
       <ContactUsHero />
-      <ContactUsForm />
+      {/* <ContactUsForm /> */}
     </main>
   );
 };

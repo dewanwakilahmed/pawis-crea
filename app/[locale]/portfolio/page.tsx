@@ -19,7 +19,7 @@ const PortfolioPage: FC<PortfolioPageProps> = async ({ params }) => {
   return (
     <main className="portfolio-page">
       <PortfolioHero />
-      <OurPhotographyCollection />
+      {/* <OurPhotographyCollection /> */}
     </main>
   );
 };
