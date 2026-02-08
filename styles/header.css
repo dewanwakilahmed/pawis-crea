@@ -13,23 +13,23 @@
 
 .header-container {
   @apply section-container
-
-  grid
-  grid-cols-[auto,1fr]
-  xl:grid-cols-[auto,1fr,auto]
+  flex
+  flex-row
   items-center
-  justify-center
-
+  justify-between
   !py-3
   lg:!py-4;
 }
 
 .company-logo-container {
+  @apply flex-shrink-0;
 }
 
 .nav {
   @apply hidden
-  xl:block;
+  xl:flex
+  flex-1
+  justify-center;
 }
 
 .nav-links {
@@ -73,17 +73,16 @@
 }
 
 .header-btns {
-  @apply justify-self-end
-  flex
+  @apply flex
   items-center
   gap-3
   lg:gap-4
-  xl:gap-5;
+  xl:gap-5
+  flex-shrink-0;
 }
 
 .switch-lang-mobile-btn {
-  @apply btn
-  btn-secondary
+  @apply btn-secondary
   w-14
   sm:hidden;
 }
@@ -96,25 +95,23 @@
 }
 
 .switch-lang-btn {
-  @apply btn
-  btn-secondary
+  @apply btn-secondary
+  cursor-pointer
   hidden
-  sm:block
-  w-24
-  lg:w-28;
+  sm:block;
 }
 
 .book-a-session-header-btn {
-  @apply btn
-  btn-primary
+  @apply btn-primary
   hidden
-  md:block
-  md:w-40
-  lg:w-48;
+  md:block;
 }
 
 .mobile-nav {
-  @apply col-span-2
+  @apply absolute
+  top-full
+  left-0
+  w-full
   min-h-screen;
 }
 
@@ -162,34 +159,27 @@
   .header-container {
     @apply !py-2.5;
   }
-
   .header-btns {
     @apply gap-2.5;
   }
-
   .switch-lang-mobile-btn {
     @apply w-12;
   }
-
   .mobile-nav-toggle-btn {
     @apply text-3xl;
   }
-
   .mobile-nav-divider {
     @apply border
     my-4;
   }
-
   .mobile-nav-links {
     @apply gap-6
     mt-6;
   }
-
   .mobile-nav-link {
     @apply text-sm
     font-[600];
   }
-
   .book-a-session-header-mobile-nav-btn {
     @apply mt-0.5
     w-36;
