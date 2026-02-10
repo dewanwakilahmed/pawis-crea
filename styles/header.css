@@ -1,15 +1,33 @@
 @reference "tailwindcss";
 @reference "./globals.css";
 
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes header-stretch {
+  from {
+    opacity: 0;
+    transform: scaleX(0.98) translateY(-10px);
+    letter-spacing: 0.5em;
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1) translateY(0);
+    letter-spacing: normal;
+  }
+}
+
 .header {
   @apply fixed z-50 top-0 w-full bg-zinc-950/40 backdrop-blur-xl border-b border-zinc-800/60;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
-  --tw-gradient: linear-gradient(
-    90deg,
-    transparent 0%,
-    #ec4899 50%,
-    #06b6d4 100%
-  );
+  animation: header-stretch 1s var(--hero-animation-easing) forwards;
 }
 
 .header::before {
@@ -48,13 +66,7 @@
 }
 
 .header-container {
-  @apply section-container
-  flex
-  flex-row
-  items-center
-  justify-between
-  !py-3
-  lg:!py-4;
+  @apply section-container flex flex-row items-center justify-between !py-3 lg:!py-4;
 }
 
 .company-logo-container {
@@ -62,18 +74,11 @@
 }
 
 .nav {
-  @apply hidden
-  xl:flex
-  flex-1
-  justify-center;
+  @apply hidden xl:flex flex-1 justify-center;
 }
 
 .nav-links {
-  @apply flex
-  flex-row
-  items-center
-  justify-center
-  xl:gap-6;
+  @apply flex flex-row items-center justify-center xl:gap-6;
 }
 
 .nav-link,
@@ -83,6 +88,7 @@
 
 .nav-link {
   @apply xl:w-24;
+  animation: letter-reveal 0.8s var(--hero-animation-easing) 0.3s both;
 }
 
 .nav-link::before,
@@ -110,93 +116,47 @@
 }
 
 .header-btns {
-  @apply flex
-  items-center
-  gap-3
-  lg:gap-4
-  xl:gap-5
-  flex-shrink-0;
+  @apply flex items-center gap-3 lg:gap-4 xl:gap-5 flex-shrink-0;
 }
 
 .switch-lang-mobile-btn {
-  @apply btn-secondary
-  w-14
-  sm:hidden;
+  @apply btn-secondary w-14 sm:hidden;
 }
 
 .mobile-nav-toggle-btn {
-  @apply text-zinc-100
-  text-3xl
-  xl:hidden
-  z-50
-  relative
-  flex
-  items-center
-  justify-center;
+  @apply text-zinc-100 text-3xl xl:hidden z-50 relative flex items-center justify-center;
 }
 
 .switch-lang-btn {
-  @apply btn-secondary
-  cursor-pointer
-  hidden
-  sm:block;
+  @apply btn-secondary cursor-pointer hidden sm:block;
 }
 
 .book-a-session-header-btn {
-  @apply btn-primary
-  hidden
-  md:block;
+  @apply btn-primary hidden md:block;
 }
 
 .mobile-nav {
-  @apply fixed
-  inset-0
-  z-40
-  w-full
-  h-screen
-  bg-zinc-950/98
-  backdrop-blur-2xl
-  flex
-  flex-col
-  opacity-0
-  pointer-events-none
-  transition-all
-  duration-500
-  ease-[cubic-bezier(0.4,0,0.2,1)];
+  @apply fixed inset-0 z-40 w-full h-screen bg-zinc-950/98 backdrop-blur-2xl flex flex-col opacity-0 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)];
 }
 
 .mobile-nav.is-open {
-  @apply opacity-100
-  pointer-events-auto;
+  @apply opacity-100 pointer-events-auto;
 }
 
 .mobile-nav-content {
-  @apply flex
-  flex-col
-  items-center
-  justify-center
-  h-full
-  w-full;
+  @apply flex flex-col items-center justify-center h-full w-full;
 }
 
 .mobile-nav-links {
-  @apply flex
-  flex-col
-  items-center
-  justify-center
-  gap-10;
+  @apply flex flex-col items-center justify-center gap-10;
 }
 
 .mobile-nav-item {
-  @apply opacity-0
-  translate-y-4
-  transition-all
-  duration-500;
+  @apply opacity-0 translate-y-4 transition-all duration-500;
 }
 
 .is-open .mobile-nav-item {
-  @apply opacity-100
-  translate-y-0;
+  @apply opacity-100 translate-y-0;
 }
 
 .mobile-nav-link {
@@ -204,9 +164,7 @@
 }
 
 .book-a-session-header-mobile-nav-btn {
-  @apply block
-  md:hidden
-  btn-primary;
+  @apply block md:hidden btn-primary;
 }
 
 @media (max-width: 355px) {
@@ -231,25 +189,4 @@
   .book-a-session-header-mobile-nav-btn {
     @apply w-40;
   }
-}
-
-@keyframes header-stretch {
-  from {
-    opacity: 0;
-    transform: scaleX(0.98) translateY(-10px);
-    letter-spacing: 0.5em;
-  }
-  to {
-    opacity: 1;
-    transform: scaleX(1) translateY(0);
-    letter-spacing: normal;
-  }
-}
-
-.header {
-  animation: header-stretch 1s var(--hero-animation-easing) forwards;
-}
-
-.nav-link {
-  animation: letter-reveal 0.8s var(--hero-animation-easing) 0.3s both;
 }
