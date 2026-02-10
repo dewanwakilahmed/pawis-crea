@@ -41,7 +41,7 @@
 }
 
 .home-hero-cta {
-  @apply hero-cta-base;
+  @apply hero-cta;
 }
 
 .book-a-session-btn {

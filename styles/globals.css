@@ -135,16 +135,16 @@
     var(--hero-animation-easing) var(--hero-subheadline-delay) both;
 
   &::before {
-    @apply content-[''] absolute top-0 left-0 w-3 h-3 border-l border-t border-cyan-400/60;
+    @apply content-[''] absolute top-0 left-0 w-3 h-3 border-l border-t border-pink-400;
     animation: glow-pulse 2s ease-in-out var(--hero-glow-delay) infinite;
   }
 
   &::after {
-    @apply content-[''] absolute bottom-0 right-0 w-3 h-3 border-r border-b border-cyan-400/60;
+    @apply content-[''] absolute bottom-0 right-0 w-3 h-3 border-r border-b border-cyan-400;
   }
 }
 
-@utility hero-cta-base {
+@utility hero-cta {
   @apply mt-8 lg:mt-9 flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-5 opacity-0 scale-95;
   animation: headline-float-in var(--hero-animation-duration)
     var(--hero-animation-easing) var(--hero-cta-delay) forwards;
