@@ -97,11 +97,133 @@
   @apply relative max-w-7xl mx-auto text-center max-[355px]:px-2 max-[355px]:py-5 px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-10 lg:py-20 lg:text-start xl:px-12 xl:py-24 2xl:px-14 2xl:py-28;
 }
 
-@utility section-heading {
+@utility section-heading-1 {
   @apply text-2xl font-display font-medium tracking-widest text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-pink-600 relative pb-3 mb-7 max-[355px]:text-xl max-[355px]:pb-2.5 max-[355px]:mb-6 lg:text-3xl lg:pb-3.5 lg:mb-9;
 
   &::after {
     @apply content-[''] absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-pink-600 to-pink-300 rounded-full max-[355px]:w-14 max-[355px]:h-[3px] lg:w-20 lg:h-[5px];
+  }
+}
+
+@utility section-intro-1 {
+  @apply text-base
+  lg:text-lg
+  text-center
+  tracking-widest
+  font-accent
+  italic
+  font-[400]
+  text-zinc-300
+  max-w-2xl
+  mx-auto
+  mb-9
+  lg:mb-11
+  rounded-lg
+  border-t
+  border-b
+  border-pink-200/15
+  py-2
+  max-[355px]:text-xs
+    max-[355px]:mb-7
+    max-[355px]:py-1.5;
+}
+
+@utility card-1 {
+  @apply bg-neutral-50/5
+  backdrop-blur-xl
+  rounded-lg
+  shadow-lg
+  overflow-hidden 
+  flex 
+  flex-col
+  border
+  border-neutral-50/10
+  transition
+  relative
+  hover:bg-neutral-50/10
+  hover:border-neutral-50/20
+  hover:shadow-neutral-50/10
+  hover:shadow-xl;
+
+  &::before {
+    content: "";
+    @apply absolute 
+  top-0 
+  left-0 
+  right-0 
+  h-px
+  bg-gradient-to-r from-transparent via-neutral-50/30 to-transparent;
+  }
+
+  &::after {
+    content: "";
+    @apply absolute 
+  bottom-0 
+  left-0 
+  right-0 
+  h-px
+  bg-gradient-to-r from-transparent via-pink-400/30 to-transparent;
+  }
+}
+
+@utility card-title-1 {
+  @apply font-display
+  text-base 
+  lg:text-lg
+  tracking-widest 
+  font-[600] 
+  text-zinc-50
+  max-[355px]:text-sm;
+  text-shadow:
+    0 0 6px rgba(236, 72, 153, 0.4),
+    0 0 15px rgba(236, 72, 153, 0.2);
+}
+
+@utility card-tagline-1 {
+  @apply mt-2 
+  lg:mt-3 
+  font-accent
+  text-sm 
+  lg:text-base 
+  tracking-widest
+  font-[300] 
+  text-zinc-100
+  uppercase
+  relative
+  max-[355px]:text-xs
+  max-[355px]:mt-1.5;
+  text-shadow: 0 0 3px rgba(156, 163, 175, 0.4);
+
+  &::after {
+    content: "";
+    @apply absolute 
+  -bottom-1 
+  left-0  
+  w-full 
+  h-px 
+  bg-gradient-to-r from-pink-400/50 via-pink-400/20 to-transparent;
+  }
+}
+
+@utility card-summary-1 {
+  @apply mt-3 
+  lg:mt-4 
+  text-sm 
+  lg:text-base
+  font-body
+  tracking-wider
+  font-[300]
+  text-zinc-300
+  relative
+  pl-5
+  max-[355px]:text-xs
+  max-[355px]:mt-2.5;
+
+  &::before {
+    content: "»";
+    @apply absolute 
+  left-0 
+  text-pink-400/70;
   }
 }
 
