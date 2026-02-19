@@ -98,7 +98,7 @@
 }
 
 @utility section-heading-1 {
-  @apply text-2xl font-display font-medium tracking-widest text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-pink-600 relative pb-3 mb-7 max-[355px]:text-xl max-[355px]:pb-2.5 max-[355px]:mb-6 lg:text-3xl lg:pb-3.5 lg:mb-9;
+  @apply text-2xl lg:text-3xl font-display font-[500] tracking-widest text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-pink-600 relative pb-3 mb-7 max-[355px]:text-xl max-[355px]:pb-2.5 max-[355px]:mb-6 lg:text-3xl lg:pb-3.5 lg:mb-9;
 
   &::after {
     @apply content-[''] absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-pink-600 to-pink-300 rounded-full max-[355px]:w-14 max-[355px]:h-[3px] lg:w-20 lg:h-[5px];

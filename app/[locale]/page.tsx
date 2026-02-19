@@ -20,7 +20,7 @@ const HomePage: FC<HomePageProps> = async ({ params }) => {
     <main className="home-page">
       <HomeHero />
       <ServicesShowcase />
-      {/* <ClientStoriesExperiences /> */}
+      <ClientStoriesExperiences />
     </main>
   );
 };
