@@ -3,7 +3,7 @@
 @reference "../globals.css";
 
 .our-story {
-  @apply bg-[url("/images/sections-bg/section-bg-9.svg")]
+  @apply bg-[url("/images/sections-bg/section-bg-11.svg")]
   bg-cover
   bg-center
   bg-no-repeat
@@ -11,8 +11,19 @@
 }
 
 .our-story::before {
-  @apply overlay
-  !bg-gradient-to-br from-neutral-900/75 to-neutral-900/0;
+  @apply content-[''] absolute inset-0 pointer-events-none;
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(24, 24, 27, 0.55) 0%,
+      rgba(24, 24, 27, 0.75) 55%,
+      rgba(9, 9, 11, 0.9) 100%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(236, 72, 153, 0.12) 0%,
+      rgba(6, 182, 212, 0.08) 100%
+    );
 }
 
 .our-story-container {
@@ -20,14 +31,18 @@
 }
 
 .our-story-heading {
-  @apply section-heading;
+  @apply section-heading-2;
+}
+
+.our-story-intro {
+  @apply section-intro-2;
 }
 
 .our-story-content {
-  @apply bg-neutral-100/15
-  backdrop-blur-sm
-  rounded-lg
-  shadow-lg
+  @apply card-2
+  max-[355px]:!p-0
+  !p-0
+  lg:!p-0
   overflow-hidden
   grid
   grid-cols-1
@@ -57,15 +72,15 @@
   @apply text-lg
   lg:text-xl
   tracking-widest
-  font-[700]
-  font-primary
+  font-[500]
+  font-display
   uppercase
   flex
   gap-1.5
   lg:gap-2
   justify-center
   xl:justify-start
-  text-gray-50;
+  text-zinc-50;
 }
 
 .our-story-slogan-quote-left,
@@ -81,16 +96,17 @@
   lg:mb-9
   text-sm
   lg:text-base
+  font-accent
+  italic
   tracking-widest
   font-[400]
   text-center
   xl:text-justify
-  text-gray-200;
+  text-zinc-200;
 }
 
 .our-story-book-a-session-btn {
-  @apply btn
-  btn-primary;
+  @apply btn-primary;
 }
 
 @media (max-width: 355px) {
