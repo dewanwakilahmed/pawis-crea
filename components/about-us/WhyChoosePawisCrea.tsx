@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC, ComponentType } from "react";
+import { FC, ComponentType } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
@@ -54,8 +54,6 @@ const WhyChoosePawisCrea: FC = () => {
     icon: REASON_ICONS[index],
   }));
 
-  const sectionOutro = t_Section("sectionOutro");
-
   return (
     <section
       id="why-choose-pawis-crea"
@@ -92,7 +90,6 @@ const WhyChoosePawisCrea: FC = () => {
             );
           })}
         </div>
-        <p className="why-choose-pawis-crea__outro">{sectionOutro}</p>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { setRequestLocale } from "next-intl/server";
 
 // Sections
@@ -11,7 +11,6 @@ interface AboutUsPageProps {
 }
 
 const AboutUsPage: FC<AboutUsPageProps> = async ({ params }) => {
-  // Next.js 16: params is now async, must await
   const { locale } = await params;
 
   setRequestLocale(locale);
@@ -19,8 +18,8 @@ const AboutUsPage: FC<AboutUsPageProps> = async ({ params }) => {
   return (
     <main className="about-us-page">
       <AboutUsHero />
-      {/* <OurStory />
-      <WhyChoosePawisCrea /> */}
+      {/* <OurStory /> */}
+      <WhyChoosePawisCrea />
     </main>
   );
 };
