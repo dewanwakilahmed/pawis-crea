@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { setRequestLocale } from "next-intl/server";,
+import { setRequestLocale } from "next-intl/server";
 
 // Sections
 import PortfolioHero from "@/components/portfolio/PortfolioHero";
@@ -13,7 +13,7 @@ interface PortfolioPageProps {
 const PortfolioPage: FC<PortfolioPageProps> = async ({ params }) => {
   // Next.js 16: params is now async, must await
   const { locale } = await params;
-  
+
   setRequestLocale(locale);
 
   return (

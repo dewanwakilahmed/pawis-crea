@@ -41,14 +41,14 @@
 }
 
 .about-us-hero-cta {
-  @apply hero-cta-base;
+  @apply hero-cta;
 }
 
 .book-a-session-btn {
   @apply btn-primary;
 }
 
-.explore-our-services-btn {
+.explore-our-story-btn {
   @apply btn-secondary;
 }
 
