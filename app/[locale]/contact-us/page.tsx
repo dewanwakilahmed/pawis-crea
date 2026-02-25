@@ -10,7 +10,6 @@ interface ContactUsPageProps {
 }
 
 const ContactUsPage: FC<ContactUsPageProps> = async ({ params }) => {
-  // Next.js 16: params is now async, must await
   const { locale } = await params;
 
   setRequestLocale(locale);
@@ -18,7 +17,7 @@ const ContactUsPage: FC<ContactUsPageProps> = async ({ params }) => {
   return (
     <main className="contact-us-page">
       <ContactUsHero />
-      {/* <ContactUsForm /> */}
+      <ContactUsForm />
     </main>
   );
 };

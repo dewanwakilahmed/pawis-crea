@@ -224,6 +224,7 @@
     },
     "ContactUsForm": {
       "sectionHeading": "Contáctanos - Conecta con Nosotros",
+      "sectionIntro": "¿Listo para capturar tu historia? Comparte tu visión con nosotros y convirtamos tus sueños en realidad",
       "companyIntroMessage": "En Pawis Crea, convertimos tus sueños en historias atemporales. ¡Hagamos que tus sueños sean inolvidables, contáctanos hoy!",
       "form": {
         "fields": {

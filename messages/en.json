@@ -223,6 +223,7 @@
     },
     "ContactUsForm": {
       "sectionHeading": "Reach Out - Connect with Us",
+      "sectionIntro": "Ready to capture your story? Share your vision with us and let’s frame your dreams into reality",
       "companyIntroMessage": "At Pawis Crea, we turn your dreams into timeless stories. Let's make your dreams unforgettable—reach out today!",
       "form": {
         "fields": {
