@@ -11,7 +11,6 @@ interface PortfolioPageProps {
 }
 
 const PortfolioPage: FC<PortfolioPageProps> = async ({ params }) => {
-  // Next.js 16: params is now async, must await
   const { locale } = await params;
 
   setRequestLocale(locale);
@@ -19,7 +18,7 @@ const PortfolioPage: FC<PortfolioPageProps> = async ({ params }) => {
   return (
     <main className="portfolio-page">
       <PortfolioHero />
-      {/* <OurPhotographyCollection /> */}
+      <OurPhotographyCollection />
     </main>
   );
 };
