@@ -130,7 +130,7 @@ const Footer: FC = () => {
                     rel="noopener noreferrer"
                     className="footer-social-link"
                   >
-                    {t(`social.${link.key}`)}
+                    {t(`social.${link.key}` as Parameters<typeof t>[0])}
                   </a>
                 </li>
               ))}
