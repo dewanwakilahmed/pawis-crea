@@ -148,6 +148,13 @@
           "clientInfo": "Lucia Fernandez | Fashion Model | Studio Location | Fashion Portrait Session"
         }
       ]
+    },
+    "CallToAction": {
+      "eyebrow": "Ready to Begin?",
+      "headline": "Let's Tell Your Story Together",
+      "body": "Every great memory starts with a single click. Let's make yours unforgettable",
+      "primaryBtn": "Book a Session",
+      "secondaryBtn": "View Portfolio"
     }
   },
   "AboutUs": {
@@ -198,6 +205,13 @@
           "description": "Photography and videography aren't just our job—they're our calling. Every project receives our full creative energy and meticulous attention to detail because your joy is our greatest reward"
         }
       }
+    },
+    "CallToAction": {
+      "eyebrow": "We'd Love to Work With You",
+      "headline": "Your Vision, Our Passion",
+      "body": "Now that you know who we are, let's create something meaningful together",
+      "primaryBtn": "Book a Session",
+      "secondaryBtn": "View Portfolio"
     }
   },
   "Portfolio": {
@@ -211,6 +225,13 @@
       "sectionHeading": "Our Photography Collection - Moments in Focus",
       "sectionIntro": "A gallery of dreams captured, celebrations frozen, and authentic souls revealed",
       "photographyCollectionNotLoaded": "No images are available at the moment! Please check back later"
+    },
+    "CallToAction": {
+      "eyebrow": "Inspired by What You See?",
+      "headline": "Your Story Could Be Next",
+      "body": "These moments were once just dreams. Let's turn yours into a visual masterpiece.",
+      "primaryBtn": "Book a Session",
+      "secondaryBtn": "View Portfolio"
     }
   },
   "ContactUs": {

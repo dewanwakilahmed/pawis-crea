@@ -148,6 +148,13 @@
           "clientInfo": "Lucia Fernandez | Modelo de Moda | Locación de Estudio | Sesión de Retrato Fashion"
         }
       ]
+    },
+    "CallToAction": {
+      "eyebrow": "¿Listo para Comenzar?",
+      "headline": "Contemos Tu Historia Juntos",
+      "body": "Cada gran recuerdo comienza con un solo clic. Hagamos el tuyo inolvidable",
+      "primaryBtn": "Reserva una Sesión",
+      "secondaryBtn": "Ver Portafolio"
     }
   },
   "AboutUs": {
@@ -199,6 +206,13 @@
         }
       },
       "sectionOutro": "Confía en nosotros tu momento. Tienes nuestra promesa"
+    },
+    "CallToAction": {
+      "eyebrow": "Nos Encantaría Trabajar Contigo",
+      "headline": "Tu Visión, Nuestra Pasión",
+      "body": "Ahora que nos conoces, creemos algo significativo juntos",
+      "primaryBtn": "Reserva una Sesión",
+      "secondaryBtn": "Ver Portafolio"
     }
   },
   "Portfolio": {
@@ -212,6 +226,13 @@
       "sectionHeading": "Nuestra Colección de Fotografía - Momentos en Foco",
       "sectionIntro": "Una galería de sueños capturados, celebraciones congeladas y almas auténticas reveladas",
       "photographyCollectionNotLoaded": "¡No hay imágenes disponibles en este momento! Por favor, vuelve a revisar más tarde"
+    },
+    "CallToAction": {
+      "eyebrow": "¿Inspirado por lo que Ves?",
+      "headline": "Tu Historia Podría Ser la Próxima",
+      "body": "Estos momentos alguna vez fueron solo sueños. Convirtamos los tuyos en una obra maestra visual",
+      "primaryBtn": "Reserva una Sesión",
+      "secondaryBtn": "Ver Portafolio"
     }
   },
   "ContactUs": {
