@@ -54,7 +54,7 @@ const Header: FC = () => {
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="nav-link">
-                  {t(item.key) as Parameters<typeof t>[0]}
+                  {t(item.key as Parameters<typeof t>[0])}
                 </Link>
               </li>
             ))}
