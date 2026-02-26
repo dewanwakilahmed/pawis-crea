@@ -99,7 +99,7 @@ const Header: FC = () => {
                     className="mobile-nav-link"
                     onClick={handleMobileClick}
                   >
-                    {t(item.key)}
+                    {t(item.key as Parameters<typeof t>[0])}
                   </Link>
                 </li>
               ))}
