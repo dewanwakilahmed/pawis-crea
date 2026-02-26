@@ -58,7 +58,7 @@ const Footer: FC = () => {
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="footer-nav-link">
-                    {t(`nav.${item.key}`)}
+                    {t(`nav.${item.key}` as Parameters<typeof t>[0])}
                   </Link>
                 </li>
               ))}

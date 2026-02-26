@@ -209,7 +209,11 @@ const OurPhotographyCollection: FC = () => {
   }
 
   return (
-    <section className="our-photography-collection">
+    <section
+      className="our-photography-collection"
+      id="our-photography-collection"
+      aria-labelledby="our-photography-collection-heading"
+    >
       <div className="our-photography-collection-container">
         <h3 className="our-photography-collection-heading">{sectionHeading}</h3>
         <p className="our-photography-collection-intro">{sectionIntro}</p>

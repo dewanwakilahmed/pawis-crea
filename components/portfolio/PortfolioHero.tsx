@@ -66,7 +66,7 @@ const PortfolioHero: FC = () => {
             </Link>
 
             <Link
-              href="/#portfolio-categories"
+              href="/portfolio#our-photography-collection"
               className="explore-our-works-btn"
               aria-label={exploreOurWorksBtn}
             >

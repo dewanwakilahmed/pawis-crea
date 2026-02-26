@@ -66,7 +66,7 @@ const HomeHero: FC = () => {
             </Link>
 
             <Link
-              href="/#services-overview"
+              href="/#services-showcase"
               className="explore-our-services-btn"
               aria-label={exploreOurServicesBtn}
             >
